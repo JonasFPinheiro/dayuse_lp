@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+serve.log
+serve-err.log
+
+# Editor
+.vscode/
+*.code-workspace
+
+# Node (caso venha a ter)
+node_modules/

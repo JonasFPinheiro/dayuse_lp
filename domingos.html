@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Domingos de Praia — experiência completa do amanhecer ao pôr do sol em Na Praia Parque, Brasília. Temporada 2026." />
+  <meta property="og:title" content="Domingos de Praia — Na Praia Parque · Brasília" />
+  <title>Domingos de Praia — Experiências até o sol virar lua</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ──────────── NAV ──────────── -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__brand">
+      <img src="NP Parque_Selo 04.png" alt="Na Praia Parque" class="nav__logo" />
+      <span class="nav__wordmark">Domingos de Praia</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a href="#jornada" class="nav__link">A Jornada</a>
+      <a href="#ritual" class="nav__link">Ritual Sol/Lua</a>
+      <a href="#atividades" class="nav__link">Atividades</a>
+      <a href="#shows" class="nav__link">Ingressos</a>
+      <div class="nav-switch" id="navSwitch" role="tablist" aria-label="Escolha o produto">
+        <a href="index.html" class="nav-switch__opt" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          Dia
+        </a>
+        <a href="domingos.html" class="nav-switch__opt is-active" role="tab" aria-selected="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          Noite
+        </a>
+      </div>
+      <a href="#shows" class="nav__cta">Ver datas →</a>
+    </div>
+  </nav>
+
+  <!-- ──────────── HERO ──────────── -->
+  <section class="hero" id="hero">
+    <div class="hero__carousel">
+      <div class="hero__slide is-active" style="background-image:url('domingo_de_praia/roda_pagode.jpg')"></div>
+      <div class="hero__slide" style="background-image:url('domingo_de_praia/Na-PraiaIMG_8503-1.jpg')"></div>
+      <div class="hero__slide" style="background-image:url('domingo_de_praia/Palco_Na_Praia.png')"></div>
+      <div class="hero__overlay"></div>
+      <button class="hero__arrow hero__arrow--prev" aria-label="Anterior">‹</button>
+      <button class="hero__arrow hero__arrow--next" aria-label="Próximo">›</button>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__badge animate-up">
+        <span class="hero__badge-dot"></span>
+        Na Praia Parque · Brasília
+      </div>
+      <span class="hero__kicker animate-up delay-1">Domingos de Praia</span>
+      <h1 class="hero__title animate-up delay-2" data-captions></h1>
+      <p class="hero__tagline animate-up delay-3">Experiências até o sol virar lua.</p>
+      <div class="hero__pillars animate-up delay-3">
+        <span>Música</span><span class="dot">·</span>
+        <span>Movimento</span><span class="dot">·</span>
+        <span>Conexão</span><span class="dot">·</span>
+        <span>Celebração</span>
+      </div>
+      <div class="hero__ctas animate-up delay-4">
+        <a href="#shows" class="btn btn--primary">Garantir meu ingresso →</a>
+      </div>
+      <div class="hero__dots">
+        <button class="hero__dot is-active" data-i="0"></button>
+        <button class="hero__dot" data-i="1"></button>
+        <button class="hero__dot" data-i="2"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────── CRONOGRAMA ──────────── -->
+  <section class="cronograma" id="jornada">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="label">A Jornada</p>
+        <h2>Um domingo do amanhecer<br /><em>ao pôr do sol</em></h2>
+      </div>
+      <p class="cronograma__note">Cronograma base — pode variar a cada domingo.</p>
+      <div class="cronograma__track" data-animate>
+
+        <div class="crono__item crono__item--morning">
+          <div class="crono__time">08h00</div>
+          <div class="crono__dot"></div>
+          <div class="crono__card">
+            <span class="crono__label">Manhã</span>
+            <h4>Day Use começa</h4>
+            <p>Esportes, wellness, atividades infantis e sol pra aquecer.</p>
+            <div class="crono__tags"><span>Esporte</span><span>Família</span><span>Wellness</span></div>
+          </div>
+        </div>
+
+        <div class="crono__item crono__item--afternoon">
+          <div class="crono__time">16h30</div>
+          <div class="crono__dot"></div>
+          <div class="crono__card">
+            <span class="crono__label">Tarde</span>
+            <h4>Roda de Samba</h4>
+            <p>O dia muda de temperatura. A comunidade se encontra.</p>
+            <div class="crono__tags"><span>Samba</span><span>Música ao vivo</span></div>
+          </div>
+        </div>
+
+        <div class="crono__item crono__item--sunset">
+          <div class="crono__time">18h20</div>
+          <div class="crono__dot crono__dot--special"></div>
+          <div class="crono__card">
+            <span class="crono__badge">✦ Momento único</span>
+            <h4>Ritual Sol/Lua</h4>
+            <p>O pôr do sol em Na Praia Parque como você nunca viu.</p>
+            <div class="crono__tags"><span>Ritual</span><span>Pôr do sol</span></div>
+          </div>
+        </div>
+
+        <div class="crono__item crono__item--night">
+          <div class="crono__time">18h30</div>
+          <div class="crono__dot"></div>
+          <div class="crono__card">
+            <span class="crono__label">Noite</span>
+            <h4>Palco Praia</h4>
+            <p>Banda + participações especiais. Música ao vivo até o sol se despedir.</p>
+            <div class="crono__tags"><span>Banda</span><span>Ao vivo</span></div>
+          </div>
+        </div>
+
+        <div class="crono__item crono__item--night">
+          <div class="crono__time">21h00</div>
+          <div class="crono__dot"></div>
+          <div class="crono__card">
+            <span class="crono__label">Encerramento</span>
+            <h4>Música até o fim</h4>
+            <p>DJ sets e encerramento. Quem ficou desde cedo viveu tudo.</p>
+            <div class="crono__tags"><span>DJ 1 · 21h</span><span>DJ 2 · 22h</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SHOWS — 14 DOMINGOS
+  ══════════════════════════════════════ -->
+  <section class="shows" id="shows">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="label">Programação · Temporada 2026</p>
+        <h2>Escolha o seu <em>domingo</em></h2>
+        <p class="section-desc">14 domingos, de junho a setembro. A partir das 13h. Encontre a sua data.</p>
+      </div>
+
+      <div class="shows__controls" data-animate>
+        <select class="shows__week-select" id="showsWeekSelect" aria-label="Ir para domingo">
+          <option value="">Ir para um domingo…</option>
+          <option value="0">14/06 — Banda Eva + Doze por Oito</option>
+          <option value="1">21/06</option>
+          <option value="2">28/06</option>
+          <option value="3">05/07 — Felipe Amorim + Clayton & Romário</option>
+          <option value="4">12/07 — Diego & Victor Hugo</option>
+          <option value="5">19/07 — Belo + Pixote</option>
+          <option value="6">26/07</option>
+          <option value="7">02/08</option>
+          <option value="8">09/08</option>
+          <option value="9">16/08</option>
+          <option value="10">23/08 — Xand Avião</option>
+          <option value="11">30/08</option>
+          <option value="12">06/09</option>
+          <option value="13">13/09 — Último Domingo</option>
+        </select>
+      </div>
+
+      <div class="shows__grid" id="showsGrid">
+
+        <!-- 1 — 14/06 → SHOW: Banda Eva + Doze por Oito (Palco Praia) -->
+        <article class="show-card" data-search="14/06 14 junho jun domingo banda eva doze por oito abertura palco praia show">
+          <div class="show-card__media">
+            <img src="shows_domingo/Banner-01-1000x1000px-44.png" alt="Show no Domingos de Praia — 14 de Junho" loading="lazy" style="object-position:center top" />
+            <span class="show-card__tag">Abertura da Temporada</span>
+            <span class="show-card__date-chip">14 <small>JUN</small></span>
+          </div>
+          <div class="show-card__body">
+            <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+            <h3 class="show-card__lineup">14 de Junho</h3>
+            <p class="show-card__palco">✦ Palco Praia · Banda Eva + Doze por Oito</p>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
+            <a href="#" class="btn btn--primary show-card__cta">Garantir ingresso do show →</a>
+          </div>
+        </article>
+
+        <!-- 2 — 21/06 → 13_07 samba -->
+        <article class="show-card" data-search="21/06 21 junho jun domingo">
+          <div class="show-card__media">
+            <img src="produto_domingo/pagode-sol.jpg" alt="Domingo 21 de junho em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
+            <span class="show-card__date-chip">21 <small>JUN</small></span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__lineup">Line-up em breve</h3>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
+          </div>
+        </article>
+
+        <!-- 3 — 28/06 -->
+        <article class="show-card" data-search="28/06 28 junho jun domingo">
+          <div class="show-card__media">
+            <img src="produto_domingo/vila-noite.jpg" alt="Domingo 28 de junho em Na Praia Parque" loading="lazy" style="object-position:center center" />
+            <span class="show-card__date-chip">28 <small>JUN</small></span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__lineup">28 de Junho</h3>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
+          </div>
+        </article>
+
+        <!-- 4 — 05/07 → SHOW: Felipe Amorim + Clayton & Romário (Palco Praia + Torcida na Praia) -->
+        <article class="show-card" data-search="05/07 05 5 julho jul domingo felipe amorim clayton romario palco praia torcida show">
+          <div class="show-card__media">
+            <img src="shows_domingo/Banner-01-1000x1000px-42.png" alt="Show no Domingos de Praia — 05 de Julho" loading="lazy" style="object-position:center top" />
+            <span class="show-card__date-chip">05 <small>JUL</small></span>
+          </div>
+          <div class="show-card__body">
+            <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+            <h3 class="show-card__lineup">05 de Julho</h3>
+            <p class="show-card__palco">✦ Palco Praia · Felipe Amorim + Clayton & Romário</p>
+            <p class="show-card__palco">🏟️ Torcida na Praia · Felipe Amorim + Clayton & Romário</p>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
+            <a href="#" class="btn btn--primary show-card__cta">Garantir ingresso do show →</a>
+          </div>
+        </article>
+
+        <!-- 5 — 12/07 → SHOW: Diego & Victor Hugo (Palco Praia) -->
+        <article class="show-card" data-search="12/07 12 julho jul domingo diego victor hugo palco praia show">
+          <div class="show-card__media">
+            <img src="shows_domingo/Banner-01-1000x1000px-24.png" alt="Show no Domingos de Praia — 12 de Julho" loading="lazy" style="object-position:center top" />
+            <span class="show-card__date-chip">12 <small>JUL</small></span>
+          </div>
+          <div class="show-card__body">
+            <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+            <h3 class="show-card__lineup">12 de Julho</h3>
+            <p class="show-card__palco">✦ Palco Praia · Diego & Victor Hugo</p>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
+            <a href="#" class="btn btn--primary show-card__cta">Garantir ingresso do show →</a>
+          </div>
+        </article>
+
+        <!-- 6 — 19/07 → SHOW: Belo + Pixote (Torcida na Praia) -->
+        <article class="show-card" data-search="19/07 19 julho jul domingo belo pixote torcida na praia show">
+          <div class="show-card__media">
+            <img src="shows_domingo/Banner-01-1000x1000px-8.png" alt="Show no Domingos de Praia — 19 de Julho" loading="lazy" style="object-position:center top" />
+            <span class="show-card__tag">🏟️ Torcida na Praia</span>
+            <span class="show-card__date-chip">19 <small>JUL</small></span>
+          </div>
+          <div class="show-card__body">
+            <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+            <h3 class="show-card__lineup">19 de Julho</h3>
+            <p class="show-card__palco">🏟️ Torcida na Praia · Belo + Pixote</p>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
+            <a href="#" class="btn btn--primary show-card__cta">Garantir ingresso do show →</a>
+          </div>
+        </article>
+
+        <!-- 7 — 26/07 → 03_08 vila -->
+        <article class="show-card" data-search="26/07 26 julho jul domingo">
+          <div class="show-card__media">
+            <img src="produto_domingo/vila-noite.jpg" alt="Domingo 26 de julho em Na Praia Parque" loading="lazy" style="object-position:center center" />
+            <span class="show-card__date-chip">26 <small>JUL</small></span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__lineup">Line-up em breve</h3>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
+          </div>
+        </article>
+
+        <!-- 8 — 02/08 → night lounge -->
+        <article class="show-card" data-search="02/08 02 2 agosto ago domingo">
+          <div class="show-card__media">
+            <img src="produto_domingo/noite-lounge.jpg" alt="Domingo 02 de agosto em Na Praia Parque" loading="lazy" style="object-position:center center" />
+            <span class="show-card__date-chip">02 <small>AGO</small></span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__lineup">Line-up em breve</h3>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
+          </div>
+        </article>
+
+        <!-- 9 — 09/08 → foto63.jpg -->
+        <article class="show-card" data-search="09/08 09 9 agosto ago domingo">
+          <div class="show-card__media">
+            <img src="produto_domingo/palco-sunset.jpg" alt="Domingo 09 de agosto em Na Praia Parque" loading="lazy" style="object-position:center 60%" />
+            <span class="show-card__date-chip">09 <small>AGO</small></span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__lineup">Line-up em breve</h3>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
+          </div>
+        </article>
+
+        <!-- 10 — 16/08 → 13_07 samba -->
+        <article class="show-card" data-search="16/08 16 agosto ago domingo">
+          <div class="show-card__media">
+            <img src="produto_domingo/pagode-sol.jpg" alt="Domingo 16 de agosto em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
+            <span class="show-card__date-chip">16 <small>AGO</small></span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__lineup">Line-up em breve</h3>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
+          </div>
+        </article>
+
+        <!-- 11 — 23/08 → SHOW: Xand Avião (Palco Praia) -->
+        <article class="show-card" data-search="23/08 23 agosto ago domingo xand aviao palco praia show">
+          <div class="show-card__media">
+            <img src="shows_domingo/Banner-01-1000x1000px-30.png" alt="Show no Domingos de Praia — 23 de Agosto" loading="lazy" style="object-position:center top" />
+            <span class="show-card__date-chip">23 <small>AGO</small></span>
+          </div>
+          <div class="show-card__body">
+            <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+            <h3 class="show-card__lineup">23 de Agosto</h3>
+            <p class="show-card__palco">✦ Palco Praia · Xand Avião</p>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
+            <a href="#" class="btn btn--primary show-card__cta">Garantir ingresso do show →</a>
+          </div>
+        </article>
+
+        <!-- 12 — 30/08 → night lounge -->
+        <article class="show-card" data-search="30/08 30 agosto ago domingo">
+          <div class="show-card__media">
+            <img src="produto_domingo/noite-lounge.jpg" alt="Domingo 30 de agosto em Na Praia Parque" loading="lazy" style="object-position:center center" />
+            <span class="show-card__date-chip">30 <small>AGO</small></span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__lineup">Line-up em breve</h3>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
+          </div>
+        </article>
+
+        <!-- 13 — 06/09 → foto63.jpg -->
+        <article class="show-card" data-search="06/09 06 6 setembro set domingo">
+          <div class="show-card__media">
+            <img src="produto_domingo/palco-sunset.jpg" alt="Domingo 06 de setembro em Na Praia Parque" loading="lazy" style="object-position:center 60%" />
+            <span class="show-card__date-chip">06 <small>SET</small></span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__lineup">Line-up em breve</h3>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
+          </div>
+        </article>
+
+        <!-- 14 — 13/09 → 13_07 samba (Encerramento) -->
+        <article class="show-card" data-search="13/09 13 setembro set domingo encerramento ultimo">
+          <div class="show-card__media">
+            <img src="produto_domingo/pagode-sol.jpg" alt="Domingo 13 de setembro em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
+            <span class="show-card__tag">Último Domingo da Temporada</span>
+            <span class="show-card__date-chip">13 <small>SET</small></span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__lineup">Line-up em breve</h3>
+            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
+            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
+          </div>
+        </article>
+
+      </div><!-- /shows__grid -->
+
+      <div class="shows__nav">
+        <button class="shows__arrow" id="showsPrev" aria-label="Domingo anterior" disabled>‹</button>
+        <span class="shows__label" id="showsLabel">Mostrando domingo 1 de 14</span>
+        <button class="shows__arrow" id="showsNext" aria-label="Próximo domingo">›</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────────── STORY ──────────── -->
+  <section class="story" id="story">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="label">O que é</p>
+        <h2>Domingo na <em>Praia</em></h2>
+        <p class="section-desc">Pé na areia, sol no rosto, samba na tarde e o pôr do sol como grande final. Um domingo inteiro, do seu jeito — sem pressa.</p>
+      </div>
+      <div class="story__strip" data-animate>
+        <figure class="story__shot">
+          <img src="produto_domingo/palco-sunset.jpg" alt="Palco ao pôr do sol em Na Praia Parque" loading="lazy" style="object-position:center 60%" />
+          <figcaption>E o pôr do sol fecha o dia</figcaption>
+        </figure>
+        <figure class="story__shot">
+          <img src="produto_domingo/pagode-sol.jpg" alt="Roda de pagode em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
+          <figcaption>A roda esquenta a tarde</figcaption>
+        </figure>
+        <figure class="story__shot">
+          <img src="produto_domingo/familia-parque.jpg" alt="Família e crianças em Na Praia Parque" loading="lazy" style="object-position:center 55%" />
+          <figcaption>Pra toda a família</figcaption>
+        </figure>
+        <figure class="story__shot">
+          <img src="produto_domingo/vila-noite.jpg" alt="Vila iluminada ao anoitecer em Na Praia Parque" loading="lazy" style="object-position:center center" />
+          <figcaption>Pé na areia, do dia à noite</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────── RITUAL ──────────── -->
+  <section class="ritual" id="ritual">
+    <div class="ritual__glow"></div>
+    <div class="ritual__content" data-animate>
+      <div class="ritual__eyebrow">18h20 · Na Praia Parque · Todo domingo</div>
+      <h2 class="ritual__title">O Ritual<br /><em>Sol/Lua</em></h2>
+      <div class="ritual__text">
+        <p>Na Praia do Jacaré, na Paraíba, existe um ritual que atrai pessoas de todo o Brasil. Todos os dias, ao pôr do sol, Jurandir do Sax toca o Boléro de Ravel enquanto o sol se despede do céu. A música criou identidade. O pôr do sol virou destino.</p>
+        <p>Nós trouxemos esse conceito para Na Praia Parque — e criamos algo que Brasília nunca teve. Um ritual inédito, todo domingo, no pôr do sol mais bonito da cidade.</p>
+      </div>
+      <blockquote class="ritual__quote">
+        "O momento em que o sol toca a água<br />e a noite começa a nascer."
+      </blockquote>
+      <a href="#shows" class="btn btn--gold">Reserve seu lugar nesse ritual</a>
+    </div>
+  </section>
+
+  <!-- ──────────── ATIVIDADES ──────────── -->
+  <section class="atividades" id="atividades">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="label">Day Use · A partir das 13h</p>
+        <h2>A manhã que<br /><em>cria o encontro</em></h2>
+        <p class="section-desc">Chegue cedo. Movimente o corpo. Conecte com pessoas. O esporte cria o encontro, o encontro cria a comunidade, a comunidade cria a festa.</p>
+      </div>
+      <div class="atividades__grid" data-animate>
+        <div class="atividade atividade--altinha atividade--has-photo">
+          <div class="atividade__photo">
+            <img src="produto_domingo/yoga-praia.jpg" alt="Altinha na areia em Na Praia Parque" loading="lazy" style="object-position:center 40%" />
+          </div>
+          <div class="atividade__content">
+            <div class="atividade__emoji">🏐</div>
+            <h3>Altinha</h3>
+            <p>O jogo que une estranhos e cria amizades. Sem times fixos, sem regras pesadas.</p>
+          </div>
+        </div>
+        <div class="atividade atividade--funcional atividade--has-photo">
+          <div class="atividade__photo">
+            <img src="midia_dayuse/funcional-brown.jpeg" alt="Aula funcional no pôr do sol em Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center 35%;width:100%;height:100%">
+          </div>
+          <div class="atividade__content">
+            <span class="atividade__tag-top">☀️ Sunset</span>
+            <div class="atividade__emoji">💪</div>
+            <h3>Funcional Sunset</h3>
+            <p>Treino funcional com vista incrível. Porque o melhor treino é o que você vai repetir.</p>
+          </div>
+        </div>
+        <div class="atividade atividade--beach atividade--has-photo">
+          <div class="atividade__photo">
+            <img src="produto_domingo/beach-sport.jpg" alt="Beach games em Na Praia Parque" loading="lazy" style="object-position:center 45%" />
+          </div>
+          <div class="atividade__content">
+            <div class="atividade__emoji">🏄</div>
+            <h3>Beach Games</h3>
+            <p>Vôlei, futevôlei, beach tênis — a areia chama e a competição fica.</p>
+          </div>
+        </div>
+        <div class="atividade atividade--wellness atividade--has-photo">
+          <div class="atividade__photo">
+            <img src="midia_dayuse/funcional-blue.jpeg" alt="Wellness e atividades em grupo no Na Praia Parque" loading="lazy" style="object-position:center 30%" />
+          </div>
+          <div class="atividade__content">
+            <div class="atividade__emoji">🧘</div>
+            <h3>Wellness & Social</h3>
+            <p>Experiências que desaceleram e criam o ambiente perfeito para encontros reais.</p>
+          </div>
+        </div>
+        <div class="atividade atividade--infantil atividade--has-photo">
+          <div class="atividade__photo">
+            <img src="produto_domingo/familia-parque.jpg" alt="Programação infantil em Na Praia Parque" loading="lazy" style="object-position:center 55%" />
+          </div>
+          <div class="atividade__content">
+            <div class="atividade__emoji">🎠</div>
+            <h3>Programação Infantil</h3>
+            <p>As crianças têm o próprio espaço — para toda a família aproveitar junto.</p>
+          </div>
+        </div>
+        <div class="atividade atividade--lago atividade--has-photo">
+          <div class="atividade__photo">
+            <img src="domingo_de_praia/Palco_Na_Praia.png" alt="Palco Na Praia Parque ao pôr do sol" loading="lazy" style="object-position:center center">
+          </div>
+          <div class="atividade__content">
+            <div class="atividade__emoji">🌊</div>
+            <h3>A praia é o palco</h3>
+            <p>Na Praia Parque como pano de fundo pra tudo. Sempre presente. Sempre bonito.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────── COMBINHO ──────────── -->
+  <section class="atividades" style="padding-top:0;padding-bottom:var(--sp-xl)">
+    <div class="container">
+      <div class="combinho" data-animate>
+        <div class="combinho__inner">
+          <div class="combinho__left">
+            <img src="produto_domingo/coconut-npp.jpg" alt="Coco Na Praia Parque" loading="lazy" style="width:72px;height:72px;object-fit:cover;object-position:center 40%;border-radius:50%;margin-bottom:.75rem;border:2px solid var(--sand);" />
+            <span class="combinho__eyebrow">✦ Produto Especial</span>
+            <h3 class="combinho__title">Combinho de Domingos</h3>
+            <p class="combinho__desc">
+              Um free pass para curtir <strong>todos os domingos da temporada</strong>. Chega quando quiser, fica o quanto quiser. Pé na areia, toda semana, o verão inteiro.
+            </p>
+            <ul class="combinho__perks">
+              <li>✅ Acesso a todos os 14 domingos</li>
+              <li>✅ Acesso a partir das 13h</li>
+              <li>✅ Ritual Sol/Lua toda semana</li>
+              <li>✅ Comunidade exclusiva de membros</li>
+              <li>✅ Crianças até 12 anos sempre grátis</li>
+            </ul>
+          </div>
+          <div class="combinho__right">
+            <div class="combinho__price-card">
+              <small>temporada completa · 14 domingos</small>
+              <p class="combinho__per" style="font-size:.85rem;color:var(--soft-ink);text-align:center">Vagas limitadas por temporada</p>
+              <a href="#" class="btn btn--gold combinho__cta">Quero o Combinho →</a>
+              <p class="combinho__note">Consulte disponibilidade</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────── FAQ ──────────── -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="label">Dúvidas</p>
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <div class="faq__list" data-animate>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false"><span>Onde fica o Na Praia Parque?</span><span class="faq__icon">+</span></button>
+          <div class="faq__a" hidden><p>O Na Praia Parque está localizado em Brasília — uma das localizações mais bonitas da cidade, com vista privilegiada para o pôr do sol.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false"><span>O que está incluso no ingresso?</span><span class="faq__icon">+</span></button>
+          <div class="faq__a" hidden><p>O ingresso Domingos de Praia dá acesso a partir das 13h. Para curtir o dia inteiro desde as 08h, adquira o ingresso Day Use.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false"><span>Posso levar meus filhos?</span><span class="faq__icon">+</span></button>
+          <div class="faq__a" hidden><p>Com prazer! O período do day use é totalmente family-friendly. Temos programação infantil específica. Crianças até 12 anos entram gratuitamente.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false"><span>O que é o Ritual Sol/Lua?</span><span class="faq__icon">+</span></button>
+          <div class="faq__a" hidden><p>É o momento mais esperado de cada domingo. Às 18h20, no exato horário do pôr do sol em Na Praia Parque, acontece uma experiência musical e sensorial única — inspirado no ritual da Praia do Jacaré (PB). Um ritual inédito em Brasília.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false"><span>O que é o Combinho de Domingos?</span><span class="faq__icon">+</span></button>
+          <div class="faq__a" hidden><p>É o passe da temporada completa com acesso a todos os 14 domingos. Ideal para quem quer viver o verão inteiro em Na Praia Parque sem precisar comprar ingresso toda semana. Consulte disponibilidade.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false"><span>Tem estacionamento?</span><span class="faq__icon">+</span></button>
+          <div class="faq__a" hidden><p>Sim. O Na Praia Parque conta com estacionamento próprio. Recomendamos chegar cedo, especialmente nos domingos com programação especial.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────── CROSS-SELL ──────────── -->
+  <section class="cross-sell" id="cross-sell">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="label">Dois jeitos de viver o Na Praia Parque</p>
+        <h2>Qual é a <em>sua praia</em>?</h2>
+      </div>
+      <div class="cross-sell__grid" data-animate>
+        <a href="index.html" class="cross-sell__card cross-sell__card--day">
+          <div class="cross-sell__img">
+            <img src="midia_dayuse/lagoon-flags.jpeg" alt="Dia na Praia — família e sol" loading="lazy" style="object-fit:cover;object-position:center 40%;width:100%;height:100%">
+          </div>
+          <div class="cross-sell__body">
+            <span class="cross-sell__kicker">☀️ Dia na Praia</span>
+            <h3>O dia inteiro de praia</h3>
+            <p>Família, esporte, piscina e gastronomia. Das 08h ao fim da tarde, pé na areia.</p>
+            <span class="cross-sell__cta">Ver o Day Use →</span>
+          </div>
+        </a>
+        <a href="domingos.html" class="cross-sell__card cross-sell__card--sunset">
+          <div class="cross-sell__img">
+            <img src="produto_domingo/palco-sunset.jpg" alt="Domingos de Praia — pôr do sol" loading="lazy" style="object-fit:cover;object-position:center 60%;width:100%;height:100%">
+          </div>
+          <div class="cross-sell__body">
+            <span class="cross-sell__kicker">🌙 Domingos de Praia</span>
+            <h3>A tarde que vira noite</h3>
+            <p>Roda de samba, Ritual Sol/Lua e o Palco Praia. A festa começa a partir das 13h.</p>
+            <span class="cross-sell__cta">Ver os Domingos →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────── FOOTER CTA ──────────── -->
+  <section class="footer-cta">
+    <div class="footer-cta__content" data-animate>
+      <p class="label label--light">Todo domingo · Na Praia Parque · Brasília</p>
+      <h2>O sol está<br />esperando por você</h2>
+      <p>Não anunciamos. <strong>Fazemos viver.</strong></p>
+      <a href="#shows" class="btn btn--white">Garantir meu lugar na temporada</a>
+    </div>
+  </section>
+
+  <!-- ──────────── FOOTER ──────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="footer__logo">Na Praia Parque</span>
+          <p>Domingos de Praia · Temporada 2026</p>
+          <p>Na Praia Parque · Brasília · DF</p>
+        </div>
+        <div class="footer__nav">
+          <p class="footer__nav-title">Navegação</p>
+          <a href="#jornada">A Jornada</a>
+          <a href="#shows">Shows e Ingressos</a>
+          <a href="#ritual">Ritual Sol/Lua</a>
+          <a href="#atividades">Atividades</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer__social">
+          <p class="footer__nav-title">Redes sociais</p>
+          <a href="#" class="footer__social-link">Instagram</a>
+          <a href="#" class="footer__social-link">WhatsApp</a>
+          <a href="#" class="footer__social-link">TikTok</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Na Praia Parque · Todos os direitos reservados</p>
+        <p class="footer__tagline">Experiências até o sol virar lua.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY BAR -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-bar__inner">
+      <div class="sticky-bar__left">
+        <span class="sticky-bar__dot"></span>
+        <p>Vagas limitadas por edição — <strong>acesso a partir das 13h · Na Praia Parque</strong></p>
+      </div>
+      <a href="#shows" class="sticky-bar__cta">Garantir ingresso →</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
