@@ -13,3 +13,4 @@ serve-err.log
 
 # Node (caso venha a ter)
 node_modules/
+.vercel
