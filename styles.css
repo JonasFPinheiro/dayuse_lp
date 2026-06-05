@@ -427,10 +427,52 @@ em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color
   min-height: 1.2em; margin-bottom: var(--sp-md);
 }
 
-.shows__grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem;
-  max-width: 980px; margin: 0 auto;
+.shows__grid { max-width: 980px; margin: 0 auto; }
+
+/* ── SUNDAY BLOCKS — dual-ticket layout ── */
+.sunday-block { display: none; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.sunday-block.is-visible { display: grid; }
+
+.slot-card {
+  background: var(--cream); border: 1px solid var(--sand);
+  border-radius: var(--r-xl); overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform var(--t), box-shadow var(--t);
 }
+.slot-card:not(.slot-card--soon):hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.slot-card--experience { border-color: var(--sand); }
+.slot-card--show { border-color: var(--tangerine); }
+
+.slot-card__media { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--sand); }
+.slot-card__media img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  transition: transform .45s ease;
+}
+.slot-card:not(.slot-card--soon):hover .slot-card__media img { transform: scale(1.04); }
+
+.slot-card__body { padding: 1.1rem; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
+.slot-card__kicker { font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--warm-grey); }
+.slot-card__title {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--warm-ink); line-height: 1.15;
+}
+.slot-card__sub  { font-size: .85rem; color: var(--soft-ink); line-height: 1.65; }
+.slot-card__value {
+  font-size: .75rem; color: var(--ember); font-style: italic; line-height: 1.5;
+  background: var(--tint-tang); border-radius: var(--r-sm); padding: .3rem .65rem;
+}
+.slot-card__meta { display: flex; flex-direction: column; gap: .3rem; font-size: .82rem; color: var(--warm-grey); }
+.slot-card__cta  { width: 100%; justify-content: center; margin-top: auto; }
+
+.slot-card--soon {
+  border-style: dashed; background: var(--linen); opacity: .45; pointer-events: none;
+  justify-content: center; align-items: center; text-align: center; min-height: 240px;
+}
+.slot-card--soon .slot-card__body { align-items: center; justify-content: center; flex: unset; }
+.slot-card--soon .slot-card__title { color: var(--warm-grey); font-size: .95rem; }
+.slot-card--soon .slot-card__sub   { color: var(--warm-grey); font-size: .8rem; }
+
+.btn--disabled { background: var(--sand); color: var(--warm-grey); box-shadow: none; pointer-events: none; cursor: default; }
 .shows__empty {
   text-align: center; padding: var(--sp-lg);
   color: var(--warm-grey);
@@ -810,7 +852,7 @@ em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color
    RESPONSIVE — MOBILE
 ════════════════════════════════════════ */
 @media (max-width: 720px) {
-  .shows__grid { grid-template-columns: 1fr; }
+  .sunday-block { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {

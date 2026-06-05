@@ -111,7 +111,7 @@
   }
 
   /* ──────────────────────────────────────
-     SHOWS — WINDOWED CAROUSEL
+     SHOWS — SUNDAY BLOCKS CAROUSEL
   ────────────────────────────────────── */
   const showsGrid   = document.getElementById('showsGrid');
   const showsPrev   = document.getElementById('showsPrev');
@@ -120,66 +120,50 @@
   const showsSelect = document.getElementById('showsWeekSelect');
 
   if (showsGrid) {
-    const allCards = Array.from(showsGrid.querySelectorAll('.show-card'));
-    const TOTAL    = allCards.length;
-    let winStart   = 0;
-
-    function winSize() { return window.innerWidth < 720 ? 1 : 2; }
+    const allBlocks = Array.from(showsGrid.querySelectorAll('.sunday-block'));
+    const TOTAL     = allBlocks.length;
+    let winStart    = 0;
 
     function renderWindow(animate) {
-      const size = winSize();
-      allCards.forEach((card, i) => {
-        const visible = i >= winStart && i < winStart + size;
-        card.style.display = visible ? '' : 'none';
-        if (visible && animate) {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(10px)';
-          setTimeout(() => {
-            card.style.transition = 'opacity .3s ease, transform .3s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 20);
-        } else if (visible) {
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
+      allBlocks.forEach((block, i) => {
+        const visible = i === winStart;
+        if (visible) {
+          block.classList.add('is-visible');
+          if (animate) {
+            block.style.opacity = '0';
+            block.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+              block.style.transition = 'opacity .3s ease, transform .3s ease';
+              block.style.opacity = '1';
+              block.style.transform = 'translateY(0)';
+            }, 20);
+          } else {
+            block.style.opacity = '1';
+            block.style.transform = 'translateY(0)';
+          }
+        } else {
+          block.classList.remove('is-visible');
         }
       });
 
       if (showsPrev) showsPrev.disabled = winStart === 0;
-      if (showsNext) showsNext.disabled = winStart >= TOTAL - size;
-
-      if (showsLabel) {
-        const end = Math.min(winStart + size, TOTAL);
-        const label = size === 1
-          ? `Mostrando domingo ${winStart + 1} de ${TOTAL}`
-          : `Mostrando domingos ${winStart + 1}–${end} de ${TOTAL}`;
-        showsLabel.textContent = label;
-      }
-
-      if (showsSelect) {
-        showsSelect.value = '';
-      }
+      if (showsNext) showsNext.disabled = winStart >= TOTAL - 1;
+      if (showsLabel) showsLabel.textContent = `Domingo ${winStart + 1} de ${TOTAL}`;
+      if (showsSelect) showsSelect.value = '';
     }
 
     showsPrev?.addEventListener('click', () => {
       if (winStart > 0) { winStart--; renderWindow(true); }
     });
-
     showsNext?.addEventListener('click', () => {
-      if (winStart < TOTAL - winSize()) { winStart++; renderWindow(true); }
+      if (winStart < TOTAL - 1) { winStart++; renderWindow(true); }
     });
-
     showsSelect?.addEventListener('change', () => {
       const val = showsSelect.value;
       if (val === '') return;
       const idx = parseInt(val, 10);
-      if (!isNaN(idx)) {
-        winStart = Math.min(idx, TOTAL - winSize());
-        renderWindow(true);
-      }
+      if (!isNaN(idx)) { winStart = idx; renderWindow(true); }
     });
-
-    window.addEventListener('resize', () => renderWindow(false));
 
     renderWindow(false);
   }

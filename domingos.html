@@ -6,7 +6,6 @@
   <meta name="description" content="Domingos de Praia — experiência completa do amanhecer ao pôr do sol em Na Praia Parque, Brasília. Temporada 2026." />
   <meta property="og:title" content="Domingos de Praia — Na Praia Parque · Brasília" />
   <title>Domingos de Praia — Experiências até o sol virar lua</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -14,7 +13,7 @@
 </head>
 <body>
 
-  <!-- ──────────── NAV ──────────── -->
+  <!-- ── NAV ── -->
   <nav class="nav" id="nav">
     <a href="#hero" class="nav__brand">
       <img src="NP Parque_Selo 04.png" alt="Na Praia Parque" class="nav__logo" />
@@ -42,7 +41,7 @@
     </div>
   </nav>
 
-  <!-- ──────────── HERO ──────────── -->
+  <!-- ── HERO ── -->
   <section class="hero" id="hero">
     <div class="hero__carousel">
       <div class="hero__slide is-active" style="background-image:url('domingo_de_praia/roda_pagode.jpg')"></div>
@@ -52,7 +51,6 @@
       <button class="hero__arrow hero__arrow--prev" aria-label="Anterior">‹</button>
       <button class="hero__arrow hero__arrow--next" aria-label="Próximo">›</button>
     </div>
-
     <div class="hero__content">
       <div class="hero__badge animate-up">
         <span class="hero__badge-dot"></span>
@@ -78,7 +76,7 @@
     </div>
   </section>
 
-  <!-- ──────────── CRONOGRAMA ──────────── -->
+  <!-- ── CRONOGRAMA ── -->
   <section class="cronograma" id="jornada">
     <div class="container">
       <div class="section-header" data-animate>
@@ -148,14 +146,14 @@
   </section>
 
   <!-- ══════════════════════════════════════
-       SHOWS — 14 DOMINGOS
+       SHOWS — DUAL-TICKET SUNDAY BLOCKS
   ══════════════════════════════════════ -->
   <section class="shows" id="shows">
     <div class="container">
       <div class="section-header" data-animate>
         <p class="label">Programação · Temporada 2026</p>
         <h2>Escolha o seu <em>domingo</em></h2>
-        <p class="section-desc">14 domingos, de junho a setembro. A partir das 13h. Encontre a sua data.</p>
+        <p class="section-desc">14 domingos, de junho a setembro. Cada domingo tem dois ingressos disponíveis — a experiência do dia e, nas datas especiais, o show.</p>
       </div>
 
       <div class="shows__controls" data-animate>
@@ -164,8 +162,8 @@
           <option value="0">14/06 — Banda Eva + Doze por Oito</option>
           <option value="1">21/06</option>
           <option value="2">28/06</option>
-          <option value="3">05/07 — Felipe Amorim + Clayton & Romário</option>
-          <option value="4">12/07 — Diego & Victor Hugo</option>
+          <option value="3">05/07 — Felipe Amorim + Clayton &amp; Romário</option>
+          <option value="4">12/07 — Diego &amp; Victor Hugo</option>
           <option value="5">19/07 — Belo + Pixote</option>
           <option value="6">26/07</option>
           <option value="7">02/08</option>
@@ -180,219 +178,405 @@
 
       <div class="shows__grid" id="showsGrid">
 
-        <!-- 1 — 14/06 → SHOW: Banda Eva + Doze por Oito (Palco Praia) -->
-        <article class="show-card" data-search="14/06 14 junho jun domingo banda eva doze por oito abertura palco praia show">
-          <div class="show-card__media">
-            <img src="shows_domingo/Banner-01-1000x1000px-44.png" alt="Show no Domingos de Praia — 14 de Junho" loading="lazy" style="object-position:center top" />
-            <span class="show-card__tag">Abertura da Temporada</span>
-            <span class="show-card__date-chip">14 <small>JUN</small></span>
-          </div>
-          <div class="show-card__body">
-            <p class="show-card__eyebrow">🎤 Show neste domingo</p>
-            <h3 class="show-card__lineup">14 de Junho</h3>
-            <p class="show-card__palco">✦ Palco Praia · Banda Eva + Doze por Oito</p>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
-            <a href="#" class="btn btn--primary show-card__cta">Garantir ingresso do show →</a>
-          </div>
-        </article>
+        <!-- ══ DOMINGO 1 — 14/06 ══ -->
+        <div class="sunday-block" data-search="14/06 14 junho jun domingo banda eva doze por oito palco praia abertura">
 
-        <!-- 2 — 21/06 → 13_07 samba -->
-        <article class="show-card" data-search="21/06 21 junho jun domingo">
-          <div class="show-card__media">
-            <img src="produto_domingo/pagode-sol.jpg" alt="Domingo 21 de junho em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
-            <span class="show-card__date-chip">21 <small>JUN</small></span>
+          <!-- Slot A: Experiência Domingos de Praia -->
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/pagode-sol.jpg" alt="Programação Domingos de Praia — 14 de Junho" loading="lazy" style="object-position:center 35%">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
           </div>
-          <div class="show-card__body">
-            <h3 class="show-card__lineup">Line-up em breve</h3>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
-          </div>
-        </article>
 
-        <!-- 3 — 28/06 -->
-        <article class="show-card" data-search="28/06 28 junho jun domingo">
-          <div class="show-card__media">
-            <img src="produto_domingo/vila-noite.jpg" alt="Domingo 28 de junho em Na Praia Parque" loading="lazy" style="object-position:center center" />
-            <span class="show-card__date-chip">28 <small>JUN</small></span>
+          <!-- Slot B: Show -->
+          <div class="slot-card slot-card--show">
+            <div class="slot-card__media">
+              <img src="shows_domingo/Banner-01-1000x1000px-8.png" alt="Show no Domingos de Praia — 14 de Junho" loading="lazy" style="object-position:center top">
+              <span class="show-card__tag">Abertura da Temporada</span>
+              <span class="show-card__date-chip">14 <small>JUN</small></span>
+            </div>
+            <div class="slot-card__body">
+              <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+              <h3 class="slot-card__title">Domingo · 14 de Junho</h3>
+              <p class="show-card__palco">✦ Palco Praia · Banda Eva + Doze por Oito</p>
+              <p class="slot-card__value">Comprando o show, você também garante toda a programação do Domingos de Praia.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
+              <a href="https://r2.com.vc/produto/14-06-banda-eva-doze-por-oito-inauguracao-do-palco-praia/" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Garantir ingresso do show →</a>
+            </div>
           </div>
-          <div class="show-card__body">
-            <h3 class="show-card__lineup">28 de Junho</h3>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
-          </div>
-        </article>
+        </div>
 
-        <!-- 4 — 05/07 → SHOW: Felipe Amorim + Clayton & Romário (Palco Praia + Torcida na Praia) -->
-        <article class="show-card" data-search="05/07 05 5 julho jul domingo felipe amorim clayton romario palco praia torcida show">
-          <div class="show-card__media">
-            <img src="shows_domingo/Banner-01-1000x1000px-42.png" alt="Show no Domingos de Praia — 05 de Julho" loading="lazy" style="object-position:center top" />
-            <span class="show-card__date-chip">05 <small>JUL</small></span>
-          </div>
-          <div class="show-card__body">
-            <p class="show-card__eyebrow">🎤 Show neste domingo</p>
-            <h3 class="show-card__lineup">05 de Julho</h3>
-            <p class="show-card__palco">✦ Palco Praia · Felipe Amorim + Clayton & Romário</p>
-            <p class="show-card__palco">🏟️ Torcida na Praia · Felipe Amorim + Clayton & Romário</p>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
-            <a href="#" class="btn btn--primary show-card__cta">Garantir ingresso do show →</a>
-          </div>
-        </article>
+        <!-- ══ DOMINGO 2 — 21/06 ══ -->
+        <div class="sunday-block" data-search="21/06 21 junho jun domingo">
 
-        <!-- 5 — 12/07 → SHOW: Diego & Victor Hugo (Palco Praia) -->
-        <article class="show-card" data-search="12/07 12 julho jul domingo diego victor hugo palco praia show">
-          <div class="show-card__media">
-            <img src="shows_domingo/Banner-01-1000x1000px-24.png" alt="Show no Domingos de Praia — 12 de Julho" loading="lazy" style="object-position:center top" />
-            <span class="show-card__date-chip">12 <small>JUL</small></span>
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="domingo_de_praia/roda_pagode.jpg" alt="Programação Domingos de Praia — 21 de Junho" loading="lazy" style="object-position:center center">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
           </div>
-          <div class="show-card__body">
-            <p class="show-card__eyebrow">🎤 Show neste domingo</p>
-            <h3 class="show-card__lineup">12 de Julho</h3>
-            <p class="show-card__palco">✦ Palco Praia · Diego & Victor Hugo</p>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
-            <a href="#" class="btn btn--primary show-card__cta">Garantir ingresso do show →</a>
-          </div>
-        </article>
 
-        <!-- 6 — 19/07 → SHOW: Belo + Pixote (Torcida na Praia) -->
-        <article class="show-card" data-search="19/07 19 julho jul domingo belo pixote torcida na praia show">
-          <div class="show-card__media">
-            <img src="shows_domingo/Banner-01-1000x1000px-8.png" alt="Show no Domingos de Praia — 19 de Julho" loading="lazy" style="object-position:center top" />
-            <span class="show-card__tag">🏟️ Torcida na Praia</span>
-            <span class="show-card__date-chip">19 <small>JUL</small></span>
+          <div class="slot-card slot-card--soon">
+            <div class="slot-card__body">
+              <h3 class="slot-card__title">Line-up em breve</h3>
+              <p class="slot-card__sub">Em breve novidades para este domingo.</p>
+            </div>
           </div>
-          <div class="show-card__body">
-            <p class="show-card__eyebrow">🎤 Show neste domingo</p>
-            <h3 class="show-card__lineup">19 de Julho</h3>
-            <p class="show-card__palco">🏟️ Torcida na Praia · Belo + Pixote</p>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
-            <a href="#" class="btn btn--primary show-card__cta">Garantir ingresso do show →</a>
-          </div>
-        </article>
+        </div>
 
-        <!-- 7 — 26/07 → 03_08 vila -->
-        <article class="show-card" data-search="26/07 26 julho jul domingo">
-          <div class="show-card__media">
-            <img src="produto_domingo/vila-noite.jpg" alt="Domingo 26 de julho em Na Praia Parque" loading="lazy" style="object-position:center center" />
-            <span class="show-card__date-chip">26 <small>JUL</small></span>
-          </div>
-          <div class="show-card__body">
-            <h3 class="show-card__lineup">Line-up em breve</h3>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
-          </div>
-        </article>
+        <!-- ══ DOMINGO 3 — 28/06 ══ -->
+        <div class="sunday-block" data-search="28/06 28 junho jun domingo">
 
-        <!-- 8 — 02/08 → night lounge -->
-        <article class="show-card" data-search="02/08 02 2 agosto ago domingo">
-          <div class="show-card__media">
-            <img src="produto_domingo/noite-lounge.jpg" alt="Domingo 02 de agosto em Na Praia Parque" loading="lazy" style="object-position:center center" />
-            <span class="show-card__date-chip">02 <small>AGO</small></span>
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/familia-parque.jpg" alt="Programação Domingos de Praia — 28 de Junho" loading="lazy" style="object-position:center 55%">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
           </div>
-          <div class="show-card__body">
-            <h3 class="show-card__lineup">Line-up em breve</h3>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
-          </div>
-        </article>
 
-        <!-- 9 — 09/08 → foto63.jpg -->
-        <article class="show-card" data-search="09/08 09 9 agosto ago domingo">
-          <div class="show-card__media">
-            <img src="produto_domingo/palco-sunset.jpg" alt="Domingo 09 de agosto em Na Praia Parque" loading="lazy" style="object-position:center 60%" />
-            <span class="show-card__date-chip">09 <small>AGO</small></span>
+          <div class="slot-card slot-card--soon">
+            <div class="slot-card__body">
+              <h3 class="slot-card__title">Line-up em breve</h3>
+              <p class="slot-card__sub">Em breve novidades para este domingo.</p>
+            </div>
           </div>
-          <div class="show-card__body">
-            <h3 class="show-card__lineup">Line-up em breve</h3>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
-          </div>
-        </article>
+        </div>
 
-        <!-- 10 — 16/08 → 13_07 samba -->
-        <article class="show-card" data-search="16/08 16 agosto ago domingo">
-          <div class="show-card__media">
-            <img src="produto_domingo/pagode-sol.jpg" alt="Domingo 16 de agosto em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
-            <span class="show-card__date-chip">16 <small>AGO</small></span>
-          </div>
-          <div class="show-card__body">
-            <h3 class="show-card__lineup">Line-up em breve</h3>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
-          </div>
-        </article>
+        <!-- ══ DOMINGO 4 — 05/07 ══ -->
+        <div class="sunday-block" data-search="05/07 05 5 julho jul domingo felipe amorim clayton romario palco praia torcida show">
 
-        <!-- 11 — 23/08 → SHOW: Xand Avião (Palco Praia) -->
-        <article class="show-card" data-search="23/08 23 agosto ago domingo xand aviao palco praia show">
-          <div class="show-card__media">
-            <img src="shows_domingo/Banner-01-1000x1000px-30.png" alt="Show no Domingos de Praia — 23 de Agosto" loading="lazy" style="object-position:center top" />
-            <span class="show-card__date-chip">23 <small>AGO</small></span>
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/noite-lounge.jpg" alt="Programação Domingos de Praia — 05 de Julho" loading="lazy" style="object-position:center center">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
           </div>
-          <div class="show-card__body">
-            <p class="show-card__eyebrow">🎤 Show neste domingo</p>
-            <h3 class="show-card__lineup">23 de Agosto</h3>
-            <p class="show-card__palco">✦ Palco Praia · Xand Avião</p>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
-            <a href="#" class="btn btn--primary show-card__cta">Garantir ingresso do show →</a>
-          </div>
-        </article>
 
-        <!-- 12 — 30/08 → night lounge -->
-        <article class="show-card" data-search="30/08 30 agosto ago domingo">
-          <div class="show-card__media">
-            <img src="produto_domingo/noite-lounge.jpg" alt="Domingo 30 de agosto em Na Praia Parque" loading="lazy" style="object-position:center center" />
-            <span class="show-card__date-chip">30 <small>AGO</small></span>
+          <div class="slot-card slot-card--show">
+            <div class="slot-card__media">
+              <img src="shows_domingo/Banner-01-1000x1000px-42.png" alt="Show no Domingos de Praia — 05 de Julho" loading="lazy" style="object-position:center top">
+              <span class="show-card__date-chip">05 <small>JUL</small></span>
+            </div>
+            <div class="slot-card__body">
+              <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+              <h3 class="slot-card__title">Domingo · 05 de Julho</h3>
+              <p class="show-card__palco">✦ Palco Praia · Felipe Amorim + Clayton &amp; Romário</p>
+              <p class="show-card__palco">🏟️ Torcida na Praia · Felipe Amorim + Clayton &amp; Romário</p>
+              <p class="slot-card__value">Comprando o show, você também garante toda a programação do Domingos de Praia.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
+              <a href="https://r2.com.vc/produto/05-07-felipe-amorim-clayton-romario-torcida-na-praia/" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Garantir ingresso do show →</a>
+            </div>
           </div>
-          <div class="show-card__body">
-            <h3 class="show-card__lineup">Line-up em breve</h3>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
-          </div>
-        </article>
+        </div>
 
-        <!-- 13 — 06/09 → foto63.jpg -->
-        <article class="show-card" data-search="06/09 06 6 setembro set domingo">
-          <div class="show-card__media">
-            <img src="produto_domingo/palco-sunset.jpg" alt="Domingo 06 de setembro em Na Praia Parque" loading="lazy" style="object-position:center 60%" />
-            <span class="show-card__date-chip">06 <small>SET</small></span>
-          </div>
-          <div class="show-card__body">
-            <h3 class="show-card__lineup">Line-up em breve</h3>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
-          </div>
-        </article>
+        <!-- ══ DOMINGO 5 — 12/07 ══ -->
+        <div class="sunday-block" data-search="12/07 12 julho jul domingo diego victor hugo palco praia show">
 
-        <!-- 14 — 13/09 → 13_07 samba (Encerramento) -->
-        <article class="show-card" data-search="13/09 13 setembro set domingo encerramento ultimo">
-          <div class="show-card__media">
-            <img src="produto_domingo/pagode-sol.jpg" alt="Domingo 13 de setembro em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
-            <span class="show-card__tag">Último Domingo da Temporada</span>
-            <span class="show-card__date-chip">13 <small>SET</small></span>
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/palco-sunset.jpg" alt="Programação Domingos de Praia — 12 de Julho" loading="lazy" style="object-position:center 60%">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
           </div>
-          <div class="show-card__body">
-            <h3 class="show-card__lineup">Line-up em breve</h3>
-            <div class="show-card__meta"><span>🕐 A partir das 13h</span><span>📍 Na Praia Parque · Brasília</span></div>
-            <a href="#" class="btn btn--primary show-card__cta">Comprar ingresso →</a>
+
+          <div class="slot-card slot-card--show">
+            <div class="slot-card__media">
+              <img src="shows_domingo/Banner-01-1000x1000px-24.png" alt="Show no Domingos de Praia — 12 de Julho" loading="lazy" style="object-position:center top">
+              <span class="show-card__date-chip">12 <small>JUL</small></span>
+            </div>
+            <div class="slot-card__body">
+              <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+              <h3 class="slot-card__title">Domingo · 12 de Julho</h3>
+              <p class="show-card__palco">✦ Palco Praia · Diego &amp; Victor Hugo</p>
+              <p class="slot-card__value">Comprando o show, você também garante toda a programação do Domingos de Praia.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
+              <a href="https://r2.com.vc/produto/12-07-diego-victor-hugo/" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Garantir ingresso do show →</a>
+            </div>
           </div>
-        </article>
+        </div>
+
+        <!-- ══ DOMINGO 6 — 19/07 ══ -->
+        <div class="sunday-block" data-search="19/07 19 julho jul domingo belo pixote torcida na praia show">
+
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="domingo_de_praia/Na-PraiaIMG_8503-1.jpg" alt="Programação Domingos de Praia — 19 de Julho" loading="lazy" style="object-position:center center">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
+          </div>
+
+          <div class="slot-card slot-card--show">
+            <div class="slot-card__media">
+              <img src="shows_domingo/Banner-01-1000x1000px-44.png" alt="Show no Domingos de Praia — 19 de Julho" loading="lazy" style="object-position:center top">
+              <span class="show-card__tag">🏟️ Torcida na Praia</span>
+              <span class="show-card__date-chip">19 <small>JUL</small></span>
+            </div>
+            <div class="slot-card__body">
+              <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+              <h3 class="slot-card__title">Domingo · 19 de Julho</h3>
+              <p class="show-card__palco">🏟️ Torcida na Praia · Belo + Pixote</p>
+              <p class="slot-card__value">Comprando o show, você também garante toda a programação do Domingos de Praia.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
+              <a href="https://r2.com.vc/produto/19-07-belo-pixote-torcida-na-praia/" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Garantir ingresso do show →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ DOMINGO 7 — 26/07 ══ -->
+        <div class="sunday-block" data-search="26/07 26 julho jul domingo">
+
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/noite-lounge.jpg" alt="Programação Domingos de Praia — 26 de Julho" loading="lazy" style="object-position:center center">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
+          </div>
+
+          <div class="slot-card slot-card--soon">
+            <div class="slot-card__body">
+              <h3 class="slot-card__title">Line-up em breve</h3>
+              <p class="slot-card__sub">Em breve novidades para este domingo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ DOMINGO 8 — 02/08 ══ -->
+        <div class="sunday-block" data-search="02/08 02 2 agosto ago domingo">
+
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/beach-sport.jpg" alt="Programação Domingos de Praia — 02 de Agosto" loading="lazy" style="object-position:center 45%">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
+          </div>
+
+          <div class="slot-card slot-card--soon">
+            <div class="slot-card__body">
+              <h3 class="slot-card__title">Line-up em breve</h3>
+              <p class="slot-card__sub">Em breve novidades para este domingo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ DOMINGO 9 — 09/08 ══ -->
+        <div class="sunday-block" data-search="09/08 09 9 agosto ago domingo">
+
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/coconut-npp.jpg" alt="Programação Domingos de Praia — 09 de Agosto" loading="lazy" style="object-position:center 40%">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
+          </div>
+
+          <div class="slot-card slot-card--soon">
+            <div class="slot-card__body">
+              <h3 class="slot-card__title">Line-up em breve</h3>
+              <p class="slot-card__sub">Em breve novidades para este domingo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ DOMINGO 10 — 16/08 ══ -->
+        <div class="sunday-block" data-search="16/08 16 agosto ago domingo">
+
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/vila-noite.jpg" alt="Programação Domingos de Praia — 16 de Agosto" loading="lazy" style="object-position:center center">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
+          </div>
+
+          <div class="slot-card slot-card--soon">
+            <div class="slot-card__body">
+              <h3 class="slot-card__title">Line-up em breve</h3>
+              <p class="slot-card__sub">Em breve novidades para este domingo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ DOMINGO 11 — 23/08 ══ -->
+        <div class="sunday-block" data-search="23/08 23 agosto ago domingo xand aviao palco praia show">
+
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/pagode-sol.jpg" alt="Programação Domingos de Praia — 23 de Agosto" loading="lazy" style="object-position:center 35%">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
+          </div>
+
+          <div class="slot-card slot-card--show">
+            <div class="slot-card__media">
+              <img src="shows_domingo/Banner-01-1000x1000px-30.png" alt="Show no Domingos de Praia — 23 de Agosto" loading="lazy" style="object-position:center top">
+              <span class="show-card__date-chip">23 <small>AGO</small></span>
+            </div>
+            <div class="slot-card__body">
+              <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+              <h3 class="slot-card__title">Domingo · 23 de Agosto</h3>
+              <p class="show-card__palco">✦ Palco Praia · Xand Avião</p>
+              <p class="slot-card__value">Comprando o show, você também garante toda a programação do Domingos de Praia.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <p class="show-card__ribbon">Ingresso deste domingo = acesso ao show</p>
+              <a href="https://r2.com.vc/produto/23-08-xand-aviao-gravacao-de-dvd/" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Garantir ingresso do show →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ DOMINGO 12 — 30/08 ══ -->
+        <div class="sunday-block" data-search="30/08 30 agosto ago domingo">
+
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="domingo_de_praia/roda_pagode.jpg" alt="Programação Domingos de Praia — 30 de Agosto" loading="lazy" style="object-position:center center">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
+          </div>
+
+          <div class="slot-card slot-card--soon">
+            <div class="slot-card__body">
+              <h3 class="slot-card__title">Line-up em breve</h3>
+              <p class="slot-card__sub">Em breve novidades para este domingo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ DOMINGO 13 — 06/09 ══ -->
+        <div class="sunday-block" data-search="06/09 06 6 setembro set domingo">
+
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/familia-parque.jpg" alt="Programação Domingos de Praia — 06 de Setembro" loading="lazy" style="object-position:center 55%">
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
+          </div>
+
+          <div class="slot-card slot-card--soon">
+            <div class="slot-card__body">
+              <h3 class="slot-card__title">Line-up em breve</h3>
+              <p class="slot-card__sub">Em breve novidades para este domingo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ DOMINGO 14 — 13/09 (encerramento) ══ -->
+        <div class="sunday-block" data-search="13/09 13 setembro set domingo encerramento ultimo">
+
+          <div class="slot-card slot-card--experience">
+            <div class="slot-card__media">
+              <img src="produto_domingo/noite-lounge.jpg" alt="Programação Domingos de Praia — 13 de Setembro" loading="lazy" style="object-position:center center">
+              <span class="show-card__tag">Último Domingo da Temporada</span>
+            </div>
+            <div class="slot-card__body">
+              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+              <h3 class="slot-card__title">Domingos de Praia</h3>
+              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada livre.</p>
+              <div class="slot-card__meta"><span>🎶 Programação até 23h · entrada livre</span><span>📍 Na Praia Parque · Brasília</span></div>
+              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+            </div>
+          </div>
+
+          <div class="slot-card slot-card--soon">
+            <div class="slot-card__body">
+              <h3 class="slot-card__title">Line-up em breve</h3>
+              <p class="slot-card__sub">Em breve novidades para este domingo.</p>
+            </div>
+          </div>
+        </div>
 
       </div><!-- /shows__grid -->
 
       <div class="shows__nav">
         <button class="shows__arrow" id="showsPrev" aria-label="Domingo anterior" disabled>‹</button>
-        <span class="shows__label" id="showsLabel">Mostrando domingo 1 de 14</span>
+        <span class="shows__label" id="showsLabel">Domingo 1 de 14</span>
         <button class="shows__arrow" id="showsNext" aria-label="Próximo domingo">›</button>
       </div>
 
     </div>
   </section>
 
-  <!-- ──────────── STORY ──────────── -->
+  <!-- ── STORY ── -->
   <section class="story" id="story">
     <div class="container">
       <div class="section-header" data-animate>
@@ -421,7 +605,7 @@
     </div>
   </section>
 
-  <!-- ──────────── RITUAL ──────────── -->
+  <!-- ── RITUAL ── -->
   <section class="ritual" id="ritual">
     <div class="ritual__glow"></div>
     <div class="ritual__content" data-animate>
@@ -438,15 +622,16 @@
     </div>
   </section>
 
-  <!-- ──────────── ATIVIDADES ──────────── -->
+  <!-- ── ATIVIDADES ── -->
   <section class="atividades" id="atividades">
     <div class="container">
       <div class="section-header" data-animate>
-        <p class="label">Day Use · A partir das 13h</p>
+        <p class="label">Day Use · Entrada livre</p>
         <h2>A manhã que<br /><em>cria o encontro</em></h2>
         <p class="section-desc">Chegue cedo. Movimente o corpo. Conecte com pessoas. O esporte cria o encontro, o encontro cria a comunidade, a comunidade cria a festa.</p>
       </div>
       <div class="atividades__grid" data-animate>
+
         <div class="atividade atividade--altinha atividade--has-photo">
           <div class="atividade__photo">
             <img src="produto_domingo/yoga-praia.jpg" alt="Altinha na areia em Na Praia Parque" loading="lazy" style="object-position:center 40%" />
@@ -457,9 +642,10 @@
             <p>O jogo que une estranhos e cria amizades. Sem times fixos, sem regras pesadas.</p>
           </div>
         </div>
+
         <div class="atividade atividade--funcional atividade--has-photo">
           <div class="atividade__photo">
-            <img src="midia_dayuse/funcional-brown.jpeg" alt="Aula funcional no pôr do sol em Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center 35%;width:100%;height:100%">
+            <img src="midia_dayuse/funcional-brown.jpeg" alt="Aula funcional no pôr do sol em Na Praia Parque" loading="lazy" style="object-position:center 35%">
           </div>
           <div class="atividade__content">
             <span class="atividade__tag-top">☀️ Sunset</span>
@@ -468,6 +654,7 @@
             <p>Treino funcional com vista incrível. Porque o melhor treino é o que você vai repetir.</p>
           </div>
         </div>
+
         <div class="atividade atividade--beach atividade--has-photo">
           <div class="atividade__photo">
             <img src="produto_domingo/beach-sport.jpg" alt="Beach games em Na Praia Parque" loading="lazy" style="object-position:center 45%" />
@@ -478,16 +665,18 @@
             <p>Vôlei, futevôlei, beach tênis — a areia chama e a competição fica.</p>
           </div>
         </div>
+
         <div class="atividade atividade--wellness atividade--has-photo">
           <div class="atividade__photo">
             <img src="midia_dayuse/funcional-blue.jpeg" alt="Wellness e atividades em grupo no Na Praia Parque" loading="lazy" style="object-position:center 30%" />
           </div>
           <div class="atividade__content">
             <div class="atividade__emoji">🧘</div>
-            <h3>Wellness & Social</h3>
+            <h3>Wellness &amp; Social</h3>
             <p>Experiências que desaceleram e criam o ambiente perfeito para encontros reais.</p>
           </div>
         </div>
+
         <div class="atividade atividade--infantil atividade--has-photo">
           <div class="atividade__photo">
             <img src="produto_domingo/familia-parque.jpg" alt="Programação infantil em Na Praia Parque" loading="lazy" style="object-position:center 55%" />
@@ -495,9 +684,10 @@
           <div class="atividade__content">
             <div class="atividade__emoji">🎠</div>
             <h3>Programação Infantil</h3>
-            <p>As crianças têm o próprio espaço — para toda a família aproveitar junto.</p>
+            <p>As crianças têm o próprio espaço — para toda a família aproveitar junto. Crianças até 10 anos grátis.</p>
           </div>
         </div>
+
         <div class="atividade atividade--lago atividade--has-photo">
           <div class="atividade__photo">
             <img src="domingo_de_praia/Palco_Na_Praia.png" alt="Palco Na Praia Parque ao pôr do sol" loading="lazy" style="object-position:center center">
@@ -508,11 +698,12 @@
             <p>Na Praia Parque como pano de fundo pra tudo. Sempre presente. Sempre bonito.</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ──────────── COMBINHO ──────────── -->
+  <!-- ── COMBINHO ── -->
   <section class="atividades" style="padding-top:0;padding-bottom:var(--sp-xl)">
     <div class="container">
       <div class="combinho" data-animate>
@@ -526,10 +717,10 @@
             </p>
             <ul class="combinho__perks">
               <li>✅ Acesso a todos os 14 domingos</li>
-              <li>✅ Acesso a partir das 13h</li>
+              <li>✅ Entrada livre em todos os domingos</li>
               <li>✅ Ritual Sol/Lua toda semana</li>
               <li>✅ Comunidade exclusiva de membros</li>
-              <li>✅ Crianças até 12 anos sempre grátis</li>
+              <li>✅ Crianças até 10 anos sempre grátis</li>
             </ul>
           </div>
           <div class="combinho__right">
@@ -545,7 +736,7 @@
     </div>
   </section>
 
-  <!-- ──────────── FAQ ──────────── -->
+  <!-- ── FAQ ── -->
   <section class="faq" id="faq">
     <div class="container">
       <div class="section-header" data-animate>
@@ -555,15 +746,15 @@
       <div class="faq__list" data-animate>
         <div class="faq__item">
           <button class="faq__q" aria-expanded="false"><span>Onde fica o Na Praia Parque?</span><span class="faq__icon">+</span></button>
-          <div class="faq__a" hidden><p>O Na Praia Parque está localizado em Brasília — uma das localizações mais bonitas da cidade, com vista privilegiada para o pôr do sol.</p></div>
+          <div class="faq__a" hidden><p>O Na Praia Parque está localizado no Setor de Clubes Sul, Trecho 2, Brasília — uma das localizações mais bonitas da cidade, com vista privilegiada para o pôr do sol.</p></div>
         </div>
         <div class="faq__item">
-          <button class="faq__q" aria-expanded="false"><span>O que está incluso no ingresso?</span><span class="faq__icon">+</span></button>
-          <div class="faq__a" hidden><p>O ingresso Domingos de Praia dá acesso a partir das 13h. Para curtir o dia inteiro desde as 08h, adquira o ingresso Day Use.</p></div>
+          <button class="faq__q" aria-expanded="false"><span>O que está incluso no ingresso Domingos de Praia?</span><span class="faq__icon">+</span></button>
+          <div class="faq__a" hidden><p>O ingresso Domingos de Praia dá acesso à experiência completa do domingo — roda de samba, Ritual Sol/Lua, gastronomia e toda a programação do parque. Nos domingos com show, o ingresso do show já inclui toda a experiência Domingos de Praia. Entrada sem restrição de horário.</p></div>
         </div>
         <div class="faq__item">
           <button class="faq__q" aria-expanded="false"><span>Posso levar meus filhos?</span><span class="faq__icon">+</span></button>
-          <div class="faq__a" hidden><p>Com prazer! O período do day use é totalmente family-friendly. Temos programação infantil específica. Crianças até 12 anos entram gratuitamente.</p></div>
+          <div class="faq__a" hidden><p>Com prazer! O período do day use é totalmente family-friendly. Temos programação infantil específica. Crianças até 10 anos entram gratuitamente.</p></div>
         </div>
         <div class="faq__item">
           <button class="faq__q" aria-expanded="false"><span>O que é o Ritual Sol/Lua?</span><span class="faq__icon">+</span></button>
@@ -581,7 +772,7 @@
     </div>
   </section>
 
-  <!-- ──────────── CROSS-SELL ──────────── -->
+  <!-- ── CROSS-SELL ── -->
   <section class="cross-sell" id="cross-sell">
     <div class="container">
       <div class="section-header" data-animate>
@@ -591,7 +782,7 @@
       <div class="cross-sell__grid" data-animate>
         <a href="index.html" class="cross-sell__card cross-sell__card--day">
           <div class="cross-sell__img">
-            <img src="midia_dayuse/lagoon-flags.jpeg" alt="Dia na Praia — família e sol" loading="lazy" style="object-fit:cover;object-position:center 40%;width:100%;height:100%">
+            <img src="midia_dayuse/lagoon-flags.jpeg" alt="Dia na Praia — família e sol no Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center 40%;width:100%;height:100%">
           </div>
           <div class="cross-sell__body">
             <span class="cross-sell__kicker">☀️ Dia na Praia</span>
@@ -602,12 +793,12 @@
         </a>
         <a href="domingos.html" class="cross-sell__card cross-sell__card--sunset">
           <div class="cross-sell__img">
-            <img src="produto_domingo/palco-sunset.jpg" alt="Domingos de Praia — pôr do sol" loading="lazy" style="object-fit:cover;object-position:center 60%;width:100%;height:100%">
+            <img src="produto_domingo/palco-sunset.jpg" alt="Domingos de Praia — pôr do sol em Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center 60%;width:100%;height:100%">
           </div>
           <div class="cross-sell__body">
             <span class="cross-sell__kicker">🌙 Domingos de Praia</span>
             <h3>A tarde que vira noite</h3>
-            <p>Roda de samba, Ritual Sol/Lua e o Palco Praia. A festa começa a partir das 13h.</p>
+            <p>Roda de samba, Ritual Sol/Lua e o Palco Praia. A festa começa onde o dia termina.</p>
             <span class="cross-sell__cta">Ver os Domingos →</span>
           </div>
         </a>
@@ -615,7 +806,7 @@
     </div>
   </section>
 
-  <!-- ──────────── FOOTER CTA ──────────── -->
+  <!-- ── FOOTER CTA ── -->
   <section class="footer-cta">
     <div class="footer-cta__content" data-animate>
       <p class="label label--light">Todo domingo · Na Praia Parque · Brasília</p>
@@ -625,7 +816,7 @@
     </div>
   </section>
 
-  <!-- ──────────── FOOTER ──────────── -->
+  <!-- ── FOOTER ── -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
@@ -661,7 +852,7 @@
     <div class="sticky-bar__inner">
       <div class="sticky-bar__left">
         <span class="sticky-bar__dot"></span>
-        <p>Vagas limitadas por edição — <strong>acesso a partir das 13h · Na Praia Parque</strong></p>
+        <p>Vagas limitadas por edição — <strong>Domingos de Praia · entrada livre · Na Praia Parque</strong></p>
       </div>
       <a href="#shows" class="sticky-bar__cta">Garantir ingresso →</a>
     </div>

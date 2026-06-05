@@ -147,7 +147,7 @@
 
     if (prevBtn)   prevBtn.disabled   = week <= 1;
     if (nextBtn)   nextBtn.disabled   = week >= maxWeek;
-    if (weekLabel) weekLabel.textContent = `Semana ${week} de ${maxWeek}`;
+    if (weekLabel) weekLabel.textContent = `Sábado ${week} de ${maxWeek}`;
     currentWeek = week;
   }
 
