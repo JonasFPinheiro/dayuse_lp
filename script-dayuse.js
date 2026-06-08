@@ -26,7 +26,7 @@
       setTimeout(() => { duTitle.textContent = duCaptions[duI]; duTitle.style.opacity = '1'; }, 250);
     }
   }
-  function duHeroTimer() { clearInterval(duCarouselTimer); duCarouselTimer = setInterval(() => duHeroGo(duI + 1), 3000); }
+  function duHeroTimer() { clearInterval(duCarouselTimer); duCarouselTimer = setInterval(() => duHeroGo(duI + 1), 6000); }
 
   if (duSlides.length) {
     if (duTitle) duTitle.textContent = duCaptions[0];
@@ -134,7 +134,7 @@
     const weekCards = allCards.filter(c => +c.dataset.week === week);
 
     allCards.forEach(c => { c.style.display = 'none'; });
-    weekCards.slice(0, n).forEach((c, i) => {
+    weekCards.forEach((c, i) => {
       c.style.display = '';
       c.style.opacity = '0';
       c.style.transform = 'translateY(10px)';
@@ -147,7 +147,7 @@
 
     if (prevBtn)   prevBtn.disabled   = week <= 1;
     if (nextBtn)   nextBtn.disabled   = week >= maxWeek;
-    if (weekLabel) weekLabel.textContent = `Sábado ${week} de ${maxWeek}`;
+    if (weekLabel) weekLabel.textContent = `Semana ${week} de ${maxWeek}`;
     currentWeek = week;
   }
 
@@ -175,7 +175,7 @@
     }
     if (prevBtn) prevBtn.disabled = true;
     if (nextBtn) nextBtn.disabled = true;
-    if (weekLabel) weekLabel.textContent = count > 0 ? `${count} resultado${count > 1 ? 's' : ''}` : 'Sem resultados';
+    if (weekLabel) weekLabel.textContent = count > 0 ? `${count} data${count > 1 ? 's' : ''} encontrada${count > 1 ? 's' : ''}` : 'Sem resultados';
   }
 
   function clearSearch() {

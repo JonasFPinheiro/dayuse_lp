@@ -29,7 +29,7 @@
     }
   }
 
-  function heroTimer() { clearInterval(hTimer); hTimer = setInterval(() => heroGo(hi + 1), 4000); }
+  function heroTimer() { clearInterval(hTimer); hTimer = setInterval(() => heroGo(hi + 1), 6000); }
 
   if (hSlides.length) {
     if (hTitle) hTitle.textContent = hCaptions[0];
