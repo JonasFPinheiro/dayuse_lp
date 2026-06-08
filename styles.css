@@ -432,6 +432,7 @@ em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color
 /* ── SUNDAY BLOCKS — dual-ticket layout ── */
 .sunday-block { display: none; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .sunday-block.is-visible { display: grid; }
+.sunday-block--single.is-visible { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
 
 .slot-card {
   background: var(--cream); border: 1px solid var(--sand);
@@ -452,6 +453,9 @@ em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color
 
 .slot-card__body { padding: 1.1rem; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
 .slot-card__kicker { font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--warm-grey); }
+.slot-card__date-block { margin: .1rem 0 .15rem; }
+.slot-card__date-day   { display: block; font-family: var(--font-display); font-weight: 900; font-size: clamp(2.5rem,5vw,3.5rem); color: var(--ember); line-height: 1; letter-spacing: -.04em; }
+.slot-card__date-month { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--warm-grey); text-transform: uppercase; letter-spacing: .05em; margin-top: .2rem; }
 .slot-card__title {
   font-family: var(--font-display); font-weight: 800;
   font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--warm-ink); line-height: 1.15;
