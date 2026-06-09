@@ -443,11 +443,11 @@ em { font-style: normal; color: var(--coral); }
 .shows__arrow:hover:not(:disabled) { background: var(--coral); border-color: var(--coral); color: #fff; }
 .shows__arrow:disabled { opacity: .3; cursor: default; }
 
-.shows__grid { max-width: 980px; margin: 0 auto; }
+.shows__grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 
 .sunday-block { display: none; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .sunday-block.is-visible { display: grid; }
-.sunday-block--single.is-visible { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
+.sunday-block--single.is-visible { grid-template-columns: 1fr; }
 
 .slot-card {
   background: var(--white); border: 1.5px solid rgba(24,35,127,.12);
@@ -712,6 +712,7 @@ em { font-style: normal; color: var(--coral); }
    RESPONSIVE — MOBILE
 ════════════════════════════════════════ */
 @media (max-width: 720px) {
+  .shows__grid { grid-template-columns: 1fr; }
   .sunday-block { grid-template-columns: 1fr; }
   .cross-sell__grid { grid-template-columns: 1fr; }
 }
