@@ -10,6 +10,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lexend+Deca:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '944933258888890');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=944933258888890&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -90,18 +108,10 @@
         <div class="kv-stripes"><span></span><span></span><span></span></div>
       </div>
 
-      <div class="shows__controls" data-animate>
-        <select class="shows__week-select" id="showsWeekSelect" aria-label="Ir para domingo">
-          <option value="">Ir para um domingo…</option>
-          <option value="0">14/06 — Banda Eva + Doze por Oito</option>
-          <option value="1">21/06</option>
-        </select>
-      </div>
-
-      <div class="shows__grid" id="showsGrid">
+      <div class="shows__grid">
 
         <!-- ══ DOMINGO 1 — 14/06 ══ -->
-        <div class="sunday-block sunday-block--single" data-search="14/06 14 junho jun domingo banda eva doze por oito palco praia abertura">
+        <div class="sunday-block sunday-block--single is-visible" data-search="14/06 14 junho jun domingo banda eva doze por oito palco praia abertura">
 
           <!-- Slot B: Show -->
           <div class="slot-card slot-card--show">
@@ -122,7 +132,7 @@
         </div>
 
         <!-- ══ DOMINGO 2 — 21/06 ══ -->
-        <div class="sunday-block sunday-block--single" data-search="21/06 21 junho jun domingo">
+        <div class="sunday-block sunday-block--single is-visible" data-search="21/06 21 junho jun domingo">
 
           <div class="slot-card slot-card--experience">
             <div class="slot-card__media">
@@ -134,19 +144,13 @@
               <h3 class="slot-card__title">Domingos de Praia</h3>
               <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada a partir das 14h.</p>
               <div class="slot-card__meta"><span>🎶 Programação até 23h · a partir das 14h</span><span>📍 Na Praia Parque · Brasília</span></div>
-              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+              <a href="https://r2.com.vc/produto/21-06-domingo-de-praia-entardecer" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Comprar ingresso →</a>
             </div>
           </div>
 
         </div>
 
       </div><!-- /shows__grid -->
-
-      <div class="shows__nav">
-        <button class="shows__arrow" id="showsPrev" aria-label="Domingo anterior" disabled>‹</button>
-        <span class="shows__label" id="showsLabel">Domingo 1 de 2</span>
-        <button class="shows__arrow" id="showsNext" aria-label="Próximo domingo">›</button>
-      </div>
 
     </div>
   </section>
