@@ -444,6 +444,7 @@ em { font-style: normal; color: var(--coral); }
 .shows__arrow:disabled { opacity: .3; cursor: default; }
 
 .shows__grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.shows__grid--solo { grid-template-columns: 1fr; max-width: 560px; }
 
 .sunday-block { display: none; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .sunday-block.is-visible { display: grid; }
