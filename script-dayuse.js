@@ -99,7 +99,7 @@
   });
 
   /* ── DAYUSE TICKET WINDOW + SEARCH ── */
-  const allCards    = Array.from(document.querySelectorAll('.du-card'));
+  let allCards      = Array.from(document.querySelectorAll('.du-card'));
   const grid        = document.getElementById('duGrid');
   const prevBtn     = document.getElementById('duPrev');
   const nextBtn     = document.getElementById('duNext');
@@ -112,6 +112,30 @@
   const clearBtn    = document.getElementById('duClearBtn');
 
   if (!grid || !allCards.length) return;
+
+  /* ── AUTO-EXPIRE: remove cards past 06:00 BRT the day after the event ── */
+  (function () {
+    function expUTC(s) {
+      const [y, m, d] = s.split('-').map(Number);
+      return Date.UTC(y, m - 1, d + 1, 9, 0, 0); /* 06:00 BRT (UTC-3) = 09:00 UTC */
+    }
+    const now = Date.now();
+    allCards = allCards.filter(card => {
+      const mt = (card.dataset.search || '').match(/^(\d{2})\/(\d{2})/);
+      if (mt && now >= expUTC(`2026-${mt[2]}-${mt[1]}`)) { card.remove(); return false; }
+      return true;
+    });
+    /* Renumber weeks to always start at 1 */
+    const sorted = [...new Set(allCards.map(c => +c.dataset.week))].sort((a, b) => a - b);
+    const wMap   = Object.fromEntries(sorted.map((w, i) => [w, i + 1]));
+    allCards.forEach(c => { c.dataset.week = wMap[+c.dataset.week]; });
+    /* Reload when the next card should expire */
+    const nextExp = allCards
+      .map(c => { const mt = (c.dataset.search || '').match(/^(\d{2})\/(\d{2})/); return mt ? expUTC(`2026-${mt[2]}-${mt[1]}`) : Infinity; })
+      .filter(t => t > now).sort((a, b) => a - b)[0];
+    if (nextExp && isFinite(nextExp)) setTimeout(() => location.reload(), nextExp - now);
+  })();
+  if (!allCards.length) return;
 
   const maxWeek  = Math.max(...allCards.map(c => +c.dataset.week));
   let currentWeek = 1;
