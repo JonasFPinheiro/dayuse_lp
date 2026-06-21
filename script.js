@@ -116,7 +116,7 @@
   (function () {
     function expUTC(s) {
       const [y, m, d] = s.split('-').map(Number);
-      return Date.UTC(y, m - 1, d + 1, 9, 0, 0); /* 06:00 BRT (UTC-3) = 09:00 UTC */
+      return Date.UTC(y, m - 1, d + 1, 3, 0, 0); /* 00:00 BRT (UTC-3) = 03:00 UTC */
     }
     const now = Date.now();
     let remaining = 0;
