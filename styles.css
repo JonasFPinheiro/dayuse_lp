@@ -10,7 +10,7 @@
   border-radius: var(--r-full); padding: 3px; gap: 2px;
   transition: background var(--t), border-color var(--t), opacity .3s ease;
 }
-.nav.scrolled .nav-switch { background: var(--cream); border-color: rgba(24,35,127,.12); }
+.nav.scrolled .nav-switch { background: rgba(24,35,127,.08); border-color: rgba(24,35,127,.18); }
 .nav-switch__opt {
   display: inline-flex; align-items: center; gap: .35rem;
   padding: .35rem .85rem; border-radius: var(--r-full);
@@ -21,8 +21,9 @@
 .nav-switch__opt svg { width: 13px; height: 13px; flex-shrink: 0; }
 .nav-switch__opt.is-active { background: var(--coral); color: #fff; box-shadow: var(--shadow-sm); }
 .nav-switch__opt:not(.is-active):hover { color: #fff; }
-.nav.scrolled .nav-switch__opt { color: var(--text-muted); }
-.nav.scrolled .nav-switch__opt:not(.is-active):hover { color: var(--navy); }
+.nav.scrolled .nav-switch__opt { color: var(--navy); }
+.nav.scrolled .nav-switch__opt.is-active { color: #fff; }
+.nav.scrolled .nav-switch__opt:not(.is-active):hover { color: var(--coral); }
 .nav-switch--hidden { opacity: 0; pointer-events: none; }
 
 :root {
@@ -738,7 +739,35 @@ em { font-style: normal; color: var(--coral); }
   .nav__toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
   .nav__logo { height: 36px; }
   .nav__wordmark { display: none; }
-  .nav-switch { order: -1; margin-bottom: .5rem; align-self: center; }
+
+  /* Switch: pill flutuante fixo na base da tela */
+  .nav-switch {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    background: rgba(24,35,127,.92);
+    border-color: rgba(255,255,255,.22);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 6px 28px rgba(24,35,127,.45), 0 1px 0 rgba(255,255,255,.1) inset;
+    padding: 5px;
+    gap: 4px;
+  }
+  .nav-switch__opt {
+    padding: .55rem 1.15rem;
+    font-size: .84rem;
+    color: rgba(255,255,255,.75);
+  }
+  /* sobrescreve estados scrolled no mobile — fundo navy sempre */
+  .nav.scrolled .nav-switch {
+    background: rgba(24,35,127,.92);
+    border-color: rgba(255,255,255,.22);
+  }
+  .nav.scrolled .nav-switch__opt { color: rgba(255,255,255,.75); }
+  .nav.scrolled .nav-switch__opt.is-active { color: #fff; }
+  .nav.scrolled .nav-switch__opt:not(.is-active):hover { color: #fff; }
 
   .hero__arrow { display: none; }
 
