@@ -260,16 +260,73 @@
 }
 
 @media (max-width: 640px) {
+  /* Hero */
   .du-hero__arrow { display: none; }
+  .du-hero { min-height: 88svh; }
+  .du-hero__content { padding: 0 1.1rem; }
+  .du-hero__title { font-size: clamp(1.85rem, 8vw, 2.5rem); }
+  .du-hero__sub { font-size: .9rem; max-width: 300px; }
+  /* padding-bottom extra: garante que os dots não fiquem atrás do pill flutuante */
+  .du-hero__content { padding-bottom: 5.5rem; }
+
+  /* Stats */
+  .du-stats { padding: 2rem 0; }
+  .du-stats__grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 1rem; }
+  .du-stats__num  { font-size: clamp(2rem, 9vw, 2.8rem); }
+  .du-stats__label { font-size: .75rem; }
+
+  /* Família */
+  .du-family { padding: 3rem 0; }
+  .du-family__grid { grid-template-columns: 1fr; gap: 1rem; }
+  .activity-card__media { aspect-ratio: 4/3; }
+
+  /* Esportes */
+  .du-sports { padding: 3rem 0; }
+  .du-sports__grid { grid-template-columns: 1fr; }
+  .du-sports__secondary { grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .du-sports__sm-card { border-radius: var(--r-lg); }
+  .du-sports__featured { border-radius: var(--r-xl); }
+
+  /* Sustentabilidade */
+  .du-sustain { padding: 3rem 0; }
+  .du-sustain__grid { grid-template-columns: 1fr; }
+  .du-sustain__imgs { grid-template-columns: 1fr 1fr; gap: .75rem; }
+
+  /* Tickets — semana nav */
+  .du-week-btn { width: 44px; height: 44px; font-size: 1.3rem; }
+  .du-week-label { font-size: .88rem; }
+
+  /* Story bento */
   .du-story__bento {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 160px);
+    grid-template-rows: repeat(3, 140px);
     grid-template-areas: "tall tall" "img2 img3" "wide wide";
   }
-  .du-hero__title { font-size: clamp(1.9rem, 8vw, 2.8rem); }
-  .du-family__grid { grid-template-columns: 1fr; }
-  .du-sports__grid { grid-template-columns: 1fr; }
-  .du-sports__secondary { grid-template-columns: 1fr 1fr; }
-  .du-sustain__imgs { grid-template-columns: 1fr; }
-  .du-stats__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  /* Hero compacto */
+  .du-hero__content { padding-bottom: 6rem; }
+  .du-hero__badge { font-size: .68rem; }
+  .du-hero__sub { max-width: 260px; }
+
+  /* Tickets: card interno mais compacto */
+  .du-tickets { padding: 2.5rem 0 3rem; }
+  .du-tickets__grid { gap: 1rem; }
+  .du-card { padding: 1.1rem; gap: .75rem; }
+  .du-card__thumb { margin: -1.1rem -1.1rem 0; }
+  .du-card__day { font-size: clamp(2rem, 9vw, 2.8rem); }
+  .du-card__hours span { font-size: .78rem; }
+
+  /* Cronograma nos cards ativos */
+  .dcard__schedule { margin: .35rem 0; padding-top: .6rem; gap: .25rem; }
+  .dcard__schedule li { font-size: .78rem; }
+  .dcard__schedule-time { font-size: .72rem; min-width: 34px; }
+
+  /* Stats ainda menores */
+  .du-stats__num { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+
+  /* Sports secondary: lista em coluna em 375px */
+  .du-sports__secondary { grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .du-sports__sm-card span { font-size: .78rem; }
 }
