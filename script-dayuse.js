@@ -57,13 +57,27 @@
     });
   });
 
-  /* ── STICKY BAR ── */
-  const stickyBar = document.getElementById('stickyBar');
-  const heroEl    = document.querySelector('.du-hero');
+  /* ── STICKY BAR (context-aware: dia vs noite) ── */
+  const stickyBar  = document.getElementById('stickyBar');
+  const stickyMsg  = document.getElementById('stickyMsg');
+  const stickyCta  = document.getElementById('stickyCta');
+  const heroEl     = document.querySelector('.du-hero');
+  const noiteEl    = document.getElementById('noite');
   if (stickyBar && heroEl) {
     new IntersectionObserver((entries) => {
       stickyBar.classList.toggle('visible', !entries[0].isIntersecting);
     }, { threshold: 0.1 }).observe(heroEl);
+  }
+  if (stickyBar && noiteEl) {
+    new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        if (stickyMsg) stickyMsg.innerHTML = 'Vagas limitadas — <strong>Domingo de Praia · a partir das 14h</strong>';
+        if (stickyCta) { stickyCta.textContent = 'Comprar ingresso →'; stickyCta.href = '#shows'; }
+      } else {
+        if (stickyMsg) stickyMsg.innerHTML = 'Vagas limitadas — <strong>Dia na Praia · Na Praia Parque</strong>';
+        if (stickyCta) { stickyCta.textContent = 'Comprar ingresso →'; stickyCta.href = '#ingressos'; }
+      }
+    }, { threshold: 0.05 }).observe(noiteEl);
   }
 
   /* ── SCROLL ANIMATIONS ── */
@@ -218,13 +232,47 @@
 
   showWeek(1);
 
-  /* ── NAV-SWITCH: hide when cross-sell is visible ── */
-  const navSwitchEl  = document.getElementById('navSwitch');
-  const crossSellEl  = document.getElementById('cross-sell');
-  if (navSwitchEl && crossSellEl) {
-    new IntersectionObserver((entries) => {
-      navSwitchEl.classList.toggle('nav-switch--hidden', entries[0].isIntersecting);
-    }, { threshold: 0.1 }).observe(crossSellEl);
-  }
+  /* ── NAV-SWITCH: track dia/noite section visibility ── */
+  (function () {
+    const pills   = document.querySelectorAll('.nav-switch__opt');
+    const noiteSec = document.getElementById('noite');
+    function setActive(id) {
+      pills.forEach(p => {
+        const href = (p.getAttribute('href') || '').replace('#', '');
+        p.classList.toggle('is-active', href === id);
+        p.setAttribute('aria-selected', href === id ? 'true' : 'false');
+      });
+    }
+    if (noiteSec) {
+      new IntersectionObserver((entries) => {
+        setActive(entries[0].isIntersecting ? 'noite' : 'dia');
+      }, { threshold: 0.1 }).observe(noiteSec);
+    }
+  })();
+
+  /* ── SHOWS — AUTO-EXPIRE SUNDAY BLOCKS ── */
+  (function () {
+    function expUTC(s) {
+      const [y, m, d] = s.split('-').map(Number);
+      return Date.UTC(y, m - 1, d + 1, 3, 0, 0); /* 00:00 BRT = 03:00 UTC */
+    }
+    const now = Date.now();
+    let remaining = 0;
+    document.querySelectorAll('.sunday-block').forEach(block => {
+      const mt = (block.dataset.search || '').match(/^(\d{2})\/(\d{2})/);
+      if (!mt) return;
+      if (now >= expUTC(`2026-${mt[2]}-${mt[1]}`)) {
+        block.remove();
+      } else {
+        remaining++;
+      }
+    });
+    const showsGrid = document.querySelector('.shows__grid');
+    if (showsGrid && remaining === 1) showsGrid.classList.add('shows__grid--solo');
+    const nextExp = [...document.querySelectorAll('.sunday-block')]
+      .map(b => { const mt = (b.dataset.search || '').match(/^(\d{2})\/(\d{2})/); return mt ? expUTC(`2026-${mt[2]}-${mt[1]}`) : Infinity; })
+      .filter(t => t > now).sort((a, b) => a - b)[0];
+    if (nextExp && isFinite(nextExp)) setTimeout(() => location.reload(), nextExp - now);
+  })();
 
 })();

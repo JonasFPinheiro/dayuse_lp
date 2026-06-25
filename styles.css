@@ -789,3 +789,146 @@ em { font-style: normal; color: var(--coral); }
   .sticky-bar__inner { flex-direction: column; align-items: flex-start; gap: .6rem; }
   .sticky-bar__cta { width: 100%; justify-content: center; }
 }
+
+/* ═══════════════════════════════════════════
+   PRODUCT CHOOSER
+═══════════════════════════════════════════ */
+.product-chooser {
+  background: var(--cream);
+  padding: 4.5rem 0 3.5rem;
+}
+.product-chooser__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.product-chooser__card {
+  border-radius: var(--r-xl);
+  padding: 2.25rem 2rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.product-chooser__card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.12); }
+.product-chooser__card--dia  { background: #fff; color: var(--navy); border: 2px solid var(--sky); }
+.product-chooser__card--noite { background: var(--navy); color: #fff; border: 2px solid rgba(255,255,255,.12); }
+.product-chooser__icon { font-size: 2.25rem; line-height: 1; }
+.product-chooser__when {
+  font-family: var(--font-sub); font-size: .68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .09em; color: var(--coral);
+}
+.product-chooser__card--noite .product-chooser__when { color: var(--yellow); }
+.product-chooser__name {
+  font-family: var(--font-display); font-size: 1.65rem;
+  font-weight: 600; line-height: 1.1; margin: 0;
+}
+.product-chooser__perks {
+  list-style: none; padding: 0; margin: .1rem 0 auto;
+  display: flex; flex-direction: column; gap: .4rem;
+  border-top: 1px solid rgba(24,35,127,.08); padding-top: .85rem;
+}
+.product-chooser__card--noite .product-chooser__perks { border-top-color: rgba(255,255,255,.1); }
+.product-chooser__perks li {
+  font-family: var(--font-body); font-size: .84rem;
+  padding-left: 1.2rem; position: relative; opacity: .9;
+}
+.product-chooser__perks li::before {
+  content: '✓'; position: absolute; left: 0;
+  font-weight: 700; font-size: .78rem; color: var(--coral);
+}
+.product-chooser__card--noite .product-chooser__perks li::before { color: var(--yellow); }
+.product-chooser__card .btn { margin-top: .5rem; }
+.product-chooser__combo {
+  margin-top: 1.75rem;
+  background: linear-gradient(135deg, var(--yellow) 0%, #f9b45c 100%);
+  border-radius: var(--r-lg); padding: 1.1rem 1.6rem;
+  display: flex; align-items: center; gap: 1.1rem;
+}
+.product-chooser__combo-tag {
+  font-family: var(--font-sub); font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  background: var(--navy); color: #fff;
+  padding: .28rem .6rem; border-radius: 999px; white-space: nowrap; flex-shrink: 0;
+}
+.product-chooser__combo p {
+  font-family: var(--font-body); font-size: .86rem;
+  color: var(--navy); margin: 0; font-weight: 500;
+}
+@media (max-width: 720px) {
+  .product-chooser__grid { grid-template-columns: 1fr; }
+  .product-chooser__combo { flex-direction: column; align-items: flex-start; gap: .65rem; }
+}
+
+/* ═══════════════════════════════════════════
+   JOURNEY BRIDGE (Dia → Noite)
+═══════════════════════════════════════════ */
+.journey-bridge {
+  background: linear-gradient(to bottom, var(--cream) 0%, var(--navy) 55%);
+  padding: 5rem 0 4.5rem; text-align: center; color: #fff;
+}
+.journey-bridge .label--light { color: rgba(255,255,255,.5); display: block; margin-bottom: .6rem; }
+.journey-bridge__title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 600; color: #fff; line-height: 1.2; margin: 0 0 3rem;
+}
+.journey-bridge__title em { color: var(--yellow); font-style: normal; }
+.journey-timeline {
+  display: flex; align-items: center; justify-content: center;
+  max-width: 640px; margin: 0 auto;
+}
+.journey-milestone {
+  display: flex; flex-direction: column; align-items: center;
+  gap: .2rem; min-width: 120px;
+}
+.journey-milestone__time {
+  font-family: var(--font-display); font-size: 2.5rem;
+  font-weight: 700; color: var(--yellow); line-height: 1;
+}
+.journey-milestone__label {
+  font-family: var(--font-sub); font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em; color: #fff;
+}
+.journey-milestone__sub { font-family: var(--font-body); font-size: .73rem; color: rgba(255,255,255,.5); }
+.journey-connector {
+  flex: 1; height: 2px; background: rgba(255,255,255,.18);
+  position: relative; margin: -1.5rem 0 0;
+}
+@media (max-width: 520px) {
+  .journey-timeline { flex-direction: column; gap: 1.5rem; }
+  .journey-connector { width: 2px; height: 2rem; flex: none; margin: 0; }
+  .journey-milestone { min-width: unset; }
+}
+
+/* ═══════════════════════════════════════════
+   NOITE SECTION WRAPPER
+═══════════════════════════════════════════ */
+.noite-section { background: var(--navy); }
+.noite-section .shows { background: var(--navy); }
+.noite-section .story { background: rgba(15,22,70,.9); }
+
+/* ═══════════════════════════════════════════
+   NOITE INTRO (mini-hero for Domingos)
+═══════════════════════════════════════════ */
+.noite-intro {
+  position: relative; min-height: 420px;
+  display: flex; align-items: center; overflow: hidden; background: var(--navy);
+}
+.noite-intro__bg { position: absolute; inset: 0; }
+.noite-intro__bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 60%;
+}
+.noite-intro__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(24,35,127,.9) 40%, rgba(24,35,127,.45) 100%);
+}
+.noite-intro__content { position: relative; z-index: 1; padding: 4rem 0; }
+.noite-intro__title {
+  font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 600; color: #fff; margin: .6rem 0 1.25rem; line-height: 1.2; max-width: 480px;
+}
+.noite-intro .hero__badge { margin-bottom: .6rem; }
+.noite-intro .hero__pillars { margin-bottom: 1.5rem; }

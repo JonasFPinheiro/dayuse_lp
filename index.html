@@ -33,16 +33,16 @@
 
   <!-- ── NAV ── -->
   <nav class="nav" id="nav">
-    <a href="#hero" class="nav__brand">
+    <a href="#dia" class="nav__brand">
       <img src="NP Parque_Selo 04.png" alt="Na Praia Parque" class="nav__logo">
-      <span class="nav__wordmark">Dia na Praia</span>
+      <span class="nav__wordmark">Na Praia Parque</span>
     </a>
     <div class="nav-switch" id="navSwitch" role="tablist" aria-label="Escolha o produto">
-      <a href="index.html" class="nav-switch__opt is-active" role="tab" aria-selected="true">
+      <a href="#dia" class="nav-switch__opt is-active" role="tab" aria-selected="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         Dia
       </a>
-      <a href="domingos.html" class="nav-switch__opt" role="tab" aria-selected="false">
+      <a href="#noite" class="nav-switch__opt" role="tab" aria-selected="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         Noite
       </a>
@@ -55,15 +55,15 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.5 2L3.5 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         r2.com.vc
       </a>
-      <a href="#familia" class="nav__link">Família</a>
-      <a href="#esportes" class="nav__link">Esportes</a>
-      <a href="#ingressos" class="nav__link">Ingressos</a>
-      <a href="#ingressos" class="nav__cta">Ver datas →</a>
+      <a href="#ingressos" class="nav__link">Dia na Praia</a>
+      <a href="#shows" class="nav__link">Domingos de Praia</a>
+      <a href="#ritual" class="nav__link">Ritual Sol/Lua</a>
+      <a href="#ingressos" class="nav__cta">Comprar →</a>
     </div>
   </nav>
 
   <!-- ── HERO CAROUSEL ── -->
-  <section class="du-hero kv-deco-bg" id="hero">
+  <section class="du-hero kv-deco-bg" id="dia">
     <div class="du-hero__carousel">
       <div class="du-hero__slide is-active" style="background-image:url('midia_dayuse/lagoon-flags.jpeg');background-position:center 40%"></div>
       <div class="du-hero__slide" style="background-image:url('midia_dayuse/funcional-white.jpeg');background-position:center 35%"></div>
@@ -85,6 +85,50 @@
         <button class="du-hero__dot is-active" data-i="0"></button>
         <button class="du-hero__dot" data-i="1"></button>
         <button class="du-hero__dot" data-i="2"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCT CHOOSER ── -->
+  <section class="product-chooser" id="escolha">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="label">Dois produtos · Um destino</p>
+        <h2>Como você quer curtir a praia?</h2>
+        <div class="kv-stripes"><span></span><span></span><span></span></div>
+      </div>
+      <div class="product-chooser__grid" data-animate>
+
+        <a href="#ingressos" class="product-chooser__card product-chooser__card--dia">
+          <div class="product-chooser__icon">☀️</div>
+          <div class="product-chooser__when">Sáb &amp; Dom · 08h–17h · entrada até 14h</div>
+          <h3 class="product-chooser__name">Dia na Praia</h3>
+          <ul class="product-chooser__perks">
+            <li>Família, piscinas e esporte</li>
+            <li>+100 atividades infantis</li>
+            <li>20 restaurantes no parque</li>
+            <li>Aulões de beach e funcional</li>
+          </ul>
+          <span class="btn btn--primary">Ver ingressos →</span>
+        </a>
+
+        <a href="#shows" class="product-chooser__card product-chooser__card--noite">
+          <div class="product-chooser__icon">🌅</div>
+          <div class="product-chooser__when">Domingos · a partir das 14h até 23h</div>
+          <h3 class="product-chooser__name">Domingos de Praia</h3>
+          <ul class="product-chooser__perks">
+            <li>Roda de samba &amp; pagode</li>
+            <li>Ritual Sol/Lua (18h20)</li>
+            <li>Shows no Palco Praia</li>
+            <li>Pôr do sol mais bonito de Brasília</li>
+          </ul>
+          <span class="btn btn--primary">Ver programação →</span>
+        </a>
+
+      </div>
+      <div class="product-chooser__combo" data-animate>
+        <span class="product-chooser__combo-tag">Dica de domingo perfeito</span>
+        <p>Combine os dois: venha cedo para o Dia na Praia e fique para o show da tarde. Das 08h às 23h — o domingo mais completo de Brasília.</p>
       </div>
     </div>
   </section>
@@ -148,7 +192,7 @@
             </div>
           </div>
           <div class="du-card__hours">
-            <span>🕐 08h às 23h · sem restrição de entrada</span>
+            <span>🕐 08h às 17h · entrada até 14h</span>
           </div>
           <ul class="dcard__schedule">
             <li><span class="dcard__schedule-time">09h30</span> Yoga</li>
@@ -204,7 +248,7 @@
             </div>
           </div>
           <div class="du-card__hours">
-            <span>🕐 08h às 23h · sem restrição de entrada</span>
+            <span>🕐 08h às 17h · entrada até 14h</span>
           </div>
           <ul class="dcard__schedule">
             <li><span class="dcard__schedule-time">09h30</span> Yoga</li>
@@ -238,7 +282,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">05</span><div><span class="du-card__month">Jul</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · entrada até 14h</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -260,7 +304,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">12</span><div><span class="du-card__month">Jul</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · entrada até 14h</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -282,7 +326,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">19</span><div><span class="du-card__month">Jul</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · entrada até 14h</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -304,7 +348,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">26</span><div><span class="du-card__month">Jul</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · sem restrição de entrada</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -326,7 +370,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">02</span><div><span class="du-card__month">Ago</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · sem restrição de entrada</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -348,7 +392,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">09</span><div><span class="du-card__month">Ago</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · sem restrição de entrada</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -370,7 +414,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">16</span><div><span class="du-card__month">Ago</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · sem restrição de entrada</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -392,7 +436,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">23</span><div><span class="du-card__month">Ago</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · entrada até 14h</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -414,7 +458,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">30</span><div><span class="du-card__month">Ago</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · sem restrição de entrada</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -436,7 +480,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">06</span><div><span class="du-card__month">Set</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · sem restrição de entrada</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -458,7 +502,7 @@
             <span class="du-card__daybadge du-card__daybadge--sun">Domingo</span>
             <div class="du-card__dateblock"><span class="du-card__day">13</span><div><span class="du-card__month">Set</span><span class="du-card__year">2026</span></div></div>
           </div>
-          <div class="du-card__hours"><span>🕐 08h às 23h · sem restrição de entrada</span></div>
+          <div class="du-card__hours"><span>🕐 08h às 17h · entrada até 14h</span></div>
           <span class="btn btn--primary du-card__cta btn--disabled">Em breve</span>
         </article>
 
@@ -487,41 +531,6 @@
         <button class="du-week-btn" id="duNext" aria-label="Próxima semana">›</button>
       </div>
 
-    </div>
-  </section>
-
-  <!-- ── CROSS-SELL ── -->
-  <section class="cross-sell" id="cross-sell">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <p class="label">Dois jeitos de curtir</p>
-        <h2>Qual é a sua <em>praia?</em></h2>
-        <div class="kv-stripes"><span></span><span></span><span></span></div>
-      </div>
-      <div class="cross-sell__grid" data-animate>
-        <a href="index.html" class="cross-sell__card">
-          <div class="cross-sell__img">
-            <img src="imagens_tickets/Prancheta 2.4.png" alt="Dia na Praia — família e sol no Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center;width:100%;height:100%">
-            <div class="activity-label activity-label--sky">☀️ Dia na Praia</div>
-          </div>
-          <div class="cross-sell__body">
-            <h3>O parque inteiro, do amanhecer à tarde</h3>
-            <p>Esporte, família, gastronomia e muito sol. Das 08h ao fim da tarde — entrada até as 14h. Crianças até 10 anos não pagam.</p>
-            <span class="btn btn--primary">Comprar ingresso →</span>
-          </div>
-        </a>
-        <a href="domingos.html" class="cross-sell__card">
-          <div class="cross-sell__img">
-            <img src="produto_domingo/palco-sunset.jpg" alt="Domingo de Praia — pôr do sol em Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center 60%;width:100%;height:100%">
-            <div class="activity-label activity-label--coral">🌅 Domingo de Praia</div>
-          </div>
-          <div class="cross-sell__body">
-            <h3>A tarde que vira noite na praia</h3>
-            <p>Roda de samba, Ritual Sol/Lua e show ao vivo. A partir das 14h até as 23h. Crianças até 10 anos não pagam.</p>
-            <span class="btn btn--primary">Comprar ingresso →</span>
-          </div>
-        </a>
-      </div>
     </div>
   </section>
 
@@ -671,6 +680,159 @@
     </div>
   </section>
 
+  <!-- ── BRIDGE: DIA → NOITE (só aos domingos) ── -->
+  <div class="journey-bridge" id="noite">
+    <div class="container">
+      <p class="label label--light">Só nos domingos</p>
+      <h2 class="journey-bridge__title">A tarde continua.<br><em>A partir das 14h.</em></h2>
+      <div class="journey-timeline">
+        <div class="journey-milestone">
+          <span class="journey-milestone__time">08h</span>
+          <span class="journey-milestone__label">Dia na Praia</span>
+          <span class="journey-milestone__sub">família &amp; sol</span>
+        </div>
+        <div class="journey-connector"></div>
+        <div class="journey-milestone">
+          <span class="journey-milestone__time">14h</span>
+          <span class="journey-milestone__label">Domingos de Praia</span>
+          <span class="journey-milestone__sub">música &amp; pôr do sol</span>
+        </div>
+        <div class="journey-connector"></div>
+        <div class="journey-milestone">
+          <span class="journey-milestone__time">23h</span>
+          <span class="journey-milestone__label">Encerramento</span>
+          <span class="journey-milestone__sub">até a próxima</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="noite-section">
+
+    <!-- ── NOITE INTRO ── -->
+    <section class="noite-intro">
+      <div class="noite-intro__bg">
+        <img src="domingo_de_praia/Na-PraiaIMG_8503-1.jpg" alt="Pôr do sol em Na Praia Parque" loading="lazy">
+        <div class="noite-intro__overlay"></div>
+      </div>
+      <div class="noite-intro__content container">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Na Praia Parque · Brasília
+        </div>
+        <span class="hero__kicker">Domingos de Praia</span>
+        <h2 class="noite-intro__title">Experiências até<br>o sol virar lua.</h2>
+        <div class="hero__pillars">
+          <span>Música</span><span class="dot">·</span>
+          <span>Movimento</span><span class="dot">·</span>
+          <span>Conexão</span><span class="dot">·</span>
+          <span>Celebração</span>
+        </div>
+        <a href="#shows" class="btn btn--primary">Ver programação →</a>
+      </div>
+    </section>
+
+    <!-- ── SHOWS — DOMINGOS DE PRAIA ── -->
+    <section class="shows" id="shows">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <p class="label">Programação · Temporada 2026</p>
+          <h2>Escolha o seu <em>Domingo de Praia</em></h2>
+          <p class="section-desc">Ingressos para a experiência completa do domingo — pôr do sol, roda de samba e, nos dias especiais, show ao vivo.</p>
+          <div class="kv-stripes"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="shows__grid">
+
+          <!-- ══ DOMINGO 1 — 21/06 ══ -->
+          <div class="sunday-block sunday-block--single is-visible" data-search="21/06 21 junho jun domingo banda eva nossa galera palco praia inauguracao">
+            <div class="slot-card slot-card--show">
+              <div class="slot-card__media">
+                <img src="shows_domingo/Banner-01-1000x1000px-51.png" alt="Show no Domingos de Praia — 21 de Junho" loading="lazy">
+                <span class="show-card__tag">Inauguração do Palco Praia</span>
+                <span class="show-card__date-chip">21 <small>JUN</small></span>
+              </div>
+              <div class="slot-card__body">
+                <p class="show-card__eyebrow">🎤 Show neste domingo</p>
+                <h3 class="slot-card__title">Domingo · 21 de Junho</h3>
+                <p class="show-card__palco">✦ Palco Praia · Banda Eva + Nossa Galera</p>
+                <p class="slot-card__value">Comprando o show, você também garante toda a programação do Domingos de Praia.</p>
+                <div class="slot-card__meta"><span>🎶 Programação até 23h · a partir das 14h</span><span>📍 Na Praia Parque · Brasília</span></div>
+                <a href="https://r2.com.vc/produto/21-06-banda-eva-nossa-galera-inauguracao-do-palco-praia/" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Comprar ingresso do show →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ DOMINGO 2 — 28/06 ══ -->
+          <div class="sunday-block sunday-block--single is-visible" data-search="28/06 28 junho jun domingo">
+            <div class="slot-card slot-card--experience">
+              <div class="slot-card__media">
+                <img src="domingo_de_praia/roda_pagode.jpg" alt="Programação Domingos de Praia — 28 de Junho" loading="lazy" style="object-position:center center">
+              </div>
+              <div class="slot-card__body">
+                <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
+                <div class="slot-card__date-block"><span class="slot-card__date-day">28</span><span class="slot-card__date-month">JUN 2026</span></div>
+                <h3 class="slot-card__title">Domingos de Praia</h3>
+                <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada a partir das 14h.</p>
+                <div class="slot-card__meta"><span>🎶 Programação até 23h · a partir das 14h</span><span>📍 Na Praia Parque · Brasília</span></div>
+                <a href="https://r2.com.vc/produto/28-06-domingo-de-praia-entardecer" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Comprar ingresso →</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /shows__grid -->
+
+      </div>
+    </section>
+
+    <!-- ── STORY ── -->
+    <section class="story" id="story">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <p class="label">O que é</p>
+          <h2>Domingo na <em>Praia</em></h2>
+          <p class="section-desc">Pé na areia, sol no rosto, samba na tarde e o pôr do sol como grande final. Um domingo inteiro, do seu jeito — sem pressa.</p>
+        </div>
+        <div class="story__strip" data-animate>
+          <figure class="story__shot">
+            <img src="produto_domingo/palco-sunset.jpg" alt="Palco ao pôr do sol em Na Praia Parque" loading="lazy" style="object-position:center 60%" />
+            <figcaption>E o pôr do sol fecha o dia</figcaption>
+          </figure>
+          <figure class="story__shot">
+            <img src="produto_domingo/pagode-sol.jpg" alt="Roda de pagode em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
+            <figcaption>A roda esquenta a tarde</figcaption>
+          </figure>
+          <figure class="story__shot">
+            <img src="produto_domingo/familia-parque.jpg" alt="Família e crianças em Na Praia Parque" loading="lazy" style="object-position:center 55%" />
+            <figcaption>Pra toda a família</figcaption>
+          </figure>
+          <figure class="story__shot">
+            <img src="produto_domingo/vila-noite.jpg" alt="Vila iluminada ao anoitecer em Na Praia Parque" loading="lazy" style="object-position:center center" />
+            <figcaption>Pé na areia, do dia à noite</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RITUAL ── -->
+    <section class="ritual" id="ritual">
+      <div class="ritual__glow"></div>
+      <div class="ritual__content" data-animate>
+        <div class="ritual__eyebrow">18h20 · Na Praia Parque · Todo domingo</div>
+        <h2 class="ritual__title">O Ritual<br><em>Sol/Lua</em></h2>
+        <div class="ritual__text">
+          <p>Na Praia do Jacaré, na Paraíba, existe um ritual que atrai pessoas de todo o Brasil. Todos os dias, ao pôr do sol, Jurandir do Sax toca o Boléro de Ravel enquanto o sol se despede do céu. A música criou identidade. O pôr do sol virou destino.</p>
+          <p>Nós trouxemos esse conceito para Na Praia Parque — e criamos algo que Brasília nunca teve. Um ritual inédito, todo domingo, no pôr do sol mais bonito da cidade.</p>
+        </div>
+        <blockquote class="ritual__quote">
+          "O momento em que o sol toca a água<br>e a noite começa a nascer."
+        </blockquote>
+        <a href="#shows" class="btn btn--primary">Compre seu lugar nesse ritual</a>
+      </div>
+    </section>
+
+  </div><!-- /noite-section -->
+
   <!-- ── FAQ ── -->
   <section class="faq" id="faq">
     <div class="container">
@@ -680,38 +842,45 @@
         <div class="kv-stripes"><span></span><span></span><span></span></div>
       </div>
       <div class="faq__list" data-animate>
+
         <div class="faq__item">
-          <button class="faq__q" aria-expanded="false"><span>Qual é a classificação etária?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p>A classificação do Dia na Praia é livre. Menores de 16 anos precisam estar acompanhados dos pais e/ou responsáveis. Crianças até 10 anos não pagam.</p></div>
+          <button class="faq__q" aria-expanded="false"><span>Qual a diferença entre Dia na Praia e Domingos de Praia?</span><span class="faq__icon">▾</span></button>
+          <div class="faq__a" hidden><p><strong>Dia na Praia</strong> é o parque completo de manhã: piscinas, esportes, atividades infantis, gastronomia. Acontece todo sábado e domingo, com entrada até às 14h. <strong>Domingos de Praia</strong> é a experiência da tarde e noite, exclusiva aos domingos: roda de samba, Ritual Sol/Lua, shows no Palco Praia — entrada a partir das 14h. São ingressos separados e complementares.</p></div>
         </div>
         <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
         <div class="faq__item">
           <button class="faq__q" aria-expanded="false"><span>Qual o horário de funcionamento?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p><strong>Sábados:</strong> abertura às 08h, encerramento às 17h. Entrada permitida até às 14h. <strong>Domingos:</strong> abertura às 08h, encerramento às 23h. Nos domingos com show: entrada até às 14h.</p></div>
+          <div class="faq__a" hidden><p><strong>Dia na Praia — Sábados:</strong> 08h às 17h, entrada até 14h. <strong>Dia na Praia — Domingos:</strong> 08h às 17h, entrada até 14h. <strong>Domingos de Praia:</strong> a partir das 14h até 23h — você pode entrar a qualquer momento após as 14h.</p></div>
         </div>
         <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
         <div class="faq__item">
-          <button class="faq__q" aria-expanded="false"><span>O que posso levar?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p>Eco copo, copo térmico, cangas e toalhas, mochilas e bolsas, capa de chuva, carregador portátil, bonés e chapéus.</p></div>
+          <button class="faq__q" aria-expanded="false"><span>O que é o Ritual Sol/Lua?</span><span class="faq__icon">▾</span></button>
+          <div class="faq__a" hidden><p>É o momento mais esperado de cada domingo. Às 18h20, no exato horário do pôr do sol em Na Praia Parque, acontece uma experiência musical e sensorial única — inspirado no ritual da Praia do Jacaré (PB). Um ritual inédito em Brasília, incluso no ingresso Domingos de Praia.</p></div>
         </div>
         <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
         <div class="faq__item">
-          <button class="faq__q" aria-expanded="false"><span>O que não posso levar?</span><span class="faq__icon">▾</span></button>
+          <button class="faq__q" aria-expanded="false"><span>Crianças pagam ingresso?</span><span class="faq__icon">▾</span></button>
+          <div class="faq__a" hidden><p>Crianças até 10 anos não pagam. Menores de 16 anos devem estar acompanhados dos pais e/ou responsáveis legais. Os eventos são classificação livre.</p></div>
+        </div>
+        <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false"><span>O que posso e não posso levar?</span><span class="faq__icon">▾</span></button>
           <div class="faq__a" hidden>
-            <p>Alimentos, qualquer bebida, copos e garrafas de acrílico/vidro/descartáveis, isopor ou cooler, cadeiras, bancos, guarda-sol, equipamentos de filmagem profissional, substâncias ilícitas, animais (exceto cão-guia), guarda-chuva e objetos cortantes.</p>
-            <p>Exceção: alimentos para crianças até 2 anos e para celíacos com laudo médico.</p>
+            <p><strong>Pode levar:</strong> eco copo ou copo térmico, cangas e toalhas, mochilas e bolsas, capa de chuva, carregador portátil, bonés e chapéus.</p>
+            <p><strong>Não pode levar:</strong> alimentos, bebidas, copos de acrílico/vidro/descartáveis, isopor, cooler, cadeiras, guarda-sol, equipamentos de filmagem profissional, substâncias ilícitas, animais (exceto cão-guia) e objetos cortantes. Exceção: alimentos para crianças até 2 anos e celíacos com laudo médico.</p>
           </div>
         </div>
         <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
         <div class="faq__item">
-          <button class="faq__q" aria-expanded="false"><span>Crianças pagam ingresso?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p>Crianças até 10 anos não pagam. Menores de 16 anos devem estar acompanhados dos pais e/ou responsáveis legais.</p></div>
+          <button class="faq__q" aria-expanded="false"><span>Onde fica o Na Praia Parque? Tem estacionamento?</span><span class="faq__icon">▾</span></button>
+          <div class="faq__a" hidden><p>Na Praia Parque fica no Setor de Clubes Sul, Trecho 2 — entre a Agepol e o Centrejufe, com vista privilegiada para o Lago Paranoá. Sim, há estacionamento próprio. Recomendamos chegar cedo, especialmente nos domingos com show.</p></div>
         </div>
-        <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        <div class="faq__item">
-          <button class="faq__q" aria-expanded="false"><span>Onde fica o Na Praia Parque?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p>Na Praia Parque — Setor de Clubes Sul, Trecho 2, entre a Agepol e o Centrejufe, Brasília · DF.</p></div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -722,7 +891,10 @@
       <p class="label label--light">Todo fim de semana · Na Praia Parque</p>
       <h2>O litoral brasiliense está esperando por você</h2>
       <p>Sábados e domingos. <strong>A temporada inteira.</strong></p>
-      <a href="#ingressos" class="btn btn--primary">Comprar ingresso →</a>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="#ingressos" class="btn btn--primary">Dia na Praia →</a>
+        <a href="#shows" class="btn btn--yellow">Domingos de Praia →</a>
+      </div>
     </div>
   </section>
 
@@ -732,14 +904,19 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <span class="footer__logo">Na Praia Parque</span>
-          <p>Dia na Praia · Temporada 2026</p>
+          <p>Dia na Praia &amp; Domingos de Praia · Temporada 2026</p>
           <p>Na Praia Parque · Brasília · DF</p>
         </div>
         <div class="footer__nav">
-          <p class="footer__nav-title">Navegação</p>
+          <p class="footer__nav-title">Dia na Praia</p>
+          <a href="#ingressos">Ingressos</a>
           <a href="#familia">Família</a>
           <a href="#esportes">Esportes</a>
-          <a href="#ingressos">Ingressos</a>
+        </div>
+        <div class="footer__nav">
+          <p class="footer__nav-title">Domingos de Praia</p>
+          <a href="#shows">Programação</a>
+          <a href="#ritual">Ritual Sol/Lua</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="footer__social">
@@ -761,9 +938,9 @@
     <div class="sticky-bar__inner">
       <div class="sticky-bar__left">
         <span class="sticky-bar__dot"></span>
-        <p>Vagas limitadas — <strong>Dia na Praia · Na Praia Parque</strong></p>
+        <p id="stickyMsg">Vagas limitadas — <strong>Dia na Praia · Na Praia Parque</strong></p>
       </div>
-      <a href="#ingressos" class="sticky-bar__cta">Comprar ingresso →</a>
+      <a href="#ingressos" class="sticky-bar__cta" id="stickyCta">Comprar ingresso →</a>
     </div>
   </div>
 
