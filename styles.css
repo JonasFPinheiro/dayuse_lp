@@ -120,7 +120,7 @@ em { font-style: normal; color: var(--coral); }
 
 .section-header { text-align: center; max-width: 640px; margin: 0 auto var(--sp-lg); }
 .section-header h2 { color: var(--navy); margin-bottom: var(--sp-sm); }
-.section-desc { color: var(--text-muted); font-size: 1.05rem; font-family: var(--font-body); }
+.section-desc { color: var(--text-body); font-size: 1.05rem; font-family: var(--font-body); }
 
 .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 var(--sp-md); }
 
@@ -429,7 +429,7 @@ em { font-style: normal; color: var(--coral); }
   cursor: pointer; outline: none; transition: border-color var(--t); min-width: 220px;
 }
 .shows__week-select:focus { border-color: var(--coral); }
-.shows__label { font-family: var(--font-sub); font-size: .82rem; color: var(--text-muted); }
+.shows__label { font-family: var(--font-sub); font-size: .82rem; color: rgba(255,255,255,.65); }
 .shows__nav {
   max-width: 980px; margin: var(--sp-md) auto 0;
   display: flex; align-items: center; justify-content: center; gap: .75rem;
@@ -880,91 +880,123 @@ em { font-style: normal; color: var(--coral); }
 }
 .product-chooser__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
   margin-top: 2.5rem;
+  align-items: start;
 }
 
-/* Card — foto de fundo + gradiente escuro embaixo */
+/* Card — foto em cima, conteúdo embaixo em fundo limpo */
 .product-chooser__card {
-  position: relative;
-  overflow: hidden;
   border-radius: var(--r-xl);
-  min-height: 420px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   text-decoration: none;
-  color: #fff;
-  box-shadow: 0 4px 24px rgba(0,0,0,.14);
-  transition: box-shadow .3s ease;
+  color: inherit;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,.09);
+  transition: box-shadow .3s ease, transform .3s ease;
 }
-.product-chooser__card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.28); }
-.product-chooser__card:hover .pc-card__bg img { transform: scale(1.05); }
+.product-chooser__card:hover {
+  box-shadow: 0 14px 40px rgba(0,0,0,.18);
+  transform: translateY(-3px);
+}
 
-/* Imagem de fundo */
-.pc-card__bg {
-  position: absolute; inset: 0; z-index: 0; overflow: hidden;
+/* Foto */
+.pc-card__photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  flex-shrink: 0;
 }
-.pc-card__bg img {
+.pc-card__photo img {
   width: 100%; height: 100%;
   object-fit: cover;
   transition: transform .55s ease;
-}
-
-/* Overlay gradiente — dia vs noite têm sombras ligeiramente diferentes */
-.pc-card__overlay {
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(
-    to top,
-    rgba(18,28,80,.88) 0%,
-    rgba(18,28,80,.45) 45%,
-    rgba(0,0,0,.08) 100%
-  );
-}
-.pc-card__overlay--noite {
-  background: linear-gradient(
-    to top,
-    rgba(10,6,30,.92) 0%,
-    rgba(30,10,50,.5) 45%,
-    rgba(0,0,0,.12) 100%
-  );
-}
-
-/* Conteúdo posicionado sobre o gradiente */
-.pc-card__body {
-  position: relative; z-index: 2;
-  padding: 2rem 2rem 2.25rem;
-  display: flex; flex-direction: column; gap: .55rem;
-}
-
-/* Badge de horário */
-.pc-card__tag {
-  font-family: var(--font-sub); font-size: .65rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .1em;
-  color: rgba(255,255,255,.65);
   display: block;
 }
-.pc-card__tag--noite { color: var(--yellow); }
+.product-chooser__card:hover .pc-card__photo img { transform: scale(1.05); }
 
-/* Título */
+/* Gradiente + texto sobre a foto — apenas o título, nada mais */
+.pc-card__photo-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 3rem 1.4rem 1.1rem;
+  background: linear-gradient(to top, rgba(12,16,52,.92) 0%, rgba(12,16,52,.3) 55%, transparent 100%);
+}
+
+/* Tag de horário — sobre a foto */
+.pc-card__tag {
+  font-family: var(--font-sub); font-size: .62rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: rgba(255,255,255,.68);
+  display: block; margin-bottom: .3rem;
+}
+.pc-card__tag--noite { color: var(--yellow); opacity: .95; }
+
+/* Título — sobre a foto */
 .pc-card__name {
-  font-family: var(--font-display); font-size: clamp(1.6rem, 2.8vw, 2.1rem);
-  font-weight: 600; line-height: 1.1; margin: 0; color: #fff;
+  font-family: var(--font-display); font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-weight: 600; line-height: 1.1; color: #fff; margin: 0;
 }
 
-/* Descrição */
-.pc-card__desc {
-  font-family: var(--font-body); font-size: .9rem;
-  color: rgba(255,255,255,.78); line-height: 1.55; margin: .1rem 0 .6rem;
+/* Corpo — agenda + CTA em fundo branco (ou navy para noite) */
+.pc-card__body {
+  padding: 1.2rem 1.4rem 1.5rem;
+  display: flex; flex-direction: column; gap: .6rem;
+  flex: 1;
+  background: #fff;
 }
+.product-chooser__card--noite .pc-card__body { background: var(--navy); }
+
+/* Lista de atividades */
+.pc-card__schedule {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column;
+  flex: 1;
+}
+.pc-card__schedule li {
+  display: flex; align-items: baseline; gap: .55rem;
+  font-family: var(--font-sub); font-size: .8rem; font-weight: 400;
+  color: var(--text-body);
+  padding: .38rem 0;
+  border-bottom: 1px solid rgba(24,35,127,.07);
+}
+.pc-card__schedule li:last-child { border-bottom: none; padding-bottom: 0; }
+
+/* Horário da atividade */
+.pc-sched__time {
+  font-size: .7rem; font-weight: 700;
+  color: var(--coral);
+  min-width: 2.6rem; flex-shrink: 0;
+  letter-spacing: .02em;
+}
+
+/* Variante noite — texto claro no fundo navy */
+.product-chooser__card--noite .pc-card__schedule li {
+  color: rgba(255,255,255,.80);
+  border-color: rgba(255,255,255,.09);
+}
+.product-chooser__card--noite .pc-sched__time { color: var(--yellow); }
 
 /* CTA */
-.pc-card__cta { align-self: flex-start; }
+.pc-card__cta { align-self: flex-start; margin-top: .35rem; }
 
-@media (max-width: 720px) {
-  .product-chooser__grid { grid-template-columns: 1fr; }
-  .product-chooser__card { min-height: 340px; }
+@media (max-width: 960px) {
+  .product-chooser__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  /* Sábado linha inteira; Domingo + Entardecer lado a lado */
+  .product-chooser__grid { grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .product-chooser__card:first-child { grid-column: 1 / -1; }
+  /* Cards menores para o par lateral */
+  .product-chooser__card:not(:first-child) .pc-card__photo { aspect-ratio: 3 / 2; }
+  .product-chooser__card:not(:first-child) .pc-card__body { padding: .9rem 1rem 1.1rem; gap: .4rem; }
+  .product-chooser__card:not(:first-child) .pc-card__schedule li { font-size: .72rem; padding: .3rem 0; }
+  .product-chooser__card:not(:first-child) .pc-sched__time { font-size: .65rem; min-width: 2.3rem; }
+  .product-chooser__card:not(:first-child) .pc-card__name { font-size: 1.2rem; }
+  .product-chooser__card:not(:first-child) .pc-card__cta { font-size: .82rem; padding: .65rem 1.1rem; }
 }
 
 /* ═══════════════════════════════════════════
@@ -974,12 +1006,12 @@ em { font-style: normal; color: var(--coral); }
   background: linear-gradient(to bottom, var(--cream) 0%, var(--navy) 55%);
   padding: 5rem 0 4.5rem; text-align: center; color: #fff;
 }
-.journey-bridge .label--light { color: rgba(255,255,255,.5); display: block; margin-bottom: .6rem; }
+.journey-bridge .label--light { color: var(--navy); opacity: .7; display: block; margin-bottom: .6rem; }
 .journey-bridge__title {
   font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.25rem);
-  font-weight: 600; color: #fff; line-height: 1.2; margin: 0 0 3rem;
+  font-weight: 600; color: var(--navy); line-height: 1.2; margin: 0 0 3rem;
 }
-.journey-bridge__title em { color: var(--yellow); font-style: normal; }
+.journey-bridge__title em { color: var(--coral); font-style: normal; }
 .journey-timeline {
   display: flex; align-items: center; justify-content: center;
   max-width: 640px; margin: 0 auto;
