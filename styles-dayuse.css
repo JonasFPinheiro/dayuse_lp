@@ -19,7 +19,12 @@
 .du-hero__slide.is-active { opacity: 1; }
 .du-hero__overlay {
   position: absolute; inset: 0;
-  background: rgba(24,35,127,0.35);
+  background: linear-gradient(
+    to top,
+    rgba(10,14,48,.72) 0%,
+    rgba(10,14,48,.40) 45%,
+    rgba(10,14,48,.18) 100%
+  );
 }
 .du-hero__arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
