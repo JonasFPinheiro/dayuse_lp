@@ -880,7 +880,7 @@ em { font-style: normal; color: var(--coral); }
 }
 .product-chooser__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
   margin-top: 2.5rem;
   align-items: start;
@@ -982,21 +982,19 @@ em { font-style: normal; color: var(--coral); }
 /* CTA */
 .pc-card__cta { align-self: flex-start; margin-top: .35rem; }
 
-@media (max-width: 960px) {
-  .product-chooser__grid { grid-template-columns: 1fr 1fr; }
-}
+/* Sábado sempre ocupa linha inteira quando presente */
+.product-chooser__card--sabado { grid-column: 1 / -1; }
 
 @media (max-width: 640px) {
-  /* Sábado linha inteira; Domingo + Entardecer lado a lado */
-  .product-chooser__grid { grid-template-columns: 1fr 1fr; gap: .75rem; }
-  .product-chooser__card:first-child { grid-column: 1 / -1; }
-  /* Cards menores para o par lateral */
-  .product-chooser__card:not(:first-child) .pc-card__photo { aspect-ratio: 3 / 2; }
-  .product-chooser__card:not(:first-child) .pc-card__body { padding: .9rem 1rem 1.1rem; gap: .4rem; }
-  .product-chooser__card:not(:first-child) .pc-card__schedule li { font-size: .72rem; padding: .3rem 0; }
-  .product-chooser__card:not(:first-child) .pc-sched__time { font-size: .65rem; min-width: 2.3rem; }
-  .product-chooser__card:not(:first-child) .pc-card__name { font-size: 1.2rem; }
-  .product-chooser__card:not(:first-child) .pc-card__cta { font-size: .82rem; padding: .65rem 1.1rem; }
+  /* Grid 2 colunas no mobile — sábado já é full-width pela classe --sabado */
+  .product-chooser__grid { gap: .75rem; }
+  /* Cards de domingo menores para caber lado a lado */
+  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__photo { aspect-ratio: 3 / 2; }
+  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__body { padding: .9rem 1rem 1.1rem; gap: .4rem; }
+  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__schedule li { font-size: .72rem; padding: .3rem 0; }
+  .product-chooser__card:not(.product-chooser__card--sabado) .pc-sched__time { font-size: .65rem; min-width: 2.3rem; }
+  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__name { font-size: 1.2rem; }
+  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__cta { font-size: .82rem; padding: .65rem 1.1rem; }
 }
 
 /* ═══════════════════════════════════════════

@@ -250,6 +250,27 @@
     }
   })();
 
+  /* ── PRODUCT CHOOSER — AUTO-EXPIRE ── */
+  (function () {
+    function expUTC(dateStr, type) {
+      const [y, m, d] = dateStr.split('-').map(Number);
+      return type === 'sabado'
+        ? Date.UTC(y, m - 1, d, 17, 0, 0)       /* 14:00 BRT = 17:00 UTC */
+        : Date.UTC(y, m - 1, d + 1, 2, 59, 0);  /* 23:59 BRT = 02:59 UTC dia seguinte */
+    }
+    const now = Date.now();
+    let nextExp = Infinity;
+    document.querySelectorAll('.product-chooser__card[data-pc-date]').forEach(card => {
+      const exp = expUTC(card.dataset.pcDate, card.dataset.pcType || 'domingo-dia');
+      if (now >= exp) {
+        card.remove();
+      } else {
+        nextExp = Math.min(nextExp, exp);
+      }
+    });
+    if (isFinite(nextExp)) setTimeout(() => location.reload(), nextExp - now);
+  })();
+
   /* ── SHOWS — AUTO-EXPIRE SUNDAY BLOCKS ── */
   (function () {
     function expUTC(s) {
