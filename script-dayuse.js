@@ -256,9 +256,8 @@
 
     function expUTC(dateStr, type) {
       const [y, m, d] = dateStr.split('-').map(Number);
-      return type === 'sabado'
-        ? Date.UTC(y, m - 1, d, 17, 0, 0)       /* 14:00 BRT = 17:00 UTC */
-        : Date.UTC(y, m - 1, d + 1, 2, 59, 0);  /* 23:59 BRT = 02:59 UTC dia seguinte */
+      if (type === 'entardecer') return Date.UTC(y, m - 1, d + 1, 2, 0, 0);  /* 23:00 BRT = 02:00 UTC dia seguinte */
+      return Date.UTC(y, m - 1, d, 17, 0, 0); /* 14:00 BRT = 17:00 UTC — sabado e domingo-dia */
     }
 
     function nextOccurrence(type, afterDateStr) {
