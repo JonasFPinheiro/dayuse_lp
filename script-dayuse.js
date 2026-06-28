@@ -250,24 +250,69 @@
     }
   })();
 
-  /* ── PRODUCT CHOOSER — AUTO-EXPIRE ── */
+  /* ── PRODUCT CHOOSER — AUTO-ATUALIZAÇÃO ── */
   (function () {
+    const MONTHS = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+
     function expUTC(dateStr, type) {
       const [y, m, d] = dateStr.split('-').map(Number);
       return type === 'sabado'
         ? Date.UTC(y, m - 1, d, 17, 0, 0)       /* 14:00 BRT = 17:00 UTC */
         : Date.UTC(y, m - 1, d + 1, 2, 59, 0);  /* 23:59 BRT = 02:59 UTC dia seguinte */
     }
+
+    function nextOccurrence(type, afterDateStr) {
+      /* Retorna a próxima data (YYYY-MM-DD) de sábado ou domingo após a data dada */
+      const [y, m, d] = afterDateStr.split('-').map(Number);
+      const base = new Date(Date.UTC(y, m - 1, d));
+      const target = type === 'sabado' ? 6 : 0; /* 6=Sáb, 0=Dom */
+      const diff = ((target - base.getUTCDay() + 7) % 7) || 7;
+      base.setUTCDate(base.getUTCDate() + diff);
+      const ny = base.getUTCFullYear();
+      const nm = String(base.getUTCMonth() + 1).padStart(2, '0');
+      const nd = String(base.getUTCDate()).padStart(2, '0');
+      return `${ny}-${nm}-${nd}`;
+    }
+
+    function applyCard(card, dateStr, soon) {
+      const type  = card.dataset.pcType || 'domingo-dia';
+      const slug  = card.dataset.pcSlug || '';
+      const [, m, d] = dateStr.split('-').map(Number);
+      const label = `${String(d).padStart(2,'0')} ${MONTHS[m - 1]}`;
+      const dateEl = card.querySelector('.pc-card__event-date');
+      if (dateEl) dateEl.textContent = soon ? `Próx. ${label}` : label;
+      const cta = card.querySelector('.pc-card__cta');
+      if (soon) {
+        card.href = 'javascript:void(0)';
+        card.classList.add('is-soon');
+        if (cta) { cta.textContent = 'Em breve'; cta.classList.add('btn--disabled'); cta.classList.remove('btn--primary','btn--yellow'); }
+      } else {
+        const dd = String(d).padStart(2,'0');
+        const mm = String(m).padStart(2,'0');
+        card.href = `https://r2.com.vc/produto/${dd}-${mm}-${slug}`;
+      }
+    }
+
     const now = Date.now();
     let nextExp = Infinity;
+
     document.querySelectorAll('.product-chooser__card[data-pc-date]').forEach(card => {
-      const exp = expUTC(card.dataset.pcDate, card.dataset.pcType || 'domingo-dia');
+      const type    = card.dataset.pcType || 'domingo-dia';
+      const dateStr = card.dataset.pcDate;
+      const exp     = expUTC(dateStr, type);
+
       if (now >= exp) {
-        card.remove();
+        /* Expirou — avança para a próxima ocorrência e mostra "Em breve" */
+        const nextDate = nextOccurrence(type, dateStr);
+        card.dataset.pcDate = nextDate;
+        applyCard(card, nextDate, true);
       } else {
+        /* Ainda ativo */
+        applyCard(card, dateStr, false);
         nextExp = Math.min(nextExp, exp);
       }
     });
+
     if (isFinite(nextExp)) setTimeout(() => location.reload(), nextExp - now);
   })();
 

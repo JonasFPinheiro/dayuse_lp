@@ -979,6 +979,24 @@ em { font-style: normal; color: var(--coral); }
 }
 .product-chooser__card--noite .pc-sched__time { color: var(--yellow); }
 
+/* Data do evento — sobre a foto */
+.pc-card__event-date {
+  display: block;
+  font-family: var(--font-sub); font-size: .68rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  margin-top: .25rem;
+}
+
+/* Estado Em breve */
+.product-chooser__card.is-soon { pointer-events: none; }
+.product-chooser__card.is-soon .pc-card__event-date {
+  color: var(--yellow); opacity: .9;
+}
+.product-chooser__card--noite.is-soon .pc-card__event-date {
+  color: var(--yellow);
+}
+
 /* CTA */
 .pc-card__cta { align-self: flex-start; margin-top: .35rem; }
 
