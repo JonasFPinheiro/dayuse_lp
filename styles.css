@@ -836,10 +836,10 @@ em { font-style: normal; color: var(--coral); }
   .label { font-size: .65rem; letter-spacing: .07em; }
 
   /* Product chooser */
-  .product-chooser { padding: 3rem 0 2.5rem; }
-  .product-chooser__card { min-height: 310px; }
-  .pc-card__body { padding: 1.5rem 1.25rem 1.6rem; gap: .45rem; }
-  .pc-card__name { font-size: 1.65rem; }
+  .product-chooser { padding: 1.5rem 0 1rem; }
+  .product-chooser__card { min-height: unset; }
+  .pc-card__body { padding: .5rem .85rem .6rem; gap: .2rem; }
+  .pc-card__name { font-size: 1rem; }
   .pc-card__desc { font-size: .84rem; margin-bottom: .3rem; }
 
   /* Journey bridge */
@@ -876,143 +876,220 @@ em { font-style: normal; color: var(--coral); }
 ═══════════════════════════════════════════ */
 .product-chooser {
   background: var(--cream);
-  padding: 4.5rem 0 3.5rem;
+  padding: 1.5rem 0 1.25rem;
 }
+.product-chooser .section-header { margin-bottom: .6rem; }
 .product-chooser__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-top: 2.5rem;
+  gap: .6rem;
+  margin-top: .65rem;
   align-items: start;
 }
 
-/* Card — foto em cima, conteúdo embaixo em fundo limpo */
+/* ── Card base ── */
 .product-chooser__card {
-  border-radius: var(--r-xl);
+  border-radius: 1rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
   background: #fff;
-  box-shadow: 0 4px 20px rgba(0,0,0,.09);
-  transition: box-shadow .3s ease, transform .3s ease;
+  box-shadow: 0 2px 14px rgba(0,0,0,.08);
+  transition: box-shadow .3s ease, transform .25s ease;
 }
 .product-chooser__card:hover {
-  box-shadow: 0 14px 40px rgba(0,0,0,.18);
-  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,.15);
+  transform: translateY(-2px);
 }
 
-/* Foto */
+/* ── Foto 1:1 ── */
 .pc-card__photo {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   flex-shrink: 0;
 }
 .pc-card__photo img {
   width: 100%; height: 100%;
   object-fit: cover;
-  transition: transform .55s ease;
+  transition: transform .5s ease;
   display: block;
 }
-.product-chooser__card:hover .pc-card__photo img { transform: scale(1.05); }
+.product-chooser__card:hover .pc-card__photo img { transform: scale(1.04); }
 
-/* Gradiente + texto sobre a foto — apenas o título, nada mais */
+/* ── Overlay gradiente sobre a foto ── */
 .pc-card__photo-overlay {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 3rem 1.4rem 1.1rem;
-  background: linear-gradient(to top, rgba(12,16,52,.92) 0%, rgba(12,16,52,.3) 55%, transparent 100%);
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 2.5rem .9rem .8rem;
+  background: linear-gradient(to top,
+    rgba(6,8,28,.97) 0%,
+    rgba(6,8,28,.55) 40%,
+    transparent 75%);
+}
+.product-chooser__card--noite .pc-card__photo-overlay {
+  background: linear-gradient(to top,
+    rgba(6,8,28,.99) 0%,
+    rgba(6,8,28,.72) 45%,
+    rgba(6,8,28,.15) 80%,
+    transparent 100%);
 }
 
-/* Tag de horário — sobre a foto */
+/* Tag */
 .pc-card__tag {
-  font-family: var(--font-sub); font-size: .62rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .1em;
-  color: rgba(255,255,255,.68);
-  display: block; margin-bottom: .3rem;
+  font-family: var(--font-sub); font-size: .55rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: rgba(255,255,255,.78);
+  display: block; margin-bottom: .2rem;
 }
-.pc-card__tag--noite { color: var(--yellow); opacity: .95; }
+.pc-card__tag--noite { color: var(--yellow); }
 
-/* Título — sobre a foto */
+/* Título */
 .pc-card__name {
-  font-family: var(--font-display); font-size: clamp(1.35rem, 2vw, 1.65rem);
-  font-weight: 600; line-height: 1.1; color: #fff; margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(.9rem, 3.8vw, 1.15rem);
+  font-weight: 600; line-height: 1.15; color: #fff; margin: 0;
 }
 
-/* Corpo — agenda + CTA em fundo branco (ou navy para noite) */
+/* Data — pílula legível */
+.pc-card__event-date {
+  display: inline-block;
+  font-family: var(--font-sub); font-size: .58rem; font-weight: 700;
+  letter-spacing: .07em; text-transform: uppercase;
+  color: #fff;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 99px;
+  padding: .12rem .45rem;
+  margin-top: .3rem;
+  width: fit-content;
+}
+.product-chooser__card--noite .pc-card__event-date {
+  color: var(--yellow);
+  border-color: rgba(240,234,76,.45);
+  background: rgba(240,234,76,.1);
+}
+
+/* ── Corpo ── */
 .pc-card__body {
-  padding: 1.2rem 1.4rem 1.5rem;
-  display: flex; flex-direction: column; gap: .6rem;
-  flex: 1;
-  background: #fff;
+  padding: .65rem .85rem .7rem;
+  display: flex; flex-direction: column; gap: .25rem;
+  flex: 1; background: #fff;
 }
 .product-chooser__card--noite .pc-card__body { background: var(--navy); }
 
-/* Lista de atividades */
+/* Lista */
 .pc-card__schedule {
   list-style: none; padding: 0; margin: 0;
-  display: flex; flex-direction: column;
-  flex: 1;
+  display: flex; flex-direction: column; flex: 1;
 }
 .pc-card__schedule li {
-  display: flex; align-items: baseline; gap: .55rem;
-  font-family: var(--font-sub); font-size: .8rem; font-weight: 400;
+  display: flex; align-items: baseline; gap: .38rem;
+  font-family: var(--font-sub); font-size: .68rem; font-weight: 400;
   color: var(--text-body);
-  padding: .38rem 0;
+  padding: .15rem 0;
   border-bottom: 1px solid rgba(24,35,127,.07);
 }
-.pc-card__schedule li:last-child { border-bottom: none; padding-bottom: 0; }
-
-/* Horário da atividade */
+.pc-card__schedule li:last-child { border-bottom: none; }
 .pc-sched__time {
-  font-size: .7rem; font-weight: 700;
-  color: var(--coral);
-  min-width: 2.6rem; flex-shrink: 0;
-  letter-spacing: .02em;
+  font-size: .63rem; font-weight: 700; color: var(--coral);
+  min-width: 2.3rem; flex-shrink: 0; letter-spacing: .01em;
 }
-
-/* Variante noite — texto claro no fundo navy */
 .product-chooser__card--noite .pc-card__schedule li {
-  color: rgba(255,255,255,.80);
-  border-color: rgba(255,255,255,.09);
+  color: rgba(255,255,255,.82); border-color: rgba(255,255,255,.1);
 }
 .product-chooser__card--noite .pc-sched__time { color: var(--yellow); }
 
-/* Data do evento — sobre a foto */
-.pc-card__event-date {
-  display: block;
-  font-family: var(--font-sub); font-size: .68rem; font-weight: 700;
-  letter-spacing: .06em; text-transform: uppercase;
-  color: rgba(255,255,255,.55);
-  margin-top: .25rem;
-}
+/* CTA — largura total para melhor tap target */
+.pc-card__cta { align-self: stretch; text-align: center; margin-top: .28rem; }
 
-/* Estado Em breve */
-.product-chooser__card.is-soon { pointer-events: none; }
+/* ── Em breve ── */
+.product-chooser__card.is-soon { pointer-events: none; filter: saturate(.6); }
 .product-chooser__card.is-soon .pc-card__event-date {
-  color: var(--yellow); opacity: .9;
-}
-.product-chooser__card--noite.is-soon .pc-card__event-date {
-  color: var(--yellow);
+  color: var(--yellow); border-color: rgba(240,234,76,.5);
+  background: rgba(240,234,76,.12);
 }
 
-/* CTA */
-.pc-card__cta { align-self: flex-start; margin-top: .35rem; }
+/* ─────────────────────────────────────────
+   SÁBADO — full-width + layout horizontal
+───────────────────────────────────────── */
+.product-chooser__card--sabado {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: stretch;
+}
+.product-chooser__card--sabado .pc-card__photo {
+  width: 36%;
+  aspect-ratio: unset; /* preenche a altura do card */
+  flex-shrink: 0;
+}
+.product-chooser__card--sabado .pc-card__photo-overlay {
+  padding: 2.5rem .7rem .7rem;
+}
+.product-chooser__card--sabado .pc-card__tag  { font-size: .49rem; }
+.product-chooser__card--sabado .pc-card__name { font-size: .92rem; }
+.product-chooser__card--sabado .pc-card__body {
+  padding: .6rem .8rem .65rem; gap: .18rem; flex: 1;
+}
+/* Agenda em 2 colunas no espaço lateral */
+.product-chooser__card--sabado .pc-card__schedule {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: .45rem;
+}
+.product-chooser__card--sabado .pc-card__schedule li { font-size: .58rem; padding: .1rem 0; }
+.product-chooser__card--sabado .pc-sched__time { font-size: .54rem; min-width: 1.8rem; }
+.product-chooser__card--sabado .pc-card__cta {
+  align-self: flex-start; text-align: left;
+  font-size: .68rem; padding: .38rem .85rem; margin-top: .2rem;
+}
 
-/* Sábado sempre ocupa linha inteira quando presente */
-.product-chooser__card--sabado { grid-column: 1 / -1; }
+/* Cards não-sábado: mostra só 4 itens no mobile */
+.product-chooser__card:not(.product-chooser__card--sabado) .pc-card__schedule li:nth-child(n+5) {
+  display: none;
+}
 
-@media (max-width: 640px) {
-  /* Grid 2 colunas no mobile — sábado já é full-width pela classe --sabado */
-  .product-chooser__grid { gap: .75rem; }
-  /* Cards de domingo menores para caber lado a lado */
-  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__photo { aspect-ratio: 3 / 2; }
-  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__body { padding: .9rem 1rem 1.1rem; gap: .4rem; }
-  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__schedule li { font-size: .72rem; padding: .3rem 0; }
-  .product-chooser__card:not(.product-chooser__card--sabado) .pc-sched__time { font-size: .65rem; min-width: 2.3rem; }
-  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__name { font-size: 1.2rem; }
-  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__cta { font-size: .82rem; padding: .65rem 1.1rem; }
+/* ─────────────────────────────────────────
+   DESKTOP ≥ 769px — 3 colunas iguais
+───────────────────────────────────────── */
+@media (min-width: 769px) {
+  .product-chooser { padding: 2.25rem 0 2rem; }
+  .product-chooser .section-header { margin-bottom: 1rem; }
+  .product-chooser__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; margin-top: 1rem;
+  }
+
+  /* Sábado volta a ser coluna vertical igual às demais */
+  .product-chooser__card--sabado {
+    grid-column: auto;
+    flex-direction: column;
+  }
+  .product-chooser__card--sabado .pc-card__photo {
+    width: auto; aspect-ratio: 1 / 1;
+  }
+  .product-chooser__card--sabado .pc-card__photo-overlay {
+    padding: 2.5rem .9rem .8rem;
+  }
+  .product-chooser__card--sabado .pc-card__tag  { font-size: .55rem; }
+  .product-chooser__card--sabado .pc-card__name { font-size: clamp(.9rem, 1.5vw, 1.1rem); }
+  .product-chooser__card--sabado .pc-card__body { padding: .65rem .85rem .7rem; gap: .25rem; }
+  .product-chooser__card--sabado .pc-card__schedule {
+    display: flex; flex-direction: column;
+  }
+  .product-chooser__card--sabado .pc-card__schedule li { font-size: .68rem; padding: .15rem 0; }
+  .product-chooser__card--sabado .pc-sched__time { font-size: .63rem; min-width: 2.3rem; }
+  .product-chooser__card--sabado .pc-card__cta {
+    align-self: stretch; text-align: center;
+    font-size: inherit; padding: inherit; margin-top: .28rem;
+  }
+
+  /* Mostra todos os itens no desktop */
+  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__schedule li { display: flex; }
+
+  .pc-card__name { font-size: clamp(.95rem, 1.5vw, 1.15rem); }
 }
 
 /* ═══════════════════════════════════════════
