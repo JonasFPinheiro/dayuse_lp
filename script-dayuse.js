@@ -274,8 +274,6 @@
     }
 
     function applyCard(card, dateStr, soon) {
-      const type  = card.dataset.pcType || 'domingo-dia';
-      const slug  = card.dataset.pcSlug || '';
       const [, m, d] = dateStr.split('-').map(Number);
       const label = `${String(d).padStart(2,'0')} ${MONTHS[m - 1]}`;
       const dateEl = card.querySelector('.pc-card__event-date');
@@ -285,11 +283,8 @@
         card.href = 'javascript:void(0)';
         card.classList.add('is-soon');
         if (cta) { cta.textContent = 'Em breve'; cta.classList.add('btn--disabled'); cta.classList.remove('btn--primary','btn--yellow'); }
-      } else {
-        const dd = String(d).padStart(2,'0');
-        const mm = String(m).padStart(2,'0');
-        card.href = `https://r2.com.vc/produto/${dd}-${mm}-${slug}`;
       }
+      /* When active: href stays exactly as set in HTML */
     }
 
     const now = Date.now();
