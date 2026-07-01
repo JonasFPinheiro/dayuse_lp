@@ -57,27 +57,13 @@
     });
   });
 
-  /* ── STICKY BAR (context-aware: dia vs noite) ── */
+  /* ── STICKY BAR ── */
   const stickyBar  = document.getElementById('stickyBar');
-  const stickyMsg  = document.getElementById('stickyMsg');
-  const stickyCta  = document.getElementById('stickyCta');
   const heroEl     = document.querySelector('.du-hero');
-  const noiteEl    = document.getElementById('noite');
   if (stickyBar && heroEl) {
     new IntersectionObserver((entries) => {
       stickyBar.classList.toggle('visible', !entries[0].isIntersecting);
     }, { threshold: 0.1 }).observe(heroEl);
-  }
-  if (stickyBar && noiteEl) {
-    new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        if (stickyMsg) stickyMsg.innerHTML = 'Vagas limitadas — <strong>Domingo de Praia · a partir das 14h</strong>';
-        if (stickyCta) { stickyCta.textContent = 'Comprar ingresso →'; stickyCta.href = '#shows'; }
-      } else {
-        if (stickyMsg) stickyMsg.innerHTML = 'Vagas limitadas — <strong>Dia na Praia · Na Praia Parque</strong>';
-        if (stickyCta) { stickyCta.textContent = 'Comprar ingresso →'; stickyCta.href = '#ingressos'; }
-      }
-    }, { threshold: 0.05 }).observe(noiteEl);
   }
 
   /* ── SCROLL ANIMATIONS ── */
@@ -232,32 +218,14 @@
 
   showWeek(1);
 
-  /* ── NAV-SWITCH: track dia/noite section visibility ── */
-  (function () {
-    const pills   = document.querySelectorAll('.nav-switch__opt');
-    const noiteSec = document.getElementById('noite');
-    function setActive(id) {
-      pills.forEach(p => {
-        const href = (p.getAttribute('href') || '').replace('#', '');
-        p.classList.toggle('is-active', href === id);
-        p.setAttribute('aria-selected', href === id ? 'true' : 'false');
-      });
-    }
-    if (noiteSec) {
-      new IntersectionObserver((entries) => {
-        setActive(entries[0].isIntersecting ? 'noite' : 'dia');
-      }, { threshold: 0.1 }).observe(noiteSec);
-    }
-  })();
 
   /* ── PRODUCT CHOOSER — AUTO-ATUALIZAÇÃO ── */
   (function () {
     const MONTHS = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 
-    function expUTC(dateStr, type) {
+    function expUTC(dateStr) {
       const [y, m, d] = dateStr.split('-').map(Number);
-      if (type === 'entardecer') return Date.UTC(y, m - 1, d + 1, 2, 0, 0);  /* 23:00 BRT = 02:00 UTC dia seguinte */
-      return Date.UTC(y, m - 1, d, 17, 0, 0); /* 14:00 BRT = 17:00 UTC — sabado e domingo-dia */
+      return Date.UTC(y, m - 1, d, 17, 0, 0); /* 14:00 BRT = 17:00 UTC */
     }
 
     function nextOccurrence(type, afterDateStr) {
@@ -293,7 +261,7 @@
     document.querySelectorAll('.product-chooser__card[data-pc-date]').forEach(card => {
       const type    = card.dataset.pcType || 'domingo-dia';
       const dateStr = card.dataset.pcDate;
-      const exp     = expUTC(dateStr, type);
+      const exp     = expUTC(dateStr);
 
       if (now >= exp) {
         /* Expirou — avança para a próxima ocorrência e mostra "Em breve" */

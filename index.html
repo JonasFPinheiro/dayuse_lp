@@ -37,16 +37,6 @@
       <img src="NP Parque_Selo 04.png" alt="Na Praia Parque" class="nav__logo">
       <span class="nav__wordmark">Na Praia Parque</span>
     </a>
-    <div class="nav-switch" id="navSwitch" role="tablist" aria-label="Escolha o produto">
-      <a href="#dia" class="nav-switch__opt is-active" role="tab" aria-selected="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        Dia
-      </a>
-      <a href="#noite" class="nav-switch__opt" role="tab" aria-selected="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        Noite
-      </a>
-    </div>
     <button class="nav__toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -56,8 +46,9 @@
         r2.com.vc
       </a>
       <a href="#ingressos" class="nav__link">Dia na Praia</a>
-      <a href="#shows" class="nav__link">Domingos de Praia</a>
-      <a href="#ritual" class="nav__link">Ritual Sol/Lua</a>
+      <a href="#familia" class="nav__link">Família</a>
+      <a href="#esportes" class="nav__link">Esportes</a>
+      <a href="#faq" class="nav__link">FAQ</a>
       <a href="#ingressos" class="nav__cta">Comprar →</a>
     </div>
   </nav>
@@ -304,107 +295,6 @@
     </div>
   </section>
 
-  <!-- ── BRIDGE: DIA → NOITE (só aos domingos) ── -->
-  <div class="journey-bridge" id="noite">
-    <div class="container">
-      <p class="label label--light">Só nos domingos</p>
-      <h2 class="journey-bridge__title">A tarde continua.<br><em>A partir das 14h30.</em></h2>
-      <div class="journey-timeline">
-        <div class="journey-milestone">
-          <span class="journey-milestone__time">08h</span>
-          <span class="journey-milestone__label">Dia na Praia</span>
-          <span class="journey-milestone__sub">família &amp; sol</span>
-        </div>
-        <div class="journey-connector"></div>
-        <div class="journey-milestone">
-          <span class="journey-milestone__time">14h30</span>
-          <span class="journey-milestone__label">Domingos de Praia</span>
-          <span class="journey-milestone__sub">música &amp; pôr do sol</span>
-        </div>
-        <div class="journey-connector"></div>
-        <div class="journey-milestone">
-          <span class="journey-milestone__time">23h</span>
-          <span class="journey-milestone__label">Encerramento</span>
-          <span class="journey-milestone__sub">até a próxima</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="noite-section">
-
-    <!-- ── NOITE INTRO ── -->
-    <section class="noite-intro">
-      <div class="noite-intro__bg">
-        <img src="domingo_de_praia/Na-PraiaIMG_8503-1.jpg" alt="Pôr do sol em Na Praia Parque" loading="lazy">
-        <div class="noite-intro__overlay"></div>
-      </div>
-      <div class="noite-intro__content container">
-        <div class="hero__badge">
-          <span class="hero__badge-dot"></span>
-          Na Praia Parque · Brasília
-        </div>
-        <span class="hero__kicker">Domingos de Praia</span>
-        <h2 class="noite-intro__title">Experiências até<br>o sol virar lua.</h2>
-        <div class="hero__pillars">
-          <span>Música</span><span class="dot">·</span>
-          <span>Movimento</span><span class="dot">·</span>
-          <span>Conexão</span><span class="dot">·</span>
-          <span>Celebração</span>
-        </div>
-        <a href="#shows" class="btn btn--primary">Ver programação →</a>
-      </div>
-    </section>
-
-    <span id="shows"></span>
-
-    <!-- ── STORY ── -->
-    <section class="story" id="story">
-      <div class="container">
-        <div class="section-header" data-animate>
-          <p class="label">O que é</p>
-          <h2>Domingo na <em>Praia</em></h2>
-          <p class="section-desc">Pé na areia, sol no rosto, samba na tarde e o pôr do sol como grande final. Um domingo inteiro, do seu jeito — sem pressa.</p>
-        </div>
-        <div class="story__strip" data-animate>
-          <figure class="story__shot">
-            <img src="produto_domingo/palco-sunset.jpg" alt="Palco ao pôr do sol em Na Praia Parque" loading="lazy" style="object-position:center 60%" />
-            <figcaption>E o pôr do sol fecha o dia</figcaption>
-          </figure>
-          <figure class="story__shot">
-            <img src="produto_domingo/pagode-sol.jpg" alt="Roda de pagode em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
-            <figcaption>A roda esquenta a tarde</figcaption>
-          </figure>
-          <figure class="story__shot">
-            <img src="produto_domingo/familia-parque.jpg" alt="Família e crianças em Na Praia Parque" loading="lazy" style="object-position:center 55%" />
-            <figcaption>Pra toda a família</figcaption>
-          </figure>
-          <figure class="story__shot">
-            <img src="produto_domingo/vila-noite.jpg" alt="Vila iluminada ao anoitecer em Na Praia Parque" loading="lazy" style="object-position:center center" />
-            <figcaption>Pé na areia, do dia à noite</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── RITUAL ── -->
-    <section class="ritual" id="ritual">
-      <div class="ritual__glow"></div>
-      <div class="ritual__content" data-animate>
-        <div class="ritual__eyebrow">18h20 · Na Praia Parque · Todo domingo</div>
-        <h2 class="ritual__title">O Ritual<br><em>Sol/Lua</em></h2>
-        <div class="ritual__text">
-          <p>Na Praia do Jacaré, na Paraíba, existe um ritual que atrai pessoas de todo o Brasil. Todos os dias, ao pôr do sol, Jurandir do Sax toca o Boléro de Ravel enquanto o sol se despede do céu. A música criou identidade. O pôr do sol virou destino.</p>
-          <p>Nós trouxemos esse conceito para Na Praia Parque — e criamos algo que Brasília nunca teve. Um ritual inédito, todo domingo, no pôr do sol mais bonito da cidade.</p>
-        </div>
-        <blockquote class="ritual__quote">
-          "O momento em que o sol toca a água<br>e a noite começa a nascer."
-        </blockquote>
-        <a href="#shows" class="btn btn--primary">Compre seu lugar nesse ritual</a>
-      </div>
-    </section>
-
-  </div><!-- /noite-section -->
 
   <!-- ── FAQ ── -->
   <section class="faq" id="faq">
@@ -417,20 +307,8 @@
       <div class="faq__list" data-animate>
 
         <div class="faq__item">
-          <button class="faq__q" aria-expanded="false"><span>Qual a diferença entre Dia na Praia e Domingos de Praia?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p><strong>Dia na Praia</strong> é o parque completo de manhã: piscinas, esportes, atividades infantis, gastronomia. Acontece todo sábado e domingo, com entrada até às 14h. <strong>Domingos de Praia</strong> é a experiência da tarde e noite, exclusiva aos domingos: roda de samba, Ritual Sol/Lua, shows no Palco Praia — entrada a partir das 14h30. São ingressos separados e complementares.</p></div>
-        </div>
-        <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-
-        <div class="faq__item">
           <button class="faq__q" aria-expanded="false"><span>Qual o horário de funcionamento?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p><strong>Dia na Praia — Sábados:</strong> 08h às 17h, entrada até 14h. <strong>Dia na Praia — Domingos:</strong> 08h às 17h, entrada até 14h. <strong>Domingos de Praia:</strong> a partir das 14h30 até 23h — você pode entrar a qualquer momento após as 14h30 e sair quando quiser, com encerramento às 23h.</p></div>
-        </div>
-        <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-
-        <div class="faq__item">
-          <button class="faq__q" aria-expanded="false"><span>O que é o Ritual Sol/Lua?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p>É o momento mais esperado de cada domingo. Às 18h20, no exato horário do pôr do sol em Na Praia Parque, acontece uma experiência musical e sensorial única — inspirado no ritual da Praia do Jacaré (PB). Um ritual inédito em Brasília, incluso no ingresso Domingos de Praia.</p></div>
+          <div class="faq__a" hidden><p><strong>Dia na Praia — Sábados e Domingos:</strong> 08h às 17h, com entrada até as 14h.</p></div>
         </div>
         <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
@@ -451,7 +329,7 @@
 
         <div class="faq__item">
           <button class="faq__q" aria-expanded="false"><span>Onde fica o Na Praia Parque? Tem estacionamento?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p>Na Praia Parque fica no Setor de Clubes Sul, Trecho 2 — entre a Agepol e o Centrejufe, com vista privilegiada para o Lago Paranoá. Sim, há estacionamento próprio. Recomendamos chegar cedo, especialmente nos domingos com show.</p></div>
+          <div class="faq__a" hidden><p>Na Praia Parque fica no Setor de Clubes Sul, Trecho 2 — entre a Agepol e o Centrejufe, com vista privilegiada para o Lago Paranoá. Sim, há estacionamento próprio. Recomendamos chegar cedo, especialmente nos fins de semana.</p></div>
         </div>
 
       </div>
@@ -465,8 +343,7 @@
       <h2>O litoral brasiliense está esperando por você</h2>
       <p>Sábados e domingos. <strong>A temporada inteira.</strong></p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a href="#ingressos" class="btn btn--primary">Dia na Praia →</a>
-        <a href="#shows" class="btn btn--yellow">Domingos de Praia →</a>
+        <a href="#ingressos" class="btn btn--primary">Garantir ingresso →</a>
       </div>
     </div>
   </section>
@@ -477,7 +354,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <span class="footer__logo">Na Praia Parque</span>
-          <p>Dia na Praia &amp; Domingos de Praia · Temporada 2026</p>
+          <p>Dia na Praia · Temporada 2026</p>
           <p>Na Praia Parque · Brasília · DF</p>
         </div>
         <div class="footer__nav">
@@ -487,10 +364,9 @@
           <a href="#esportes">Esportes</a>
         </div>
         <div class="footer__nav">
-          <p class="footer__nav-title">Domingos de Praia</p>
-          <a href="#shows">Programação</a>
-          <a href="#ritual">Ritual Sol/Lua</a>
+          <p class="footer__nav-title">Informações</p>
           <a href="#faq">FAQ</a>
+          <a href="#ingressos">Ingressos</a>
         </div>
         <div class="footer__social">
           <p class="footer__nav-title">Redes sociais</p>
@@ -501,7 +377,7 @@
       </div>
       <div class="footer__bottom">
         <p>© 2026 Na Praia Parque · Todos os direitos reservados</p>
-        <p class="footer__tagline">Experiências até o sol virar lua.</p>
+        <p class="footer__tagline">O litoral brasiliense é logo ali.</p>
       </div>
     </div>
   </footer>
