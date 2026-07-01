@@ -1013,46 +1013,24 @@ em { font-style: normal; color: var(--coral); }
 }
 
 /* ─────────────────────────────────────────
-   SÁBADO — full-width + layout horizontal
+   SÁBADO — full-width, foto em cima (igual ao domingo)
 ───────────────────────────────────────── */
-.product-chooser__card--sabado {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  align-items: stretch;
-}
-.product-chooser__card--sabado .pc-card__photo {
-  width: 36%;
-  aspect-ratio: unset; /* preenche a altura do card */
-  flex-shrink: 0;
-}
-.product-chooser__card--sabado .pc-card__photo-overlay {
-  padding: 2.5rem .7rem .7rem;
-}
-.product-chooser__card--sabado .pc-card__tag  { font-size: .49rem; }
-.product-chooser__card--sabado .pc-card__name { font-size: .92rem; }
-.product-chooser__card--sabado .pc-card__body {
-  padding: .6rem .8rem .65rem; gap: .18rem; flex: 1;
-}
-/* Agenda em 2 colunas no espaço lateral */
+.product-chooser__card--sabado { grid-column: 1 / -1; }
+
+/* Agenda em 2 colunas para gerir os 10 itens sem scroll */
 .product-chooser__card--sabado .pc-card__schedule {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: .45rem;
-}
-.product-chooser__card--sabado .pc-card__schedule li { font-size: .58rem; padding: .1rem 0; }
-.product-chooser__card--sabado .pc-sched__time { font-size: .54rem; min-width: 1.8rem; }
-.product-chooser__card--sabado .pc-card__cta {
-  align-self: flex-start; text-align: left;
-  font-size: .68rem; padding: .38rem .85rem; margin-top: .2rem;
+  column-gap: .6rem;
 }
 
-/* Cards não-sábado: mostra só 5 itens no mobile (1-col, mais espaço) */
-.product-chooser__card:not(.product-chooser__card--sabado) .pc-card__schedule li:nth-child(n+6) {
+/* Mobile: domingo mostra 6 itens (card full-width, espaço suficiente) */
+.product-chooser__card:not(.product-chooser__card--sabado) .pc-card__schedule li:nth-child(n+7) {
   display: none;
 }
 
 /* ─────────────────────────────────────────
-   DESKTOP ≥ 769px — 3 colunas iguais
+   DESKTOP ≥ 769px — 2 colunas iguais
 ───────────────────────────────────────── */
 @media (min-width: 769px) {
   .product-chooser { padding: 2.25rem 0 2rem; }
@@ -1061,34 +1039,10 @@ em { font-style: normal; color: var(--coral); }
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem; margin-top: 1rem;
   }
-
-  /* Sábado volta a ser coluna vertical igual às demais */
-  .product-chooser__card--sabado {
-    grid-column: auto;
-    flex-direction: column;
-  }
-  .product-chooser__card--sabado .pc-card__photo {
-    width: auto; aspect-ratio: 1 / 1;
-  }
-  .product-chooser__card--sabado .pc-card__photo-overlay {
-    padding: 2.5rem .9rem .8rem;
-  }
-  .product-chooser__card--sabado .pc-card__tag  { font-size: .55rem; }
-  .product-chooser__card--sabado .pc-card__name { font-size: clamp(.9rem, 1.5vw, 1.1rem); }
-  .product-chooser__card--sabado .pc-card__body { padding: .65rem .85rem .7rem; gap: .25rem; }
-  .product-chooser__card--sabado .pc-card__schedule {
-    display: flex; flex-direction: column;
-  }
-  .product-chooser__card--sabado .pc-card__schedule li { font-size: .68rem; padding: .15rem 0; }
-  .product-chooser__card--sabado .pc-sched__time { font-size: .63rem; min-width: 2.3rem; }
-  .product-chooser__card--sabado .pc-card__cta {
-    align-self: stretch; text-align: center;
-    font-size: inherit; padding: inherit; margin-top: .28rem;
-  }
-
+  /* Sábado deixa de ser full-width no desktop — ocupa 1 das 2 colunas */
+  .product-chooser__card--sabado { grid-column: auto; }
   /* Mostra todos os itens no desktop */
-  .product-chooser__card:not(.product-chooser__card--sabado) .pc-card__schedule li { display: flex; }
-
+  .product-chooser__card .pc-card__schedule li { display: flex; }
   .pc-card__name { font-size: clamp(.95rem, 1.5vw, 1.15rem); }
 }
 
