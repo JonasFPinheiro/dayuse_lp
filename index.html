@@ -37,6 +37,16 @@
       <img src="NP Parque_Selo 04.png" alt="Na Praia Parque" class="nav__logo">
       <span class="nav__wordmark">Na Praia Parque</span>
     </a>
+    <div class="nav-switch" id="navSwitch" role="tablist" aria-label="Escolha o produto">
+      <a href="#dia" class="nav-switch__opt is-active" role="tab" aria-selected="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        Dia
+      </a>
+      <a href="#noite" class="nav-switch__opt" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        Noite
+      </a>
+    </div>
     <button class="nav__toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -46,9 +56,8 @@
         r2.com.vc
       </a>
       <a href="#ingressos" class="nav__link">Dia na Praia</a>
-      <a href="#familia" class="nav__link">Família</a>
-      <a href="#esportes" class="nav__link">Esportes</a>
-      <a href="#faq" class="nav__link">FAQ</a>
+      <a href="#shows" class="nav__link">Domingos de Praia</a>
+      <a href="#ritual" class="nav__link">Ritual Sol/Lua</a>
       <a href="#ingressos" class="nav__cta">Comprar →</a>
     </div>
   </nav>
@@ -117,31 +126,22 @@
           </div>
         </a>
 
-        <!-- CARD 2: Domingo Dia de Praia -->
-        <a href="https://r2.com.vc/produto/05-07-dia-na-praia-domingo" class="product-chooser__card" data-pc-date="2026-07-05" data-pc-type="domingo-dia" data-pc-slug="dia-na-praia-domingo" target="_blank" rel="noopener">
+        <!-- CARD 2: Torcida na Praia (Domingo) -->
+        <a href="https://r2.com.vc/produto/05-07-felipe-amorim-clayton-romario-torcida-na-praia/" class="product-chooser__card product-chooser__card--noite" data-pc-date="2026-07-05" data-pc-type="entardecer" data-pc-slug="felipe-amorim-clayton-romario-torcida-na-praia" target="_blank" rel="noopener">
           <div class="pc-card__photo">
-            <img src="cards-praia/10-08-Te-Vejo-Na-Praia-fercoutinho-shakeitbsb-013.png" alt="Domingo Dia de Praia — Na Praia Parque" loading="lazy" style="object-position:center 20%">
+            <img src="shows_domingo/banner-torcida-na-praia-05-07.png" alt="Torcida na Praia — Felipe Amorim + Clayton & Romário" loading="lazy" style="object-position:center center">
             <div class="pc-card__photo-overlay">
-              <span class="pc-card__tag">Domingos · 08h às 17h · entrada até 14h</span>
-              <h3 class="pc-card__name">Domingo na Praia</h3>
+              <span class="pc-card__tag pc-card__tag--noite">Domingos · 08h às 23h · Um único ingresso</span>
+              <h3 class="pc-card__name">Torcida na Praia</h3>
               <span class="pc-card__event-date">05 Jul</span>
             </div>
           </div>
           <div class="pc-card__body">
             <ul class="pc-card__schedule">
-              <li><span class="pc-sched__time">08h00</span> Abertura Piscinas · Espaço Giraffas</li>
-              <li><span class="pc-sched__time">09h00</span> Yoga · Rodolfo Velcas</li>
-              <li><span class="pc-sched__time">09h00</span> Arvorismo Marista · Piquenique</li>
-              <li><span class="pc-sched__time">09h30</span> Futevôlei Life Style</li>
-              <li><span class="pc-sched__time">09h30</span> Funcional · SmartFit</li>
-              <li><span class="pc-sched__time">10h30</span> Beach Tennis Life Style</li>
-              <li><span class="pc-sched__time">10h30</span> FitDance · SmartFit</li>
-              <li><span class="pc-sched__time">10h30</span> Circuito e Dança</li>
-              <li><span class="pc-sched__time">12h30</span> Teatro: Viva São João</li>
-              <li><span class="pc-sched__time">13h30</span> Recreação Splash</li>
-              <li><span class="pc-sched__time">15h00</span> Altinha na Praia</li>
+              <li><span class="pc-sched__time">20h00</span> Clayton &amp; Romário</li>
+              <li><span class="pc-sched__time">22h00</span> Felipe Amorim</li>
             </ul>
-            <span class="btn btn--primary pc-card__cta">Comprar ingresso →</span>
+            <span class="btn btn--yellow pc-card__cta">Comprar ingresso →</span>
           </div>
         </a>
 
@@ -296,6 +296,108 @@
   </section>
 
 
+  <!-- ── BRIDGE: DIA → NOITE (só aos domingos) ── -->
+  <div class="journey-bridge" id="noite">
+    <div class="container">
+      <p class="label label--light">Só nos domingos</p>
+      <h2 class="journey-bridge__title">A tarde continua.<br><em>A partir das 14h30.</em></h2>
+      <div class="journey-timeline">
+        <div class="journey-milestone">
+          <span class="journey-milestone__time">08h</span>
+          <span class="journey-milestone__label">Dia na Praia</span>
+          <span class="journey-milestone__sub">família &amp; sol</span>
+        </div>
+        <div class="journey-connector"></div>
+        <div class="journey-milestone">
+          <span class="journey-milestone__time">14h30</span>
+          <span class="journey-milestone__label">Domingos de Praia</span>
+          <span class="journey-milestone__sub">música &amp; pôr do sol</span>
+        </div>
+        <div class="journey-connector"></div>
+        <div class="journey-milestone">
+          <span class="journey-milestone__time">23h</span>
+          <span class="journey-milestone__label">Encerramento</span>
+          <span class="journey-milestone__sub">até a próxima</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="noite-section">
+
+    <!-- ── NOITE INTRO ── -->
+    <section class="noite-intro">
+      <div class="noite-intro__bg">
+        <img src="domingo_de_praia/Na-PraiaIMG_8503-1.jpg" alt="Pôr do sol em Na Praia Parque" loading="lazy">
+        <div class="noite-intro__overlay"></div>
+      </div>
+      <div class="noite-intro__content container">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Na Praia Parque · Brasília
+        </div>
+        <span class="hero__kicker">Domingos de Praia</span>
+        <h2 class="noite-intro__title">Experiências até<br>o sol virar lua.</h2>
+        <div class="hero__pillars">
+          <span>Música</span><span class="dot">·</span>
+          <span>Movimento</span><span class="dot">·</span>
+          <span>Conexão</span><span class="dot">·</span>
+          <span>Celebração</span>
+        </div>
+        <a href="#shows" class="btn btn--primary">Ver programação →</a>
+      </div>
+    </section>
+
+    <span id="shows"></span>
+
+    <!-- ── STORY ── -->
+    <section class="story" id="story">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <p class="label">O que é</p>
+          <h2>Domingo na <em>Praia</em></h2>
+          <p class="section-desc">Pé na areia, sol no rosto, samba na tarde e o pôr do sol como grande final. Um domingo inteiro, do seu jeito — sem pressa.</p>
+        </div>
+        <div class="story__strip" data-animate>
+          <figure class="story__shot">
+            <img src="produto_domingo/palco-sunset.jpg" alt="Palco ao pôr do sol em Na Praia Parque" loading="lazy" style="object-position:center 60%" />
+            <figcaption>E o pôr do sol fecha o dia</figcaption>
+          </figure>
+          <figure class="story__shot">
+            <img src="produto_domingo/pagode-sol.jpg" alt="Roda de pagode em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
+            <figcaption>A roda esquenta a tarde</figcaption>
+          </figure>
+          <figure class="story__shot">
+            <img src="produto_domingo/familia-parque.jpg" alt="Família e crianças em Na Praia Parque" loading="lazy" style="object-position:center 55%" />
+            <figcaption>Pra toda a família</figcaption>
+          </figure>
+          <figure class="story__shot">
+            <img src="produto_domingo/vila-noite.jpg" alt="Vila iluminada ao anoitecer em Na Praia Parque" loading="lazy" style="object-position:center center" />
+            <figcaption>Pé na areia, do dia à noite</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RITUAL ── -->
+    <section class="ritual" id="ritual">
+      <div class="ritual__glow"></div>
+      <div class="ritual__content" data-animate>
+        <div class="ritual__eyebrow">18h20 · Na Praia Parque · Todo domingo</div>
+        <h2 class="ritual__title">O Ritual<br><em>Sol/Lua</em></h2>
+        <div class="ritual__text">
+          <p>Na Praia do Jacaré, na Paraíba, existe um ritual que atrai pessoas de todo o Brasil. Todos os dias, ao pôr do sol, Jurandir do Sax toca o Boléro de Ravel enquanto o sol se despede do céu. A música criou identidade. O pôr do sol virou destino.</p>
+          <p>Nós trouxemos esse conceito para Na Praia Parque — e criamos algo que Brasília nunca teve. Um ritual inédito, todo domingo, no pôr do sol mais bonito da cidade.</p>
+        </div>
+        <blockquote class="ritual__quote">
+          "O momento em que o sol toca a água<br>e a noite começa a nascer."
+        </blockquote>
+        <a href="#shows" class="btn btn--primary">Compre seu lugar nesse ritual</a>
+      </div>
+    </section>
+
+  </div><!-- /noite-section -->
+
   <!-- ── FAQ ── -->
   <section class="faq" id="faq">
     <div class="container">
@@ -307,8 +409,17 @@
       <div class="faq__list" data-animate>
 
         <div class="faq__item">
+          <button class="faq__q" aria-expanded="false"><span>Qual a diferença entre Dia na Praia e Domingos de Praia?</span><span class="faq__icon">▾</span></button>
+          <div class="faq__a" hidden><p><strong>Dia na Praia</strong> é o produto diurno, disponível sábados e domingos, com programação de esportes, atividades e lazer das 08h às 17h. <strong>Domingos de Praia</strong> é um produto exclusivo de domingo que começa a partir das 14h30 e vai até as 23h, com shows, roda de samba, DJ e o famoso Ritual Sol/Lua ao pôr do sol. Nos domingos, você pode aproveitar o dia inteiro com um único ingresso — do amanhecer ao anoitecer.</p></div>
+        </div>
+        <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="faq__item">
           <button class="faq__q" aria-expanded="false"><span>Qual o horário de funcionamento?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p><strong>Dia na Praia — Sábados e Domingos:</strong> 08h às 17h, com entrada até as 14h.</p></div>
+          <div class="faq__a" hidden>
+            <p><strong>Dia na Praia — Sábados e Domingos:</strong> 08h às 17h, com entrada até as 14h.</p>
+            <p><strong>Domingos de Praia:</strong> a partir das 14h30 até as 23h. Nos domingos, o ingresso cobre o dia inteiro — das 08h às 23h.</p>
+          </div>
         </div>
         <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
@@ -324,6 +435,12 @@
             <p><strong>Pode levar:</strong> eco copo ou copo térmico, cangas e toalhas, mochilas e bolsas, capa de chuva, carregador portátil, bonés e chapéus.</p>
             <p><strong>Não pode levar:</strong> alimentos, bebidas, copos de acrílico/vidro/descartáveis, isopor, cooler, cadeiras, guarda-sol, equipamentos de filmagem profissional, substâncias ilícitas, animais (exceto cão-guia) e objetos cortantes. Exceção: alimentos para crianças até 2 anos e celíacos com laudo médico.</p>
           </div>
+        </div>
+        <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false"><span>O que é o Ritual Sol/Lua?</span><span class="faq__icon">▾</span></button>
+          <div class="faq__a" hidden><p>Inspirado no ritual do pôr do sol da Praia do Jacaré (PB), onde Jurandir do Sax toca o Boléro de Ravel enquanto o sol se despede — criamos o nosso próprio ritual, inédito em Brasília. Todo domingo, por volta das 18h20, celebramos juntos o momento em que o dia vira noite. Um ritual de música, silêncio e beleza que você não vai esquecer.</p></div>
         </div>
         <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
@@ -344,6 +461,7 @@
       <p>Sábados e domingos. <strong>A temporada inteira.</strong></p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
         <a href="#ingressos" class="btn btn--primary">Garantir ingresso →</a>
+        <a href="#shows" class="btn btn--yellow">Domingos de Praia →</a>
       </div>
     </div>
   </section>
@@ -354,7 +472,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <span class="footer__logo">Na Praia Parque</span>
-          <p>Dia na Praia · Temporada 2026</p>
+          <p>Dia na Praia & Domingos de Praia · Temporada 2026</p>
           <p>Na Praia Parque · Brasília · DF</p>
         </div>
         <div class="footer__nav">
@@ -362,6 +480,12 @@
           <a href="#ingressos">Ingressos</a>
           <a href="#familia">Família</a>
           <a href="#esportes">Esportes</a>
+        </div>
+        <div class="footer__nav">
+          <p class="footer__nav-title">Domingos de Praia</p>
+          <a href="#shows">Programação</a>
+          <a href="#ritual">Ritual Sol/Lua</a>
+          <a href="#faq">FAQ</a>
         </div>
         <div class="footer__nav">
           <p class="footer__nav-title">Informações</p>
@@ -377,7 +501,7 @@
       </div>
       <div class="footer__bottom">
         <p>© 2026 Na Praia Parque · Todos os direitos reservados</p>
-        <p class="footer__tagline">O litoral brasiliense é logo ali.</p>
+        <p class="footer__tagline">Experiências até o sol virar lua.</p>
       </div>
     </div>
   </footer>
