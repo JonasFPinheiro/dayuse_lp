@@ -1036,10 +1036,10 @@ em { font-style: normal; color: var(--coral); }
   .product-chooser { padding: 2.25rem 0 2rem; }
   .product-chooser .section-header { margin-bottom: 1rem; }
   .product-chooser__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem; margin-top: 1rem;
   }
-  /* Sábado deixa de ser full-width no desktop — ocupa 1 das 2 colunas */
+  /* Sábado ocupa 1 das 3 colunas — mesmo tamanho dos demais */
   .product-chooser__card--sabado { grid-column: auto; }
   /* Mostra todos os itens no desktop */
   .product-chooser__card .pc-card__schedule li { display: flex; }
