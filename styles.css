@@ -1218,14 +1218,17 @@ em { font-style: normal; color: var(--coral); }
 /* ── TICKET GRID ── */
 .tk-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: .75rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem;
 }
-@media (min-width: 480px) {
-  .tk-grid { grid-template-columns: repeat(2, 1fr); }
+/* Week 1 (3 cards) — Sábado full-width em cima, 2 de domingo lado a lado abaixo */
+@media (max-width: 839px) {
+  .tk-grid--3 .tk:first-child { grid-column: 1 / -1; }
 }
 @media (min-width: 840px) {
   .tk-grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .tk-grid--3 .tk:first-child { grid-column: auto; }
+  .tk-grid { gap: .75rem; }
 }
 
 /* ── TICKET CARD ── */
@@ -1424,6 +1427,76 @@ em { font-style: normal; color: var(--coral); }
   margin: 0 0 1rem;
 }
 .story-brief__desc--light { color: rgba(255,255,255,.7); }
+
+/* ═══════════════════════════════════════════
+   MOBILE OPTIMIZATIONS ≤ 600px
+═══════════════════════════════════════════ */
+@media (max-width: 600px) {
+
+  /* Container mais estreito = mais espaço para cards */
+  .container { padding: 0 .85rem; }
+
+  /* ── Hero ── */
+  .du-hero { min-height: 80vh; }
+  .du-hero__sub { display: none; }
+  .du-hero__content { padding-bottom: 2.5rem; gap: .65rem; }
+  .btn--choose { font-size: 1rem; padding: .75rem 1.75rem; }
+
+  /* ── Agenda ── */
+  .agenda { padding: 1.75rem 0 1.25rem; }
+  .agenda__header { margin-bottom: 1.25rem; padding-bottom: 1.1rem; }
+  .agenda__title { font-size: 2.2rem; }
+  .agenda__sub { font-size: .78rem; }
+  .agenda__weekend { margin-bottom: 1.5rem; }
+  .agenda__wk-header { margin-bottom: .55rem; gap: .5rem; }
+  .agenda__wk-date { font-size: .9rem; }
+  .agenda__wk-tag { font-size: .48rem; padding: .18rem .5rem; }
+
+  /* ── Ticket card — compacto para 2-col ── */
+  .tk { border-radius: .75rem; }
+  /* Sábado full-width: foto mais achatada para não desperdiçar espaço */
+  .tk-grid--3 .tk:first-child .tk__photo { aspect-ratio: 16 / 9; }
+  .tk__body { padding: .55rem .6rem; gap: .12rem; }
+  .tk__dateline { gap: .2rem; }
+  .tk__num { font-size: 1.45rem; }
+  .tk__mo { font-size: .52rem; }
+  .tk__name { font-size: .82rem; }
+  .tk__artists { font-size: .56rem; }
+  .tk__hours { font-size: .48rem; letter-spacing: .04em; }
+  .tk__cta {
+    font-size: .68rem;
+    padding: .38rem .5rem !important;
+    margin-top: .35rem;
+    border-radius: .5rem;
+  }
+  .tk__sched { gap: .1rem; margin: .1rem 0 .25rem; }
+  .tk__sched li { font-size: .58rem; gap: .3rem; }
+  .tk__sched-t { font-size: .5rem; min-width: 2rem; }
+  .tk__cta-soon { font-size: .62rem; padding: .38rem .5rem; border-radius: .5rem; }
+  .tk__pill { font-size: .46rem; padding: .17rem .42rem; top: .4rem; left: .4rem; }
+
+  /* ── Story brief — empilha, imagem menor ── */
+  .story-brief { padding: 1.75rem 0; }
+  .story-brief__photo { aspect-ratio: 16 / 8; }
+  .story-brief__text { padding: .85rem 1rem 1rem; }
+  .story-brief__title { font-size: 1.2rem; margin-bottom: .3rem; }
+  .story-brief__desc { font-size: .8rem; margin-bottom: .75rem; }
+
+  /* ── Journey bridge ── */
+  .journey-bridge { padding: 2.75rem 0 2.25rem; }
+  .journey-bridge__title { font-size: 1.65rem; margin-bottom: 2rem; }
+  .journey-milestone__time { font-size: 1.35rem; }
+  .journey-milestone__label { font-size: .75rem; }
+  .journey-milestone__sub { font-size: .6rem; }
+
+  /* ── FAQ ── */
+  .faq { padding: 2rem 0; }
+  .faq__q { font-size: .88rem; padding: .85rem 0; }
+
+  /* ── Footer ── */
+  .footer-cta { padding: 2.5rem 0; }
+  .footer-cta h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
+}
 
 /* Schedule list inside dark ticket card */
 .tk__sched {
