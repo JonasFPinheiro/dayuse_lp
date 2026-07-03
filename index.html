@@ -55,14 +55,14 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.5 2L3.5 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         r2.com.vc
       </a>
-      <a href="#ingressos" class="nav__link">Dia na Praia</a>
+      <a href="#agenda" class="nav__link">Ingressos</a>
       <a href="#shows" class="nav__link">Domingos de Praia</a>
       <a href="#ritual" class="nav__link">Ritual Sol/Lua</a>
-      <a href="#ingressos" class="nav__cta">Comprar →</a>
+      <a href="#agenda" class="nav__cta">Comprar →</a>
     </div>
   </nav>
 
-  <!-- ── HERO CAROUSEL ── -->
+  <!-- ── HERO ── -->
   <section class="du-hero kv-deco-bg" id="dia">
     <div class="du-hero__carousel">
       <div class="du-hero__slide is-active" style="background-image:url('cards-praia/Te-Vejo-Na-Praia-10-08-1.png');background-position:center 40%"></div>
@@ -75,12 +75,12 @@
     <div class="du-hero__content container">
       <div class="du-hero__badge">
         <span class="du-hero__badge-dot"></span>
-        Na Praia Parque
+        Na Praia Parque · Brasília
       </div>
-      <span class="du-hero__kicker">Dia na Praia</span>
-      <h1 class="du-hero__title"></h1>
-      <p class="du-hero__sub">O verão brasiliense está pronto pra te receber. Família, esporte, gastronomia e muito sol.</p>
-      <a href="#ingressos" class="btn btn--primary">Comprar ingresso →</a>
+      <span class="du-hero__kicker">Julho 2026</span>
+      <h1 class="du-hero__title">A praia de Brasília.</h1>
+      <p class="du-hero__sub">Sábados e domingos. Sol, esporte, família e música até a noite.</p>
+      <a href="#agenda" class="btn btn--choose">Escolha seu dia ↓</a>
       <div class="du-hero__dots">
         <button class="du-hero__dot is-active" data-i="0"></button>
         <button class="du-hero__dot" data-i="1"></button>
@@ -89,242 +89,215 @@
     </div>
   </section>
 
-  <!-- ── PRODUCT CHOOSER ── -->
-  <section class="product-chooser" id="ingressos">
+  <!-- ── AGENDA ── -->
+  <section class="agenda" id="agenda">
     <div class="container">
-      <div class="section-header" data-animate>
-        <p class="label">Três produtos · Um destino</p>
-        <h2>Como você quer curtir a praia?</h2>
-        <div class="kv-stripes"><span></span><span></span><span></span></div>
-      </div>
-      <div class="product-chooser__grid" data-animate>
 
-        <!-- CARD 1: Sábado -->
-        <a href="https://r2.com.vc/produto/04-07-dia-na-praia-sabado" class="product-chooser__card product-chooser__card--sabado" data-pc-date="2026-07-04" data-pc-type="sabado" data-pc-slug="dia-na-praia-sabado" target="_blank" rel="noopener">
-          <div class="pc-card__photo">
-            <img src="midia_dayuse/lagoon-flags.jpeg" alt="Sábado Dia de Praia — piscinas e sol no Na Praia Parque" loading="lazy" style="object-position:center 35%">
-            <div class="pc-card__photo-overlay">
-              <span class="pc-card__tag">Sábados · 08h às 17h · entrada até 14h</span>
-              <h3 class="pc-card__name">Sábado na Praia</h3>
-              <span class="pc-card__event-date">04 Jul</span>
+      <div class="agenda__header" data-animate>
+        <p class="agenda__label">Na Praia Parque · Brasília</p>
+        <h2 class="agenda__title">Julho 2026</h2>
+        <p class="agenda__sub">Escolha o fim de semana. Garanta seu lugar.</p>
+      </div>
+
+      <!-- WEEKEND 1: 04–05 Jul -->
+      <div class="agenda__weekend" id="ingressos">
+        <div class="agenda__wk-header">
+          <div class="agenda__wk-info">
+            <span class="agenda__wk-tag agenda__wk-tag--active">Próximo fim de semana</span>
+            <span class="agenda__wk-date">04 &amp; 05 de Julho</span>
+          </div>
+          <div class="agenda__wk-line"></div>
+        </div>
+        <div class="tk-grid tk-grid--3">
+
+          <a class="tk" href="https://r2.com.vc/produto/04-07-dia-na-praia-sabado" data-tk-date="2026-07-04" data-tk-type="sabado" target="_blank" rel="noopener">
+            <div class="tk__photo">
+              <img src="imagens_tickets/Prancheta 2.png" alt="Sábado na Praia — 04 Jul" loading="lazy">
+              <span class="tk__pill tk__pill--sab">Sáb</span>
+            </div>
+            <div class="tk__body">
+              <div class="tk__dateline"><span class="tk__num">04</span><span class="tk__mo">Jul</span></div>
+              <h3 class="tk__name">Dia na Praia</h3>
+              <p class="tk__hours">08h → 17h · entrada até 14h</p>
+              <span class="btn btn--primary tk__cta">Garantir ingresso →</span>
+            </div>
+          </a>
+
+          <a class="tk" href="https://r2.com.vc/produto/05-07-dia-na-praia-domingo" data-tk-date="2026-07-05" data-tk-type="domingo-dia" target="_blank" rel="noopener">
+            <div class="tk__photo">
+              <img src="imagens_tickets/Prancheta 2.1.png" alt="Domingo na Praia — 05 Jul" loading="lazy">
+              <span class="tk__pill tk__pill--dom">Dom</span>
+            </div>
+            <div class="tk__body">
+              <div class="tk__dateline"><span class="tk__num">05</span><span class="tk__mo">Jul</span></div>
+              <h3 class="tk__name">Dia na Praia</h3>
+              <p class="tk__hours">08h → 17h · entrada até 14h</p>
+              <span class="btn btn--primary tk__cta">Garantir ingresso →</span>
+            </div>
+          </a>
+
+          <a class="tk tk--show" href="https://r2.com.vc/produto/05-07-felipe-amorim-clayton-romario-torcida-na-praia/" data-tk-date="2026-07-05" data-tk-type="entardecer" target="_blank" rel="noopener">
+            <div class="tk__photo">
+              <img src="shows_domingo/banner-torcida-na-praia-05-07.png" alt="Torcida na Praia — 05 Jul" loading="lazy">
+              <span class="tk__pill tk__pill--show">Show</span>
+            </div>
+            <div class="tk__body tk__body--dark">
+              <div class="tk__dateline"><span class="tk__num">05</span><span class="tk__mo tk__mo--yellow">Jul</span></div>
+              <h3 class="tk__name tk__name--light">Torcida na Praia</h3>
+              <p class="tk__artists">Felipe Amorim · Clayton &amp; Romário</p>
+              <p class="tk__hours tk__hours--dim">08h → 23h · ingresso único</p>
+              <span class="btn btn--yellow tk__cta">Garantir ingresso →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- WEEKEND 2: 11–12 Jul -->
+      <div class="agenda__weekend">
+        <div class="agenda__wk-header">
+          <div class="agenda__wk-info">
+            <span class="agenda__wk-tag">Em breve</span>
+            <span class="agenda__wk-date">11 &amp; 12 de Julho</span>
+          </div>
+          <div class="agenda__wk-line"></div>
+        </div>
+        <div class="tk-grid">
+          <div class="tk is-soon">
+            <div class="tk__photo">
+              <img src="imagens_tickets/Prancheta 2.2.png" alt="Sábado na Praia — 11 Jul" loading="lazy">
+              <span class="tk__pill tk__pill--sab">Sáb</span>
+            </div>
+            <div class="tk__body">
+              <div class="tk__dateline"><span class="tk__num">11</span><span class="tk__mo">Jul</span></div>
+              <h3 class="tk__name">Dia na Praia</h3>
+              <p class="tk__hours">08h → 17h · entrada até 14h</p>
+              <span class="tk__cta-soon">Em breve</span>
             </div>
           </div>
-          <div class="pc-card__body">
-            <ul class="pc-card__schedule">
-              <li><span class="pc-sched__time">08h00</span> Abertura Piscinas · Espaço Giraffas</li>
-              <li><span class="pc-sched__time">09h00</span> Arvorismo Marista · Piquenique</li>
-              <li><span class="pc-sched__time">09h30</span> Futevôlei Life Style</li>
-              <li><span class="pc-sched__time">09h30</span> Funcional · SmartFit</li>
-              <li><span class="pc-sched__time">10h30</span> Circuito e Dança</li>
-              <li><span class="pc-sched__time">10h30</span> FitDance · SmartFit</li>
-              <li><span class="pc-sched__time">11h30</span> Beach Tennis Life Style</li>
-              <li><span class="pc-sched__time">12h30</span> Show Chou Chou Palhágico</li>
-              <li><span class="pc-sched__time">13h30</span> Recreação Splash</li>
-              <li><span class="pc-sched__time">15h00</span> Altinha na Praia</li>
-            </ul>
-            <span class="btn btn--primary pc-card__cta">Comprar ingresso →</span>
-          </div>
-        </a>
-
-        <!-- CARD 2: Domingo Dia de Praia -->
-        <a href="https://r2.com.vc/produto/05-07-dia-na-praia-domingo" class="product-chooser__card" data-pc-date="2026-07-05" data-pc-type="domingo-dia" data-pc-slug="dia-na-praia-domingo" target="_blank" rel="noopener">
-          <div class="pc-card__photo">
-            <img src="cards-praia/10-08-Te-Vejo-Na-Praia-fercoutinho-shakeitbsb-013.png" alt="Domingo Dia de Praia — Na Praia Parque" loading="lazy" style="object-position:center 20%">
-            <div class="pc-card__photo-overlay">
-              <span class="pc-card__tag">Domingos · 08h às 17h · entrada até 14h</span>
-              <h3 class="pc-card__name">Domingo na Praia</h3>
-              <span class="pc-card__event-date">05 Jul</span>
+          <div class="tk is-soon">
+            <div class="tk__photo">
+              <img src="imagens_tickets/Prancheta 2.3.png" alt="Domingo na Praia — 12 Jul" loading="lazy">
+              <span class="tk__pill tk__pill--dom">Dom</span>
+            </div>
+            <div class="tk__body">
+              <div class="tk__dateline"><span class="tk__num">12</span><span class="tk__mo">Jul</span></div>
+              <h3 class="tk__name">Dia na Praia</h3>
+              <p class="tk__hours">08h → 17h · entrada até 14h</p>
+              <span class="tk__cta-soon">Em breve</span>
             </div>
           </div>
-          <div class="pc-card__body">
-            <ul class="pc-card__schedule">
-              <li><span class="pc-sched__time">08h00</span> Abertura Piscinas · Espaço Giraffas</li>
-              <li><span class="pc-sched__time">09h00</span> Yoga · Rodolfo Velcas</li>
-              <li><span class="pc-sched__time">09h00</span> Arvorismo Marista · Piquenique</li>
-              <li><span class="pc-sched__time">09h30</span> Futevôlei Life Style</li>
-              <li><span class="pc-sched__time">09h30</span> Funcional · SmartFit</li>
-              <li><span class="pc-sched__time">10h30</span> Beach Tennis Life Style</li>
-              <li><span class="pc-sched__time">10h30</span> FitDance · SmartFit</li>
-              <li><span class="pc-sched__time">10h30</span> Circuito e Dança</li>
-              <li><span class="pc-sched__time">12h30</span> Teatro: Viva São João</li>
-              <li><span class="pc-sched__time">13h30</span> Recreação Splash</li>
-              <li><span class="pc-sched__time">15h00</span> Altinha na Praia</li>
-            </ul>
-            <span class="btn btn--primary pc-card__cta">Comprar ingresso →</span>
-          </div>
-        </a>
+        </div>
+      </div>
 
-        <!-- CARD 3: Torcida na Praia (Domingo) -->
-        <a href="https://r2.com.vc/produto/05-07-felipe-amorim-clayton-romario-torcida-na-praia/" class="product-chooser__card product-chooser__card--noite" data-pc-date="2026-07-05" data-pc-type="entardecer" data-pc-slug="felipe-amorim-clayton-romario-torcida-na-praia" target="_blank" rel="noopener">
-          <div class="pc-card__photo">
-            <img src="shows_domingo/banner-torcida-na-praia-05-07.png" alt="Torcida na Praia — Felipe Amorim + Clayton & Romário" loading="lazy" style="object-position:center center">
-            <div class="pc-card__photo-overlay">
-              <span class="pc-card__tag pc-card__tag--noite">Domingos · 08h às 23h · Um único ingresso</span>
-              <h3 class="pc-card__name">Torcida na Praia</h3>
-              <span class="pc-card__event-date">05 Jul</span>
+      <!-- WEEKEND 3: 18–19 Jul -->
+      <div class="agenda__weekend">
+        <div class="agenda__wk-header">
+          <div class="agenda__wk-info">
+            <span class="agenda__wk-tag">Em breve</span>
+            <span class="agenda__wk-date">18 &amp; 19 de Julho</span>
+          </div>
+          <div class="agenda__wk-line"></div>
+        </div>
+        <div class="tk-grid">
+          <div class="tk is-soon">
+            <div class="tk__photo">
+              <img src="imagens_tickets/Prancheta 2.4.png" alt="Sábado na Praia — 18 Jul" loading="lazy">
+              <span class="tk__pill tk__pill--sab">Sáb</span>
+            </div>
+            <div class="tk__body">
+              <div class="tk__dateline"><span class="tk__num">18</span><span class="tk__mo">Jul</span></div>
+              <h3 class="tk__name">Dia na Praia</h3>
+              <p class="tk__hours">08h → 17h · entrada até 14h</p>
+              <span class="tk__cta-soon">Em breve</span>
             </div>
           </div>
-          <div class="pc-card__body">
-            <ul class="pc-card__schedule">
-              <li><span class="pc-sched__time">20h00</span> Clayton &amp; Romário</li>
-              <li><span class="pc-sched__time">22h00</span> Felipe Amorim</li>
-            </ul>
-            <span class="btn btn--yellow pc-card__cta">Comprar ingresso →</span>
+          <div class="tk is-soon">
+            <div class="tk__photo">
+              <img src="imagens_tickets/Prancheta 2.5.png" alt="Domingo na Praia — 19 Jul" loading="lazy">
+              <span class="tk__pill tk__pill--dom">Dom</span>
+            </div>
+            <div class="tk__body">
+              <div class="tk__dateline"><span class="tk__num">19</span><span class="tk__mo">Jul</span></div>
+              <h3 class="tk__name">Dia na Praia</h3>
+              <p class="tk__hours">08h → 17h · entrada até 14h</p>
+              <span class="tk__cta-soon">Em breve</span>
+            </div>
           </div>
-        </a>
-
+        </div>
       </div>
+
+      <!-- WEEKEND 4: 25–26 Jul -->
+      <div class="agenda__weekend">
+        <div class="agenda__wk-header">
+          <div class="agenda__wk-info">
+            <span class="agenda__wk-tag">Em breve</span>
+            <span class="agenda__wk-date">25 &amp; 26 de Julho</span>
+          </div>
+          <div class="agenda__wk-line"></div>
+        </div>
+        <div class="tk-grid">
+          <div class="tk is-soon">
+            <div class="tk__photo">
+              <img src="imagens_tickets/Prancheta 2.6.png" alt="Sábado na Praia — 25 Jul" loading="lazy">
+              <span class="tk__pill tk__pill--sab">Sáb</span>
+            </div>
+            <div class="tk__body">
+              <div class="tk__dateline"><span class="tk__num">25</span><span class="tk__mo">Jul</span></div>
+              <h3 class="tk__name">Dia na Praia</h3>
+              <p class="tk__hours">08h → 17h · entrada até 14h</p>
+              <span class="tk__cta-soon">Em breve</span>
+            </div>
+          </div>
+          <div class="tk is-soon">
+            <div class="tk__photo">
+              <img src="imagens_tickets/Prancheta 2.7.png" alt="Domingo na Praia — 26 Jul" loading="lazy">
+              <span class="tk__pill tk__pill--dom">Dom</span>
+            </div>
+            <div class="tk__body">
+              <div class="tk__dateline"><span class="tk__num">26</span><span class="tk__mo">Jul</span></div>
+              <h3 class="tk__name">Dia na Praia</h3>
+              <p class="tk__hours">08h → 17h · entrada até 14h</p>
+              <span class="tk__cta-soon">Em breve</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ── STATS ── -->
-  <div class="du-stats kv-deco-bg" data-animate>
+  <!-- ── STORY BRIEF ── -->
+  <section class="story-brief">
     <div class="container">
-      <div class="du-stats__grid">
-        <div class="du-stats__item">
-          <span class="du-stats__num">+100</span>
-          <span class="du-stats__label">atividades infantis</span>
-        </div>
-        <div class="du-stats__item">
-          <span class="du-stats__num">20</span>
-          <span class="du-stats__label">restaurantes incríveis</span>
-        </div>
-        <div class="du-stats__item">
-          <span class="du-stats__num">6</span>
-          <span class="du-stats__label">bares com drinks e cerveja gelada</span>
-        </div>
-        <div class="du-stats__item">
-          <span class="du-stats__num">5</span>
-          <span class="du-stats__label">quadras de areia</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── FAMÍLIA ── -->
-  <section class="du-family" id="familia">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <p class="label">Família</p>
-        <h2>Momentos em família, <em>sorriso no rosto e pés na areia</em></h2>
-        <p class="section-desc">A programação para os mini praianos está ainda mais especial. Crianças até 10 anos não pagam.</p>
-        <div class="kv-stripes"><span></span><span></span><span></span></div>
-      </div>
-      <div class="du-family__grid" data-animate>
-
-        <div class="activity-card">
-          <div class="activity-card__media">
-            <img src="produto_domingo/beach-sport.jpg" alt="Piscinas no Dia na Praia" loading="lazy" style="object-fit:cover;object-position:center 50%;width:100%;height:100%">
-            <div class="activity-label activity-label--sky">Piscinas</div>
+      <div class="story-brief__grid">
+        <div class="story-brief__card">
+          <div class="story-brief__photo">
+            <img src="midia_dayuse/funcional-white.jpeg" alt="Dia na Praia" loading="lazy">
+            <span class="story-brief__eyebrow">Sábados &amp; Domingos · 08h–17h</span>
           </div>
-          <div class="activity-card__body"><p>Áreas molhadas e piscinas para os mini praianos se refrescarem e se divertirem o dia todo.</p></div>
-        </div>
-
-        <div class="activity-card">
-          <div class="activity-card__media">
-            <img src="dayuse_imagens/laguinho_dayuse.png" alt="Crianças brincando no laguinho do Na Praia Parque" loading="lazy" style="object-position:center 45%">
-            <div class="activity-label activity-label--yellow">Laguinho</div>
-          </div>
-          <div class="activity-card__body"><p>No coração do parque, o ponto de encontro das famílias e lugar perfeito para o mergulho guiado.</p></div>
-        </div>
-
-        <div class="activity-card">
-          <div class="activity-card__media">
-            <img src="dayuse_imagens/oficina_dayuse.jpg" alt="Crianças em oficina de artesanato com papel colorido no Na Praia Parque" loading="lazy" style="object-position:center">
-            <div class="activity-label activity-label--coral">Oficinas</div>
-          </div>
-          <div class="activity-card__body"><p>Experiências divertidas e educativas para os pequenos — do Bobbie Goods à oficina de plantação.</p></div>
-        </div>
-
-        <div class="activity-card">
-          <div class="activity-card__media">
-            <img src="dayuse_imagens/arvorismo_dayuse.jpg" alt="Criança praticando arvorismo com monitor no Na Praia Parque" loading="lazy" style="object-position:center">
-            <div class="activity-label activity-label--lilac">Arvorismo</div>
-          </div>
-          <div class="activity-card__body"><p>Uma experiência para se conectar com a natureza e brincar com liberdade, como toda criança merece.</p></div>
-        </div>
-
-        <div class="activity-card">
-          <div class="activity-card__media">
-            <img src="dayuse_imagens/teatro_dayuse.jpg" alt="Espetáculo de teatro infantil colorido no Na Praia Parque" loading="lazy" style="object-position:center">
-            <div class="activity-label activity-label--sky">Teatros</div>
-          </div>
-          <div class="activity-card__body"><p>Lilo &amp; Stitch, Vingadores, Bela e a Fera e muito mais. Espetáculos lúdicos para a criançada.</p></div>
-        </div>
-
-        <div class="activity-card">
-          <div class="activity-card__media">
-            <img src="dayuse_imagens/recreacao_dayuse.jpg" alt="Famílias com crianças na recreação do Na Praia Parque" loading="lazy" style="object-position:center 40%">
-            <div class="activity-label activity-label--yellow">Recreação</div>
-          </div>
-          <div class="activity-card__body"><p>Diversão garantida e muitas risadas pelo caminho. Programação especial para os pequenos.</p></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── ESPORTES ── -->
-  <section class="du-sports" id="esportes">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <p class="label">Esporte &amp; Bem-estar</p>
-        <h2>Movimente-se com a <em>energia do litoral</em></h2>
-        <p class="section-desc">Os aulões do Dia na Praia são o convite perfeito para cuidar do corpo, recarregar a mente e curtir bons momentos com os amigos.</p>
-        <div class="kv-stripes"><span></span><span></span><span></span></div>
-      </div>
-      <div class="du-sports__grid" data-animate>
-        <div class="du-sports__featured">
-          <img src="midia_dayuse/funcional-white.jpeg" alt="Aula funcional na areia do Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center 35%;width:100%;height:100%">
-          <div class="du-sports__featured-caption">
-            <h3>Aulões na Areia</h3>
-            <p>Funcional, yoga, pilates, dança e muito mais. Na areia, sob o sol, com a melhor energia.</p>
+          <div class="story-brief__text">
+            <h3 class="story-brief__title">O Dia</h3>
+            <p class="story-brief__desc">Piscinas, esportes na areia, shows infantis e gastronomia. Para toda a família, das 08h às 17h.</p>
+            <a href="#ingressos" class="btn btn--primary">Garantir ingresso →</a>
           </div>
         </div>
-        <div class="du-sports__secondary">
-          <div class="du-sports__sm-card">
-            <img src="midia_dayuse/beach-tennis.jpeg" alt="Beach tennis no Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center center;width:100%;height:100%">
-            <span>Beach Tennis</span>
+        <div class="story-brief__card story-brief__card--dark">
+          <div class="story-brief__photo">
+            <img src="domingo_de_praia/Na-PraiaIMG_8503-1.jpg" alt="Domingos de Praia — entardecer" loading="lazy" style="object-position:center 30%">
+            <span class="story-brief__eyebrow">Só nos Domingos · 14h30–23h</span>
           </div>
-          <div class="du-sports__sm-card">
-            <img src="produto_domingo/yoga-praia.jpg" alt="Altinha na areia do Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center 40%;width:100%;height:100%">
-            <span>Altinha &amp; Futevôlei</span>
+          <div class="story-brief__text story-brief__text--dark">
+            <h3 class="story-brief__title story-brief__title--light">O Entardecer</h3>
+            <p class="story-brief__desc story-brief__desc--light">Samba ao vivo, Ritual Sol/Lua e shows que Brasília nunca viu — tudo em um único ingresso.</p>
+            <a href="#shows" class="btn btn--yellow">Ver programação →</a>
           </div>
-          <div class="du-sports__sm-card">
-            <img src="produto_domingo/pagode-sol.jpg" alt="Pagode na areia do Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center 40%;width:100%;height:100%">
-            <span>Yoga &amp; Wellness</span>
-          </div>
-          <div class="du-sports__sm-card">
-            <img src="midia_dayuse/funcional-blue.jpeg" alt="Aula funcional em grupo no Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center 30%;width:100%;height:100%">
-            <span>Funcional</span>
-          </div>
-        </div>
-      </div>
-      <div class="du-sports__cta" data-animate>
-        <a href="#ingressos" class="btn btn--primary">Comprar ingresso →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SUSTENTABILIDADE ── -->
-  <section class="du-sustain">
-    <div class="container">
-      <div class="du-sustain__grid" data-animate>
-        <div class="du-sustain__text">
-          <p class="label">Sustentabilidade</p>
-          <h2>O parque que <em>devolve pra comunidade</em></h2>
-          <p>Em parceria com o SESC Mesa Brasil, cada edição arrecada alimentos para quem mais precisa. Venha fazer parte disso.</p>
-        </div>
-        <div class="du-sustain__imgs">
-          <img src="midia_dayuse/sesc-box-1.jpeg" alt="Caixa de doação SESC Mesa Brasil no Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center center;border-radius:var(--r-lg);aspect-ratio:4/3;width:100%">
-          <img src="midia_dayuse/sesc-box-2.jpeg" alt="SESC Mesa Brasil no Na Praia Parque" loading="lazy" style="object-fit:cover;object-position:center center;border-radius:var(--r-lg);aspect-ratio:4/3;width:100%">
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ── BRIDGE: DIA → NOITE (só aos domingos) ── -->
+  <!-- ── BRIDGE: DIA → NOITE ── -->
   <div class="journey-bridge" id="noite">
     <div class="container">
       <p class="label label--light">Só nos domingos</p>
@@ -352,60 +325,7 @@
   </div>
 
   <div class="noite-section">
-
-    <!-- ── NOITE INTRO ── -->
-    <section class="noite-intro">
-      <div class="noite-intro__bg">
-        <img src="domingo_de_praia/Na-PraiaIMG_8503-1.jpg" alt="Pôr do sol em Na Praia Parque" loading="lazy">
-        <div class="noite-intro__overlay"></div>
-      </div>
-      <div class="noite-intro__content container">
-        <div class="hero__badge">
-          <span class="hero__badge-dot"></span>
-          Na Praia Parque · Brasília
-        </div>
-        <span class="hero__kicker">Domingos de Praia</span>
-        <h2 class="noite-intro__title">Experiências até<br>o sol virar lua.</h2>
-        <div class="hero__pillars">
-          <span>Música</span><span class="dot">·</span>
-          <span>Movimento</span><span class="dot">·</span>
-          <span>Conexão</span><span class="dot">·</span>
-          <span>Celebração</span>
-        </div>
-        <a href="#shows" class="btn btn--primary">Ver programação →</a>
-      </div>
-    </section>
-
     <span id="shows"></span>
-
-    <!-- ── STORY ── -->
-    <section class="story" id="story">
-      <div class="container">
-        <div class="section-header" data-animate>
-          <p class="label">O que é</p>
-          <h2>Domingo na <em>Praia</em></h2>
-          <p class="section-desc">Pé na areia, sol no rosto, samba na tarde e o pôr do sol como grande final. Um domingo inteiro, do seu jeito — sem pressa.</p>
-        </div>
-        <div class="story__strip" data-animate>
-          <figure class="story__shot">
-            <img src="produto_domingo/palco-sunset.jpg" alt="Palco ao pôr do sol em Na Praia Parque" loading="lazy" style="object-position:center 60%" />
-            <figcaption>E o pôr do sol fecha o dia</figcaption>
-          </figure>
-          <figure class="story__shot">
-            <img src="produto_domingo/pagode-sol.jpg" alt="Roda de pagode em Na Praia Parque" loading="lazy" style="object-position:center 35%" />
-            <figcaption>A roda esquenta a tarde</figcaption>
-          </figure>
-          <figure class="story__shot">
-            <img src="produto_domingo/familia-parque.jpg" alt="Família e crianças em Na Praia Parque" loading="lazy" style="object-position:center 55%" />
-            <figcaption>Pra toda a família</figcaption>
-          </figure>
-          <figure class="story__shot">
-            <img src="produto_domingo/vila-noite.jpg" alt="Vila iluminada ao anoitecer em Na Praia Parque" loading="lazy" style="object-position:center center" />
-            <figcaption>Pé na areia, do dia à noite</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
 
     <!-- ── RITUAL ── -->
     <section class="ritual" id="ritual">
@@ -414,13 +334,9 @@
         <div class="ritual__eyebrow">18h20 · Na Praia Parque · Todo domingo</div>
         <h2 class="ritual__title">O Ritual<br><em>Sol/Lua</em></h2>
         <div class="ritual__text">
-          <p>Na Praia do Jacaré, na Paraíba, existe um ritual que atrai pessoas de todo o Brasil. Todos os dias, ao pôr do sol, Jurandir do Sax toca o Boléro de Ravel enquanto o sol se despede do céu. A música criou identidade. O pôr do sol virou destino.</p>
-          <p>Nós trouxemos esse conceito para Na Praia Parque — e criamos algo que Brasília nunca teve. Um ritual inédito, todo domingo, no pôr do sol mais bonito da cidade.</p>
+          <p>Na Praia do Jacaré (PB), Jurandir do Sax toca o Boléro de Ravel enquanto o sol se despede — e o pôr do sol virou destino. Nós trouxemos esse conceito para Brasília: todo domingo, às 18h20, celebramos juntos o momento em que o dia vira noite. Um ritual inédito que você não vai esquecer.</p>
         </div>
-        <blockquote class="ritual__quote">
-          "O momento em que o sol toca a água<br>e a noite começa a nascer."
-        </blockquote>
-        <a href="#shows" class="btn btn--primary">Compre seu lugar nesse ritual</a>
+        <a href="#agenda" class="btn btn--primary">Compre seu lugar nesse ritual</a>
       </div>
     </section>
 
@@ -438,7 +354,7 @@
 
         <div class="faq__item">
           <button class="faq__q" aria-expanded="false"><span>Qual a diferença entre Dia na Praia e Domingos de Praia?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p><strong>Dia na Praia</strong> é o produto diurno, disponível sábados e domingos, com programação de esportes, atividades e lazer das 08h às 17h. <strong>Domingos de Praia</strong> é um produto exclusivo de domingo que começa a partir das 14h30 e vai até as 23h, com shows, roda de samba, DJ e o famoso Ritual Sol/Lua ao pôr do sol. Nos domingos, você pode aproveitar o dia inteiro com um único ingresso — do amanhecer ao anoitecer.</p></div>
+          <div class="faq__a" hidden><p><strong>Dia na Praia</strong> é o produto diurno, disponível sábados e domingos, com programação de esportes, atividades e lazer das 08h às 17h. <strong>Domingos de Praia</strong> é um produto exclusivo de domingo que começa a partir das 14h30 e vai até as 23h, com shows, samba, DJ e o famoso Ritual Sol/Lua ao pôr do sol. Nos domingos, você pode aproveitar o dia inteiro com um único ingresso.</p></div>
         </div>
         <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
@@ -468,7 +384,7 @@
 
         <div class="faq__item">
           <button class="faq__q" aria-expanded="false"><span>O que é o Ritual Sol/Lua?</span><span class="faq__icon">▾</span></button>
-          <div class="faq__a" hidden><p>Inspirado no ritual do pôr do sol da Praia do Jacaré (PB), onde Jurandir do Sax toca o Boléro de Ravel enquanto o sol se despede — criamos o nosso próprio ritual, inédito em Brasília. Todo domingo, por volta das 18h20, celebramos juntos o momento em que o dia vira noite. Um ritual de música, silêncio e beleza que você não vai esquecer.</p></div>
+          <div class="faq__a" hidden><p>Inspirado no ritual do pôr do sol da Praia do Jacaré (PB), criamos algo inédito em Brasília: todo domingo, às 18h20, celebramos juntos o momento em que o dia vira noite — com música, silêncio e o pôr do sol mais bonito da cidade.</p></div>
         </div>
         <div class="kv-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
@@ -486,9 +402,8 @@
     <div class="footer-cta__content" data-animate>
       <p class="label label--light">Todo fim de semana · Na Praia Parque</p>
       <h2>O litoral brasiliense está esperando por você</h2>
-      <p>Sábados e domingos. <strong>A temporada inteira.</strong></p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a href="#ingressos" class="btn btn--primary">Garantir ingresso →</a>
+        <a href="#agenda" class="btn btn--primary">Garantir ingresso →</a>
         <a href="#shows" class="btn btn--yellow">Domingos de Praia →</a>
       </div>
     </div>
@@ -500,25 +415,19 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <span class="footer__logo">Na Praia Parque</span>
-          <p>Dia na Praia & Domingos de Praia · Temporada 2026</p>
+          <p>Dia na Praia &amp; Domingos de Praia · Temporada 2026</p>
           <p>Na Praia Parque · Brasília · DF</p>
         </div>
         <div class="footer__nav">
-          <p class="footer__nav-title">Dia na Praia</p>
-          <a href="#ingressos">Ingressos</a>
-          <a href="#familia">Família</a>
-          <a href="#esportes">Esportes</a>
-        </div>
-        <div class="footer__nav">
-          <p class="footer__nav-title">Domingos de Praia</p>
-          <a href="#shows">Programação</a>
+          <p class="footer__nav-title">Ingressos</p>
+          <a href="#agenda">Julho 2026</a>
+          <a href="#shows">Domingos de Praia</a>
           <a href="#ritual">Ritual Sol/Lua</a>
-          <a href="#faq">FAQ</a>
         </div>
         <div class="footer__nav">
           <p class="footer__nav-title">Informações</p>
           <a href="#faq">FAQ</a>
-          <a href="#ingressos">Ingressos</a>
+          <a href="https://r2.com.vc" target="_blank" rel="noopener">r2.com.vc</a>
         </div>
         <div class="footer__social">
           <p class="footer__nav-title">Redes sociais</p>
@@ -546,5 +455,29 @@
   </div>
 
   <script src="script-dayuse.js"></script>
+  <script>
+  /* ── AGENDA TICKET AUTO-EXPIRE ── */
+  (function () {
+    function expUTC(dateStr, type) {
+      const [y, m, d] = dateStr.split('-').map(Number);
+      if (type === 'entardecer') return Date.UTC(y, m - 1, d + 1, 2, 0, 0);
+      return Date.UTC(y, m - 1, d, 17, 0, 0);
+    }
+    const now = Date.now();
+    document.querySelectorAll('.tk[data-tk-date]').forEach(card => {
+      if (now >= expUTC(card.dataset.tkDate, card.dataset.tkType)) {
+        card.style.display = 'none';
+      }
+    });
+    document.querySelectorAll('.agenda__weekend').forEach(block => {
+      const active = block.querySelectorAll('.tk:not(.is-soon):not([style*="none"])');
+      if (!active.length && block.querySelectorAll('.tk:not(.is-soon)').length === 0) return;
+      const allHidden = [...block.querySelectorAll('.tk:not(.is-soon)')].every(
+        c => c.style.display === 'none'
+      );
+      if (allHidden) block.style.display = 'none';
+    });
+  })();
+  </script>
 </body>
 </html>
