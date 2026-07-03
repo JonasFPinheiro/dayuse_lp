@@ -5,11 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Domingo de Praia — experiência completa do pôr do sol em Na Praia Parque, Brasília. Temporada 2026." />
   <meta property="og:title" content="Domingos de Praia — Na Praia Parque · Brasília" />
+  <meta http-equiv="refresh" content="0; url=index.html#noite" />
   <title>Domingos de Praia — Experiências até o sol virar lua</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lexend+Deca:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '944933258888890');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=944933258888890&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -19,22 +38,26 @@
       <img src="NP Parque_Selo 04.png" alt="Na Praia Parque" class="nav__logo" />
       <span class="nav__wordmark">Domingos de Praia</span>
     </a>
+    <div class="nav-switch" id="navSwitch" role="tablist" aria-label="Escolha o produto">
+      <a href="index.html" class="nav-switch__opt" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        Dia
+      </a>
+      <a href="domingos.html" class="nav-switch__opt is-active" role="tab" aria-selected="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        Noite
+      </a>
+    </div>
     <button class="nav__toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav__links" id="navLinks">
+      <a href="https://r2.com.vc" class="nav__back" target="_blank" rel="noopener" aria-label="Voltar ao site R2">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.5 2L3.5 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        r2.com.vc
+      </a>
       <a href="#shows" class="nav__link">Ingressos</a>
       <a href="#ritual" class="nav__link">Ritual Sol/Lua</a>
-      <div class="nav-switch" id="navSwitch" role="tablist" aria-label="Escolha o produto">
-        <a href="index.html" class="nav-switch__opt" role="tab" aria-selected="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          Dia
-        </a>
-        <a href="domingos.html" class="nav-switch__opt is-active" role="tab" aria-selected="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          Noite
-        </a>
-      </div>
       <a href="#shows" class="nav__cta">Ver datas →</a>
     </div>
   </nav>
@@ -86,78 +109,50 @@
         <div class="kv-stripes"><span></span><span></span><span></span></div>
       </div>
 
-      <div class="shows__controls" data-animate>
-        <select class="shows__week-select" id="showsWeekSelect" aria-label="Ir para domingo">
-          <option value="">Ir para um domingo…</option>
-          <option value="0">14/06 — Banda Eva + Doze por Oito</option>
-          <option value="1">21/06</option>
-        </select>
-      </div>
+      <div class="shows__grid">
 
-      <div class="shows__grid" id="showsGrid">
-
-        <!-- ══ DOMINGO 1 — 14/06 ══ -->
-        <div class="sunday-block" data-search="14/06 14 junho jun domingo banda eva doze por oito palco praia abertura">
-
-          <!-- Slot A: Experiência Domingos de Praia -->
-          <div class="slot-card slot-card--experience">
-            <div class="slot-card__media">
-              <img src="produto_domingo/pagode-sol.jpg" alt="Programação Domingos de Praia — 14 de Junho" loading="lazy" style="object-position:center 35%">
-            </div>
-            <div class="slot-card__body">
-              <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
-              <div class="slot-card__date-block"><span class="slot-card__date-day">14</span><span class="slot-card__date-month">JUN 2026</span></div>
-              <h3 class="slot-card__title">Domingos de Praia</h3>
-              <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada a partir das 14h.</p>
-              <div class="slot-card__meta"><span>🎶 Programação até 23h · a partir das 14h</span><span>📍 Na Praia Parque · Brasília</span></div>
-              <a href="https://r2.com.vc/produto/14-06-banda-eva-doze-por-oito-inauguracao-do-palco-praia/" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Comprar ingresso →</a>
-            </div>
-          </div>
+        <!-- ══ DOMINGO 1 — 21/06 ══ -->
+        <div class="sunday-block sunday-block--single is-visible" data-search="21/06 21 junho jun domingo banda eva nossa galera palco praia inauguracao">
 
           <!-- Slot B: Show -->
           <div class="slot-card slot-card--show">
             <div class="slot-card__media">
-              <img src="shows_domingo/Banner-01-1000x1000px-44.png" alt="Show no Domingos de Praia — 14 de Junho" loading="lazy" style="object-position:center top">
-              <span class="show-card__tag">Abertura da Temporada</span>
-              <span class="show-card__date-chip">14 <small>JUN</small></span>
+              <img src="shows_domingo/Banner-01-1000x1000px-51.png" alt="Show no Domingos de Praia — 21 de Junho" loading="lazy">
+              <span class="show-card__tag">Inauguração do Palco Praia</span>
+              <span class="show-card__date-chip">21 <small>JUN</small></span>
             </div>
             <div class="slot-card__body">
               <p class="show-card__eyebrow">🎤 Show neste domingo</p>
-              <h3 class="slot-card__title">Domingo · 14 de Junho</h3>
-              <p class="show-card__palco">✦ Palco Praia · Banda Eva + Doze por Oito</p>
+              <h3 class="slot-card__title">Domingo · 21 de Junho</h3>
+              <p class="show-card__palco">✦ Palco Praia · Banda Eva + Nossa Galera</p>
               <p class="slot-card__value">Comprando o show, você também garante toda a programação do Domingos de Praia.</p>
               <div class="slot-card__meta"><span>🎶 Programação até 23h · a partir das 14h</span><span>📍 Na Praia Parque · Brasília</span></div>
-              <a href="https://r2.com.vc/produto/14-06-banda-eva-doze-por-oito-inauguracao-do-palco-praia/" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Comprar ingresso do show →</a>
+              <a href="https://r2.com.vc/produto/21-06-banda-eva-nossa-galera-inauguracao-do-palco-praia/" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Comprar ingresso do show →</a>
             </div>
           </div>
+
         </div>
 
-        <!-- ══ DOMINGO 2 — 21/06 ══ -->
-        <div class="sunday-block sunday-block--single" data-search="21/06 21 junho jun domingo">
+        <!-- ══ DOMINGO 2 — 28/06 ══ -->
+        <div class="sunday-block sunday-block--single is-visible" data-search="28/06 28 junho jun domingo">
 
           <div class="slot-card slot-card--experience">
             <div class="slot-card__media">
-              <img src="domingo_de_praia/roda_pagode.jpg" alt="Programação Domingos de Praia — 21 de Junho" loading="lazy" style="object-position:center center">
+              <img src="domingo_de_praia/roda_pagode.jpg" alt="Programação Domingos de Praia — 28 de Junho" loading="lazy" style="object-position:center center">
             </div>
             <div class="slot-card__body">
               <p class="slot-card__kicker">☀️ Experiência do Domingo</p>
-              <div class="slot-card__date-block"><span class="slot-card__date-day">21</span><span class="slot-card__date-month">JUN 2026</span></div>
+              <div class="slot-card__date-block"><span class="slot-card__date-day">28</span><span class="slot-card__date-month">JUN 2026</span></div>
               <h3 class="slot-card__title">Domingos de Praia</h3>
               <p class="slot-card__sub">A experiência completa do domingo — roda de samba, Ritual Sol/Lua e pôr do sol. Entrada a partir das 14h.</p>
               <div class="slot-card__meta"><span>🎶 Programação até 23h · a partir das 14h</span><span>📍 Na Praia Parque · Brasília</span></div>
-              <span class="btn btn--primary slot-card__cta btn--disabled">Em breve</span>
+              <a href="https://r2.com.vc/produto/28-06-domingo-de-praia-entardecer" class="btn btn--primary slot-card__cta" target="_blank" rel="noopener">Comprar ingresso →</a>
             </div>
           </div>
 
         </div>
 
       </div><!-- /shows__grid -->
-
-      <div class="shows__nav">
-        <button class="shows__arrow" id="showsPrev" aria-label="Domingo anterior" disabled>‹</button>
-        <span class="shows__label" id="showsLabel">Domingo 1 de 2</span>
-        <button class="shows__arrow" id="showsNext" aria-label="Próximo domingo">›</button>
-      </div>
 
     </div>
   </section>

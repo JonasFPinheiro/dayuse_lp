@@ -111,62 +111,32 @@
   }
 
   /* ──────────────────────────────────────
-     SHOWS — SUNDAY BLOCKS CAROUSEL
+     SHOWS — AUTO-EXPIRE SUNDAY BLOCKS
   ────────────────────────────────────── */
-  const showsGrid   = document.getElementById('showsGrid');
-  const showsPrev   = document.getElementById('showsPrev');
-  const showsNext   = document.getElementById('showsNext');
-  const showsLabel  = document.getElementById('showsLabel');
-  const showsSelect = document.getElementById('showsWeekSelect');
-
-  if (showsGrid) {
-    const allBlocks = Array.from(showsGrid.querySelectorAll('.sunday-block'));
-    const TOTAL     = allBlocks.length;
-    let winStart    = 0;
-
-    function renderWindow(animate) {
-      allBlocks.forEach((block, i) => {
-        const visible = i === winStart;
-        if (visible) {
-          block.classList.add('is-visible');
-          if (animate) {
-            block.style.opacity = '0';
-            block.style.transform = 'translateY(10px)';
-            setTimeout(() => {
-              block.style.transition = 'opacity .3s ease, transform .3s ease';
-              block.style.opacity = '1';
-              block.style.transform = 'translateY(0)';
-            }, 20);
-          } else {
-            block.style.opacity = '1';
-            block.style.transform = 'translateY(0)';
-          }
-        } else {
-          block.classList.remove('is-visible');
-        }
-      });
-
-      if (showsPrev) showsPrev.disabled = winStart === 0;
-      if (showsNext) showsNext.disabled = winStart >= TOTAL - 1;
-      if (showsLabel) showsLabel.textContent = `Domingo ${winStart + 1} de ${TOTAL}`;
-      if (showsSelect) showsSelect.value = '';
+  (function () {
+    function expUTC(s) {
+      const [y, m, d] = s.split('-').map(Number);
+      return Date.UTC(y, m - 1, d + 1, 3, 0, 0); /* 00:00 BRT (UTC-3) = 03:00 UTC */
     }
-
-    showsPrev?.addEventListener('click', () => {
-      if (winStart > 0) { winStart--; renderWindow(true); }
+    const now = Date.now();
+    let remaining = 0;
+    document.querySelectorAll('.sunday-block').forEach(block => {
+      const mt = (block.dataset.search || '').match(/^(\d{2})\/(\d{2})/);
+      if (!mt) return;
+      if (now >= expUTC(`2026-${mt[2]}-${mt[1]}`)) {
+        block.remove();
+      } else {
+        remaining++;
+      }
     });
-    showsNext?.addEventListener('click', () => {
-      if (winStart < TOTAL - 1) { winStart++; renderWindow(true); }
-    });
-    showsSelect?.addEventListener('change', () => {
-      const val = showsSelect.value;
-      if (val === '') return;
-      const idx = parseInt(val, 10);
-      if (!isNaN(idx)) { winStart = idx; renderWindow(true); }
-    });
-
-    renderWindow(false);
-  }
+    const showsGrid = document.querySelector('.shows__grid');
+    if (showsGrid && remaining === 1) showsGrid.classList.add('shows__grid--solo');
+    /* Reload when the next block expires */
+    const nextExp = [...document.querySelectorAll('.sunday-block')]
+      .map(b => { const mt = (b.dataset.search || '').match(/^(\d{2})\/(\d{2})/); return mt ? expUTC(`2026-${mt[2]}-${mt[1]}`) : Infinity; })
+      .filter(t => t > now).sort((a, b) => a - b)[0];
+    if (nextExp && isFinite(nextExp)) setTimeout(() => location.reload(), nextExp - now);
+  })();
 
   /* ──────────────────────────────────────
      FAQ ACCORDION

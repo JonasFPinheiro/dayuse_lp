@@ -58,12 +58,26 @@
   });
 
   /* ── STICKY BAR ── */
-  const stickyBar = document.getElementById('stickyBar');
-  const heroEl    = document.querySelector('.du-hero');
+  const stickyBar  = document.getElementById('stickyBar');
+  const stickyMsg  = document.getElementById('stickyMsg');
+  const stickyCta  = document.getElementById('stickyCta');
+  const heroEl     = document.querySelector('.du-hero');
+  const noiteEl    = document.getElementById('noite');
   if (stickyBar && heroEl) {
     new IntersectionObserver((entries) => {
       stickyBar.classList.toggle('visible', !entries[0].isIntersecting);
     }, { threshold: 0.1 }).observe(heroEl);
+  }
+  if (stickyBar && noiteEl) {
+    new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        if (stickyMsg) stickyMsg.textContent = 'Domingos de Praia · até 23h';
+        if (stickyCta) { stickyCta.textContent = 'Comprar →'; stickyCta.href = '#shows'; }
+      } else {
+        if (stickyMsg) stickyMsg.textContent = 'Dia na Praia · Sáb e Dom';
+        if (stickyCta) { stickyCta.textContent = 'Comprar →'; stickyCta.href = '#ingressos'; }
+      }
+    }, { threshold: 0.1 }).observe(noiteEl);
   }
 
   /* ── SCROLL ANIMATIONS ── */
@@ -99,7 +113,7 @@
   });
 
   /* ── DAYUSE TICKET WINDOW + SEARCH ── */
-  const allCards    = Array.from(document.querySelectorAll('.du-card'));
+  let allCards      = Array.from(document.querySelectorAll('.du-card'));
   const grid        = document.getElementById('duGrid');
   const prevBtn     = document.getElementById('duPrev');
   const nextBtn     = document.getElementById('duNext');
@@ -112,6 +126,30 @@
   const clearBtn    = document.getElementById('duClearBtn');
 
   if (!grid || !allCards.length) return;
+
+  /* ── AUTO-EXPIRE: remove cards past 06:00 BRT the day after the event ── */
+  (function () {
+    function expUTC(s) {
+      const [y, m, d] = s.split('-').map(Number);
+      return Date.UTC(y, m - 1, d, 17, 0, 0); /* 14:00 BRT (UTC-3) = 17:00 UTC */
+    }
+    const now = Date.now();
+    allCards = allCards.filter(card => {
+      const mt = (card.dataset.search || '').match(/^(\d{2})\/(\d{2})/);
+      if (mt && now >= expUTC(`2026-${mt[2]}-${mt[1]}`)) { card.remove(); return false; }
+      return true;
+    });
+    /* Renumber weeks to always start at 1 */
+    const sorted = [...new Set(allCards.map(c => +c.dataset.week))].sort((a, b) => a - b);
+    const wMap   = Object.fromEntries(sorted.map((w, i) => [w, i + 1]));
+    allCards.forEach(c => { c.dataset.week = wMap[+c.dataset.week]; });
+    /* Reload when the next card should expire */
+    const nextExp = allCards
+      .map(c => { const mt = (c.dataset.search || '').match(/^(\d{2})\/(\d{2})/); return mt ? expUTC(`2026-${mt[2]}-${mt[1]}`) : Infinity; })
+      .filter(t => t > now).sort((a, b) => a - b)[0];
+    if (nextExp && isFinite(nextExp)) setTimeout(() => location.reload(), nextExp - now);
+  })();
+  if (!allCards.length) return;
 
   const maxWeek  = Math.max(...allCards.map(c => +c.dataset.week));
   let currentWeek = 1;
@@ -194,13 +232,108 @@
 
   showWeek(1);
 
-  /* ── NAV-SWITCH: hide when cross-sell is visible ── */
-  const navSwitchEl  = document.getElementById('navSwitch');
-  const crossSellEl  = document.getElementById('cross-sell');
-  if (navSwitchEl && crossSellEl) {
-    new IntersectionObserver((entries) => {
-      navSwitchEl.classList.toggle('nav-switch--hidden', entries[0].isIntersecting);
-    }, { threshold: 0.1 }).observe(crossSellEl);
-  }
+
+  /* ── NAV-SWITCH: dia / noite ── */
+  (function () {
+    const pills    = document.querySelectorAll('.nav-switch__opt');
+    const noiteSec = document.getElementById('noite');
+    function setActive(id) {
+      pills.forEach(p => {
+        const href = (p.getAttribute('href') || '').replace('#', '');
+        p.classList.toggle('is-active', href === id);
+        p.setAttribute('aria-selected', href === id ? 'true' : 'false');
+      });
+    }
+    if (noiteSec && pills.length) {
+      new IntersectionObserver((entries) => {
+        setActive(entries[0].isIntersecting ? 'noite' : 'dia');
+      }, { threshold: 0.1 }).observe(noiteSec);
+    }
+  })();
+
+  /* ── PRODUCT CHOOSER — AUTO-ATUALIZAÇÃO ── */
+  (function () {
+    const MONTHS = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+
+    function expUTC(dateStr, type) {
+      const [y, m, d] = dateStr.split('-').map(Number);
+      if (type === 'entardecer') return Date.UTC(y, m - 1, d + 1, 2, 0, 0); /* 23:00 BRT = 02:00 UTC next day */
+      return Date.UTC(y, m - 1, d, 17, 0, 0); /* 14:00 BRT = 17:00 UTC */
+    }
+
+    function nextOccurrence(type, afterDateStr) {
+      /* Retorna a próxima data (YYYY-MM-DD) de sábado ou domingo após a data dada */
+      const [y, m, d] = afterDateStr.split('-').map(Number);
+      const base = new Date(Date.UTC(y, m - 1, d));
+      const target = type === 'sabado' ? 6 : 0; /* 6=Sáb, 0=Dom */
+      const diff = ((target - base.getUTCDay() + 7) % 7) || 7;
+      base.setUTCDate(base.getUTCDate() + diff);
+      const ny = base.getUTCFullYear();
+      const nm = String(base.getUTCMonth() + 1).padStart(2, '0');
+      const nd = String(base.getUTCDate()).padStart(2, '0');
+      return `${ny}-${nm}-${nd}`;
+    }
+
+    function applyCard(card, dateStr, soon) {
+      const [, m, d] = dateStr.split('-').map(Number);
+      const label = `${String(d).padStart(2,'0')} ${MONTHS[m - 1]}`;
+      const dateEl = card.querySelector('.pc-card__event-date');
+      if (dateEl) dateEl.textContent = soon ? `Próx. ${label}` : label;
+      const cta = card.querySelector('.pc-card__cta');
+      if (soon) {
+        card.href = 'javascript:void(0)';
+        card.classList.add('is-soon');
+        if (cta) { cta.textContent = 'Em breve'; cta.classList.add('btn--disabled'); cta.classList.remove('btn--primary','btn--yellow'); }
+      }
+      /* When active: href stays exactly as set in HTML */
+    }
+
+    const now = Date.now();
+    let nextExp = Infinity;
+
+    document.querySelectorAll('.product-chooser__card[data-pc-date]').forEach(card => {
+      const type    = card.dataset.pcType || 'domingo-dia';
+      const dateStr = card.dataset.pcDate;
+      const exp     = expUTC(dateStr, type);
+
+      if (now >= exp) {
+        /* Expirou — avança para a próxima ocorrência e mostra "Em breve" */
+        const nextDate = nextOccurrence(type, dateStr);
+        card.dataset.pcDate = nextDate;
+        applyCard(card, nextDate, true);
+      } else {
+        /* Ainda ativo */
+        applyCard(card, dateStr, false);
+        nextExp = Math.min(nextExp, exp);
+      }
+    });
+
+    if (isFinite(nextExp)) setTimeout(() => location.reload(), nextExp - now);
+  })();
+
+  /* ── SHOWS — AUTO-EXPIRE SUNDAY BLOCKS ── */
+  (function () {
+    function expUTC(s) {
+      const [y, m, d] = s.split('-').map(Number);
+      return Date.UTC(y, m - 1, d + 1, 3, 0, 0); /* 00:00 BRT = 03:00 UTC */
+    }
+    const now = Date.now();
+    let remaining = 0;
+    document.querySelectorAll('.sunday-block').forEach(block => {
+      const mt = (block.dataset.search || '').match(/^(\d{2})\/(\d{2})/);
+      if (!mt) return;
+      if (now >= expUTC(`2026-${mt[2]}-${mt[1]}`)) {
+        block.remove();
+      } else {
+        remaining++;
+      }
+    });
+    const showsGrid = document.querySelector('.shows__grid');
+    if (showsGrid && remaining === 1) showsGrid.classList.add('shows__grid--solo');
+    const nextExp = [...document.querySelectorAll('.sunday-block')]
+      .map(b => { const mt = (b.dataset.search || '').match(/^(\d{2})\/(\d{2})/); return mt ? expUTC(`2026-${mt[2]}-${mt[1]}`) : Infinity; })
+      .filter(t => t > now).sort((a, b) => a - b)[0];
+    if (nextExp && isFinite(nextExp)) setTimeout(() => location.reload(), nextExp - now);
+  })();
 
 })();
