@@ -1424,3 +1424,29 @@ em { font-style: normal; color: var(--coral); }
   margin: 0 0 1rem;
 }
 .story-brief__desc--light { color: rgba(255,255,255,.7); }
+
+/* Schedule list inside dark ticket card */
+.tk__sched {
+  list-style: none;
+  margin: .2rem 0 .4rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .18rem;
+}
+.tk__sched li {
+  font-family: var(--font-body);
+  font-size: .7rem;
+  color: rgba(255,255,255,.75);
+  display: flex;
+  align-items: baseline;
+  gap: .4rem;
+}
+.tk__sched-t {
+  font-family: var(--font-sub);
+  font-size: .6rem;
+  font-weight: 700;
+  color: var(--yellow);
+  flex-shrink: 0;
+  min-width: 2.6rem;
+}
