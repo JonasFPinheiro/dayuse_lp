@@ -1231,6 +1231,28 @@ em { font-style: normal; color: var(--coral); }
   .tk-grid { gap: .75rem; }
 }
 
+/* grid com 1 card (fim de semana sem sábado) */
+.tk-grid--solo {
+  grid-template-columns: 1fr;
+  max-width: calc(50% - .375rem);
+}
+@media (max-width: 600px) {
+  .tk-grid--solo { max-width: 100%; }
+}
+
+/* separador de mês na agenda */
+.agenda__month-sep {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
 /* ── TICKET CARD ── */
 .tk {
   background: #fff;
