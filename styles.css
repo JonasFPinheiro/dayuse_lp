@@ -1177,6 +1177,14 @@ em { font-style: normal; color: var(--coral); }
   margin: 0;
 }
 
+/* Month separator */
+.agenda__month-sep {
+  text-align: center;
+  margin: 2.5rem 0 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
 /* Weekend block */
 .agenda__weekend { margin-bottom: 2.25rem; }
 .agenda__wk-header {

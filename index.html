@@ -70,7 +70,7 @@
         <span class="du-hero__badge-dot"></span>
         Na Praia Parque · Brasília
       </div>
-      <span class="du-hero__kicker">Julho 2026</span>
+      <span class="du-hero__kicker">Julho &amp; Agosto 2026</span>
       <h1 class="du-hero__title">A praia de Brasília.</h1>
       <p class="du-hero__sub">Sábados e domingos. Sol, esporte, família e música até a noite.</p>
       <a href="#agenda" class="btn btn--choose">Escolha seu dia ↓</a>
@@ -262,7 +262,10 @@
       </div>
 
       <!-- ── AGOSTO 2026 ── -->
-      <div class="agenda__month-sep">Agosto 2026</div>
+      <div class="agenda__month-sep">
+        <h2 class="agenda__title">Agosto 2026</h2>
+        <p class="agenda__sub">Escolha o fim de semana. Garanta seu lugar.</p>
+      </div>
 
       <!-- WEEKEND 5: 01–02 Ago -->
       <div class="agenda__weekend">
@@ -273,7 +276,7 @@
           <div class="agenda__wk-line"></div>
         </div>
         <div class="tk-grid">
-          <a class="tk" href="https://r2.com.vc/produto/01-08-dia-na-praia-sabado" data-tk-date="2026-08-01" data-tk-type="sabado" target="_blank" rel="noopener">
+          <a class="tk" href="https://r2.com.vc/produto/01-08-dia-na-praia-sabado" data-tk-date="2026-08-01" data-tk-type="meio-dia" target="_blank" rel="noopener">
             <div class="tk__photo">
               <img src="imagens_tickets/Prancheta 2.5.png" alt="Sábado na Praia — 01 Ago" loading="lazy">
               <span class="tk__pill tk__pill--sab">Sáb</span>
@@ -281,11 +284,11 @@
             <div class="tk__body">
               <div class="tk__dateline"><span class="tk__num">01</span><span class="tk__mo">Ago</span></div>
               <h3 class="tk__name">Dia na Praia</h3>
-              <p class="tk__hours">08h → 17h · entrada até 14h</p>
+              <p class="tk__hours">08h → 17h · entrada até 12h</p>
               <span class="btn btn--primary tk__cta">Garantir ingresso →</span>
             </div>
           </a>
-          <a class="tk" href="https://r2.com.vc/produto/02-08-dia-na-praia-domingo" data-tk-date="2026-08-02" data-tk-type="domingo-dia" target="_blank" rel="noopener">
+          <a class="tk" href="https://r2.com.vc/produto/02-08-dia-na-praia-domingo" data-tk-date="2026-08-02" data-tk-type="meio-dia" target="_blank" rel="noopener">
             <div class="tk__photo">
               <img src="imagens_tickets/Prancheta 2.png" alt="Domingo na Praia — 02 Ago" loading="lazy">
               <span class="tk__pill tk__pill--dom">Dom</span>
@@ -293,7 +296,7 @@
             <div class="tk__body">
               <div class="tk__dateline"><span class="tk__num">02</span><span class="tk__mo">Ago</span></div>
               <h3 class="tk__name">Dia na Praia</h3>
-              <p class="tk__hours">08h → 17h · entrada até 14h</p>
+              <p class="tk__hours">08h → 17h · entrada até 12h</p>
               <span class="btn btn--primary tk__cta">Garantir ingresso →</span>
             </div>
           </a>
@@ -419,6 +422,7 @@
           </a>
         </div>
       </div>
+
 
     </div>
   </section>
@@ -617,6 +621,7 @@
     function expUTC(dateStr, type) {
       const [y, m, d] = dateStr.split('-').map(Number);
       if (type === 'entardecer') return Date.UTC(y, m - 1, d + 1, 2, 0, 0);
+      if (type === 'meio-dia') return Date.UTC(y, m - 1, d, 15, 0, 0);
       return Date.UTC(y, m - 1, d, 17, 0, 0);
     }
     const now = Date.now();
