@@ -1362,6 +1362,7 @@ em { font-style: normal; color: var(--coral); }
   margin: 0;
 }
 .tk__hours--dim { color: rgba(255,255,255,.38); }
+.tk__desc { font-family: var(--font-body); font-size: .62rem; color: rgba(255,255,255,.85); margin: 0; line-height: 1.45; }
 
 .tk__cta {
   margin-top: auto;
